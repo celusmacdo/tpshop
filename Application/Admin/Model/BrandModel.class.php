@@ -19,8 +19,7 @@ class BrandModel extends Model {
 					if(empty($value)){
 						$result[$k][$key]='暂时没有数据';
 					}
-					$result[$k]['brand_logo']='<img height="100" src="'.$v['brand_logo'].'"/>';
-					$result[$k]['brand_info']=mb_substr($v['brand_info'],0,33,'utf8');
+					$result[$k]['brand_logo']='<img height="60" src="'.$v['brand_logo'].'"/>';
 			}
 				
 			}

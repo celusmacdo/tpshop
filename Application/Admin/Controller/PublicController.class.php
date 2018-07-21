@@ -12,7 +12,7 @@ class PublicController extends Controller {
 	   'Articlecat'   =>array('分类编号','分类名称'),
 	   'Article'      =>array('文章编号','文章标题','文章描述','文章分类'),
 	   'Attribute'    =>array('属性编号','属性名称','属性类型'),
-	   'Brand'        =>array('品牌编号','品牌名称','品牌LOGO','官网地址','品牌简介'),
+	   'Brand'        =>array('品牌编号','品牌名称','品牌LOGO','官网地址'),
 	   'Group'        =>array('管理员编号','角色名称','权限描述','权限分配'),
 	   'Homemenu'     =>array('导航编号','导航名称','所属导航'),
 	   'Imgrun'       =>array('轮播编号','轮播名称','轮播链接','轮播图片','轮播分类'),

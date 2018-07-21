@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50553
+Source Server         : root
+Source Server Version : 50547
 Source Host           : localhost:3306
 Source Database       : tpshop1805
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2018-07-21 12:06:45
+Date: 2018-07-21 18:24:05
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -143,11 +143,11 @@ CREATE TABLE `max_attribute` (
 INSERT INTO `max_attribute` VALUES ('1', '商品名称', '2', null);
 INSERT INTO `max_attribute` VALUES ('2', '商品编号', '2', null);
 INSERT INTO `max_attribute` VALUES ('3', '商品毛重', '2', null);
-INSERT INTO `max_attribute` VALUES ('4', '商品产地', '1', null);
-INSERT INTO `max_attribute` VALUES ('5', '重量', '1', null);
+INSERT INTO `max_attribute` VALUES ('4', '商品产地', '2', null);
+INSERT INTO `max_attribute` VALUES ('5', '重量', '2', null);
 INSERT INTO `max_attribute` VALUES ('6', '咖啡口味', '1', null);
-INSERT INTO `max_attribute` VALUES ('7', '包装', '1', null);
-INSERT INTO `max_attribute` VALUES ('8', '分类', '1', null);
+INSERT INTO `max_attribute` VALUES ('7', '包装单位', '2', null);
+INSERT INTO `max_attribute` VALUES ('8', '分类', '2', null);
 INSERT INTO `max_attribute` VALUES ('9', '包装单位', '2', null);
 INSERT INTO `max_attribute` VALUES ('10', '咖啡分类', '1', null);
 
@@ -200,7 +200,7 @@ CREATE TABLE `max_category` (
   `level` int(11) unsigned DEFAULT NULL COMMENT '等级',
   `isshow` int(11) unsigned DEFAULT '1' COMMENT '是否显示',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=61 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_category
@@ -233,13 +233,9 @@ INSERT INTO `max_category` VALUES ('25', '诚聘英才', '6', 'article', '99', '
 INSERT INTO `max_category` VALUES ('26', '产品分类', '0', 'product', '99', '1', '1');
 INSERT INTO `max_category` VALUES ('27', '咖啡分类', '26', 'product', '99', '2', '1');
 INSERT INTO `max_category` VALUES ('28', '咖啡口味', '26', 'product', '99', '2', '1');
-INSERT INTO `max_category` VALUES ('29', '是否含咖啡因', '26', 'product', '99', '2', '1');
-INSERT INTO `max_category` VALUES ('30', '是否含糖', '26', 'product', '99', '2', '1');
-INSERT INTO `max_category` VALUES ('31', '包装单位', '26', 'product', '99', '2', '1');
 INSERT INTO `max_category` VALUES ('32', '速溶咖啡', '27', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('33', '咖啡豆', '27', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('34', '咖啡粉', '27', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('35', '其他', '27', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('36', '原味咖啡', '28', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('37', '特浓咖啡', '28', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('38', '黑咖啡', '28', 'product', '99', '3', '1');
@@ -247,19 +243,6 @@ INSERT INTO `max_category` VALUES ('39', '摩卡咖啡', '28', 'product', '99', 
 INSERT INTO `max_category` VALUES ('40', '拿铁咖啡', '28', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('41', '白咖啡', '28', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('42', '卡布奇诺', '28', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('43', '其他', '28', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('44', '含咖啡因', '29', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('45', '低咖啡因', '29', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('46', '无咖啡因', '29', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('47', '其他', '29', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('48', '无糖', '30', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('49', '含糖', '30', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('50', '其他', '30', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('51', '袋装', '31', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('52', '盒装', '31', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('53', '瓶装', '31', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('54', '灌装', '31', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('55', '其他', '31', 'product', '99', '3', '1');
 INSERT INTO `max_category` VALUES ('57', '配件', '26', 'part', '99', '2', '1');
 
 -- ----------------------------
@@ -274,256 +257,16 @@ CREATE TABLE `max_category_attr` (
 -- ----------------------------
 -- Records of max_category_attr
 -- ----------------------------
-INSERT INTO `max_category_attr` VALUES ('1', '32');
-INSERT INTO `max_category_attr` VALUES ('2', '33');
-INSERT INTO `max_category_attr` VALUES ('3', '32');
-INSERT INTO `max_category_attr` VALUES ('4', '32');
-INSERT INTO `max_category_attr` VALUES ('5', '32');
-INSERT INTO `max_category_attr` VALUES ('6', '32');
-INSERT INTO `max_category_attr` VALUES ('7', '32');
-INSERT INTO `max_category_attr` VALUES ('8', '32');
-INSERT INTO `max_category_attr` VALUES ('9', '32');
-INSERT INTO `max_category_attr` VALUES ('10', '32');
-INSERT INTO `max_category_attr` VALUES ('1', '33');
-INSERT INTO `max_category_attr` VALUES ('2', '32');
-INSERT INTO `max_category_attr` VALUES ('3', '33');
-INSERT INTO `max_category_attr` VALUES ('4', '33');
-INSERT INTO `max_category_attr` VALUES ('5', '33');
-INSERT INTO `max_category_attr` VALUES ('6', '33');
-INSERT INTO `max_category_attr` VALUES ('7', '33');
-INSERT INTO `max_category_attr` VALUES ('8', '33');
-INSERT INTO `max_category_attr` VALUES ('9', '33');
-INSERT INTO `max_category_attr` VALUES ('10', '33');
-INSERT INTO `max_category_attr` VALUES ('1', '34');
-INSERT INTO `max_category_attr` VALUES ('2', '34');
-INSERT INTO `max_category_attr` VALUES ('3', '34');
-INSERT INTO `max_category_attr` VALUES ('4', '34');
-INSERT INTO `max_category_attr` VALUES ('5', '34');
-INSERT INTO `max_category_attr` VALUES ('6', '34');
-INSERT INTO `max_category_attr` VALUES ('7', '34');
-INSERT INTO `max_category_attr` VALUES ('8', '34');
-INSERT INTO `max_category_attr` VALUES ('9', '34');
-INSERT INTO `max_category_attr` VALUES ('10', '34');
-INSERT INTO `max_category_attr` VALUES ('1', '35');
-INSERT INTO `max_category_attr` VALUES ('2', '35');
-INSERT INTO `max_category_attr` VALUES ('3', '35');
-INSERT INTO `max_category_attr` VALUES ('4', '35');
-INSERT INTO `max_category_attr` VALUES ('5', '35');
-INSERT INTO `max_category_attr` VALUES ('6', '35');
-INSERT INTO `max_category_attr` VALUES ('7', '35');
-INSERT INTO `max_category_attr` VALUES ('8', '35');
-INSERT INTO `max_category_attr` VALUES ('9', '35');
-INSERT INTO `max_category_attr` VALUES ('10', '35');
-INSERT INTO `max_category_attr` VALUES ('1', '36');
-INSERT INTO `max_category_attr` VALUES ('2', '36');
-INSERT INTO `max_category_attr` VALUES ('3', '36');
-INSERT INTO `max_category_attr` VALUES ('4', '36');
-INSERT INTO `max_category_attr` VALUES ('5', '36');
-INSERT INTO `max_category_attr` VALUES ('6', '36');
-INSERT INTO `max_category_attr` VALUES ('7', '36');
-INSERT INTO `max_category_attr` VALUES ('8', '36');
-INSERT INTO `max_category_attr` VALUES ('9', '36');
-INSERT INTO `max_category_attr` VALUES ('10', '36');
-INSERT INTO `max_category_attr` VALUES ('1', '37');
-INSERT INTO `max_category_attr` VALUES ('2', '37');
-INSERT INTO `max_category_attr` VALUES ('3', '37');
-INSERT INTO `max_category_attr` VALUES ('4', '37');
-INSERT INTO `max_category_attr` VALUES ('5', '37');
-INSERT INTO `max_category_attr` VALUES ('6', '37');
-INSERT INTO `max_category_attr` VALUES ('7', '37');
-INSERT INTO `max_category_attr` VALUES ('8', '37');
-INSERT INTO `max_category_attr` VALUES ('9', '37');
-INSERT INTO `max_category_attr` VALUES ('10', '37');
-INSERT INTO `max_category_attr` VALUES ('1', '39');
-INSERT INTO `max_category_attr` VALUES ('2', '39');
-INSERT INTO `max_category_attr` VALUES ('3', '39');
-INSERT INTO `max_category_attr` VALUES ('4', '39');
-INSERT INTO `max_category_attr` VALUES ('1', '38');
-INSERT INTO `max_category_attr` VALUES ('2', '38');
-INSERT INTO `max_category_attr` VALUES ('3', '38');
-INSERT INTO `max_category_attr` VALUES ('4', '38');
-INSERT INTO `max_category_attr` VALUES ('5', '38');
-INSERT INTO `max_category_attr` VALUES ('6', '38');
-INSERT INTO `max_category_attr` VALUES ('7', '38');
-INSERT INTO `max_category_attr` VALUES ('8', '38');
-INSERT INTO `max_category_attr` VALUES ('9', '38');
-INSERT INTO `max_category_attr` VALUES ('10', '38');
-INSERT INTO `max_category_attr` VALUES ('5', '39');
-INSERT INTO `max_category_attr` VALUES ('6', '39');
-INSERT INTO `max_category_attr` VALUES ('7', '39');
-INSERT INTO `max_category_attr` VALUES ('8', '39');
-INSERT INTO `max_category_attr` VALUES ('9', '39');
-INSERT INTO `max_category_attr` VALUES ('10', '39');
-INSERT INTO `max_category_attr` VALUES ('1', '40');
-INSERT INTO `max_category_attr` VALUES ('2', '40');
-INSERT INTO `max_category_attr` VALUES ('3', '40');
-INSERT INTO `max_category_attr` VALUES ('4', '40');
-INSERT INTO `max_category_attr` VALUES ('5', '40');
-INSERT INTO `max_category_attr` VALUES ('6', '40');
-INSERT INTO `max_category_attr` VALUES ('7', '40');
-INSERT INTO `max_category_attr` VALUES ('8', '40');
-INSERT INTO `max_category_attr` VALUES ('9', '40');
-INSERT INTO `max_category_attr` VALUES ('10', '40');
-INSERT INTO `max_category_attr` VALUES ('1', '41');
-INSERT INTO `max_category_attr` VALUES ('2', '41');
-INSERT INTO `max_category_attr` VALUES ('3', '41');
-INSERT INTO `max_category_attr` VALUES ('4', '41');
-INSERT INTO `max_category_attr` VALUES ('5', '41');
-INSERT INTO `max_category_attr` VALUES ('6', '41');
-INSERT INTO `max_category_attr` VALUES ('7', '41');
-INSERT INTO `max_category_attr` VALUES ('8', '41');
-INSERT INTO `max_category_attr` VALUES ('9', '41');
-INSERT INTO `max_category_attr` VALUES ('10', '41');
-INSERT INTO `max_category_attr` VALUES ('1', '42');
-INSERT INTO `max_category_attr` VALUES ('2', '42');
-INSERT INTO `max_category_attr` VALUES ('3', '42');
-INSERT INTO `max_category_attr` VALUES ('4', '42');
-INSERT INTO `max_category_attr` VALUES ('5', '42');
-INSERT INTO `max_category_attr` VALUES ('6', '42');
-INSERT INTO `max_category_attr` VALUES ('7', '42');
-INSERT INTO `max_category_attr` VALUES ('8', '42');
-INSERT INTO `max_category_attr` VALUES ('9', '42');
-INSERT INTO `max_category_attr` VALUES ('10', '42');
-INSERT INTO `max_category_attr` VALUES ('1', '43');
-INSERT INTO `max_category_attr` VALUES ('2', '43');
-INSERT INTO `max_category_attr` VALUES ('3', '43');
-INSERT INTO `max_category_attr` VALUES ('4', '43');
-INSERT INTO `max_category_attr` VALUES ('5', '43');
-INSERT INTO `max_category_attr` VALUES ('6', '43');
-INSERT INTO `max_category_attr` VALUES ('7', '43');
-INSERT INTO `max_category_attr` VALUES ('8', '43');
-INSERT INTO `max_category_attr` VALUES ('9', '43');
-INSERT INTO `max_category_attr` VALUES ('10', '43');
-INSERT INTO `max_category_attr` VALUES ('1', '44');
-INSERT INTO `max_category_attr` VALUES ('2', '44');
-INSERT INTO `max_category_attr` VALUES ('3', '44');
-INSERT INTO `max_category_attr` VALUES ('4', '44');
-INSERT INTO `max_category_attr` VALUES ('5', '44');
-INSERT INTO `max_category_attr` VALUES ('6', '44');
-INSERT INTO `max_category_attr` VALUES ('7', '44');
-INSERT INTO `max_category_attr` VALUES ('8', '44');
-INSERT INTO `max_category_attr` VALUES ('9', '44');
-INSERT INTO `max_category_attr` VALUES ('10', '44');
-INSERT INTO `max_category_attr` VALUES ('1', '45');
-INSERT INTO `max_category_attr` VALUES ('2', '45');
-INSERT INTO `max_category_attr` VALUES ('3', '45');
-INSERT INTO `max_category_attr` VALUES ('4', '45');
-INSERT INTO `max_category_attr` VALUES ('5', '45');
-INSERT INTO `max_category_attr` VALUES ('6', '45');
-INSERT INTO `max_category_attr` VALUES ('7', '45');
-INSERT INTO `max_category_attr` VALUES ('8', '45');
-INSERT INTO `max_category_attr` VALUES ('9', '45');
-INSERT INTO `max_category_attr` VALUES ('10', '45');
-INSERT INTO `max_category_attr` VALUES ('1', '46');
-INSERT INTO `max_category_attr` VALUES ('2', '46');
-INSERT INTO `max_category_attr` VALUES ('3', '46');
-INSERT INTO `max_category_attr` VALUES ('4', '46');
-INSERT INTO `max_category_attr` VALUES ('5', '46');
-INSERT INTO `max_category_attr` VALUES ('6', '46');
-INSERT INTO `max_category_attr` VALUES ('7', '46');
-INSERT INTO `max_category_attr` VALUES ('8', '46');
-INSERT INTO `max_category_attr` VALUES ('9', '46');
-INSERT INTO `max_category_attr` VALUES ('10', '46');
-INSERT INTO `max_category_attr` VALUES ('1', '47');
-INSERT INTO `max_category_attr` VALUES ('2', '47');
-INSERT INTO `max_category_attr` VALUES ('3', '47');
-INSERT INTO `max_category_attr` VALUES ('4', '47');
-INSERT INTO `max_category_attr` VALUES ('5', '47');
-INSERT INTO `max_category_attr` VALUES ('6', '47');
-INSERT INTO `max_category_attr` VALUES ('7', '47');
-INSERT INTO `max_category_attr` VALUES ('7', '48');
-INSERT INTO `max_category_attr` VALUES ('8', '47');
-INSERT INTO `max_category_attr` VALUES ('9', '47');
-INSERT INTO `max_category_attr` VALUES ('10', '47');
-INSERT INTO `max_category_attr` VALUES ('1', '48');
-INSERT INTO `max_category_attr` VALUES ('2', '48');
-INSERT INTO `max_category_attr` VALUES ('3', '48');
-INSERT INTO `max_category_attr` VALUES ('4', '48');
-INSERT INTO `max_category_attr` VALUES ('5', '48');
-INSERT INTO `max_category_attr` VALUES ('8', '48');
-INSERT INTO `max_category_attr` VALUES ('6', '48');
-INSERT INTO `max_category_attr` VALUES ('9', '48');
-INSERT INTO `max_category_attr` VALUES ('10', '48');
-INSERT INTO `max_category_attr` VALUES ('1', '49');
-INSERT INTO `max_category_attr` VALUES ('2', '49');
-INSERT INTO `max_category_attr` VALUES ('3', '49');
-INSERT INTO `max_category_attr` VALUES ('4', '49');
-INSERT INTO `max_category_attr` VALUES ('5', '49');
-INSERT INTO `max_category_attr` VALUES ('6', '49');
-INSERT INTO `max_category_attr` VALUES ('7', '49');
-INSERT INTO `max_category_attr` VALUES ('8', '49');
-INSERT INTO `max_category_attr` VALUES ('9', '49');
-INSERT INTO `max_category_attr` VALUES ('10', '49');
-INSERT INTO `max_category_attr` VALUES ('1', '50');
-INSERT INTO `max_category_attr` VALUES ('2', '50');
-INSERT INTO `max_category_attr` VALUES ('3', '50');
-INSERT INTO `max_category_attr` VALUES ('4', '50');
-INSERT INTO `max_category_attr` VALUES ('5', '50');
-INSERT INTO `max_category_attr` VALUES ('6', '50');
-INSERT INTO `max_category_attr` VALUES ('7', '50');
-INSERT INTO `max_category_attr` VALUES ('8', '50');
-INSERT INTO `max_category_attr` VALUES ('9', '50');
-INSERT INTO `max_category_attr` VALUES ('10', '50');
-INSERT INTO `max_category_attr` VALUES ('1', '51');
-INSERT INTO `max_category_attr` VALUES ('2', '51');
-INSERT INTO `max_category_attr` VALUES ('3', '51');
-INSERT INTO `max_category_attr` VALUES ('4', '51');
-INSERT INTO `max_category_attr` VALUES ('5', '51');
-INSERT INTO `max_category_attr` VALUES ('6', '51');
-INSERT INTO `max_category_attr` VALUES ('7', '51');
-INSERT INTO `max_category_attr` VALUES ('8', '51');
-INSERT INTO `max_category_attr` VALUES ('9', '51');
-INSERT INTO `max_category_attr` VALUES ('10', '51');
-INSERT INTO `max_category_attr` VALUES ('1', '52');
-INSERT INTO `max_category_attr` VALUES ('2', '52');
-INSERT INTO `max_category_attr` VALUES ('3', '52');
-INSERT INTO `max_category_attr` VALUES ('4', '52');
-INSERT INTO `max_category_attr` VALUES ('5', '52');
-INSERT INTO `max_category_attr` VALUES ('6', '52');
-INSERT INTO `max_category_attr` VALUES ('7', '52');
-INSERT INTO `max_category_attr` VALUES ('8', '52');
-INSERT INTO `max_category_attr` VALUES ('9', '52');
-INSERT INTO `max_category_attr` VALUES ('10', '52');
-INSERT INTO `max_category_attr` VALUES ('1', '53');
-INSERT INTO `max_category_attr` VALUES ('2', '53');
-INSERT INTO `max_category_attr` VALUES ('3', '53');
-INSERT INTO `max_category_attr` VALUES ('4', '53');
-INSERT INTO `max_category_attr` VALUES ('5', '53');
-INSERT INTO `max_category_attr` VALUES ('6', '53');
-INSERT INTO `max_category_attr` VALUES ('7', '53');
-INSERT INTO `max_category_attr` VALUES ('8', '53');
-INSERT INTO `max_category_attr` VALUES ('9', '53');
-INSERT INTO `max_category_attr` VALUES ('10', '53');
-INSERT INTO `max_category_attr` VALUES ('1', '54');
-INSERT INTO `max_category_attr` VALUES ('2', '54');
-INSERT INTO `max_category_attr` VALUES ('3', '54');
-INSERT INTO `max_category_attr` VALUES ('4', '54');
-INSERT INTO `max_category_attr` VALUES ('5', '54');
-INSERT INTO `max_category_attr` VALUES ('6', '54');
-INSERT INTO `max_category_attr` VALUES ('7', '54');
-INSERT INTO `max_category_attr` VALUES ('8', '54');
-INSERT INTO `max_category_attr` VALUES ('9', '54');
-INSERT INTO `max_category_attr` VALUES ('10', '54');
-INSERT INTO `max_category_attr` VALUES ('1', '55');
-INSERT INTO `max_category_attr` VALUES ('2', '55');
-INSERT INTO `max_category_attr` VALUES ('3', '55');
-INSERT INTO `max_category_attr` VALUES ('4', '55');
-INSERT INTO `max_category_attr` VALUES ('5', '55');
-INSERT INTO `max_category_attr` VALUES ('6', '55');
-INSERT INTO `max_category_attr` VALUES ('7', '55');
-INSERT INTO `max_category_attr` VALUES ('8', '55');
-INSERT INTO `max_category_attr` VALUES ('9', '55');
-INSERT INTO `max_category_attr` VALUES ('10', '55');
-INSERT INTO `max_category_attr` VALUES ('1', '56');
-INSERT INTO `max_category_attr` VALUES ('2', '56');
-INSERT INTO `max_category_attr` VALUES ('3', '56');
-INSERT INTO `max_category_attr` VALUES ('4', '56');
-INSERT INTO `max_category_attr` VALUES ('5', '56');
-INSERT INTO `max_category_attr` VALUES ('6', '56');
-INSERT INTO `max_category_attr` VALUES ('7', '56');
-INSERT INTO `max_category_attr` VALUES ('8', '56');
-INSERT INTO `max_category_attr` VALUES ('9', '56');
-INSERT INTO `max_category_attr` VALUES ('10', '56');
+INSERT INTO `max_category_attr` VALUES ('27', '10');
+INSERT INTO `max_category_attr` VALUES ('27', '1');
+INSERT INTO `max_category_attr` VALUES ('27', '2');
+INSERT INTO `max_category_attr` VALUES ('27', '3');
+INSERT INTO `max_category_attr` VALUES ('27', '4');
+INSERT INTO `max_category_attr` VALUES ('27', '5');
+INSERT INTO `max_category_attr` VALUES ('27', '6');
+INSERT INTO `max_category_attr` VALUES ('27', '7');
+INSERT INTO `max_category_attr` VALUES ('27', '8');
+INSERT INTO `max_category_attr` VALUES ('27', '9');
 
 -- ----------------------------
 -- Table structure for `max_group`

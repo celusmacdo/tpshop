@@ -44,30 +44,30 @@ class BrandController extends PublicController {
 	    }
 		//产品品牌编辑
 	    public function update(){
-			if(IS_POST){
-				$data=I('post.');
-				//M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
-				$rs=D(CONTROLLER_NAME)->saveData($data);
-				//查看错误
-				//dump(M('adminuser')->getDbError());
-				//返回值 修改条数
-				if($rs>0){
-					//$this->success('更新成功', 'index');
-					$this->ajaxReturn(1);
-					exit;
-				}else{
-					//$this->error('更新失败');
-					$this->ajaxReturn(0);
-					exit;
-					}
-				}else{
-				//M('表名')->find();   某个表查询一条数据
-				$rs=D(CONTROLLER_NAME)->where('id='.I('get.id'))->find();
-				// dump($rs);exit;
-				$this->assign('title','麦斯威尔咖啡商城-产品品牌修改');
-				$this->assign('rs',$rs);
-				$this->display();
-			}
+				if(IS_POST){
+					$data=I('post.');
+					//M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
+					$rs=D(CONTROLLER_NAME)->saveData($data);
+					//查看错误
+					//dump(M('adminuser')->getDbError());
+					//返回值 修改条数
+					if($rs>0){
+						//$this->success('更新成功', 'index');
+						$this->ajaxReturn(1);
+						exit;
+					}else{
+						//$this->error('更新失败');
+						$this->ajaxReturn(0);
+						exit;
+						}
+					}else{
+					//M('表名')->find();   某个表查询一条数据
+					$rs=D(CONTROLLER_NAME)->where('id='.I('get.id'))->find();
+					// dump($rs);exit;
+					$this->assign('title','麦斯威尔咖啡商城-产品品牌修改');
+					$this->assign('rs',$rs);
+					$this->display();
+				}
 	    }
 	    //产品品牌删除
 	    public function del(){

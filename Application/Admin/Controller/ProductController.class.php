@@ -6,26 +6,26 @@ namespace Admin\Controller;
 use Think\Controller;
 class ProductController extends PublicController {
 		public function getcategoryattr(){
-		$rs=M('CategoryAttr')->field('max_category_attr.*,max_attribute.attrname,max_attribute.attrtype')->join('max_attribute on max_category_attr.attrid=max_attribute.id')->where('max_category_attr.catid='.I('get.catid'))->select();
-		if(IS_AJAX){
-			$this->ajaxReturn($rs);
-		    exit;			
-		}else{
-			return $rs;
-		}
-    	}
-    	//产品列表页
+			$rs=M('CategoryAttr')->field('max_category_attr.*,max_attribute.attrname,max_attribute.attrtype')->join('max_attribute on max_category_attr.attrid=max_attribute.id')->where('max_category_attr.catid='.I('get.catid'))->select();
+			if(IS_AJAX){
+				$this->ajaxReturn($rs);
+					exit;			
+			}else{
+				return $rs;
+			}
+    }
+    //产品列表页
 	    public function index(){
-			//M('表名')->where()->order()->select();   某个表查询全部
-			$perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
-			$rs = D(CONTROLLER_NAME)->showData($perpage);
-			$this->assign('title','麦斯威尔咖啡商城-产品列表');
-			$this->assign('item',$this->item[''.CONTROLLER_NAME.'']);
-			//模型返回的分页输出
-			$this->assign('page',$rs['page']);
-			//模型返回的数据输出
-			$this->assign('rs',$rs['result']);
-			$this->display();
+				//M('表名')->where()->order()->select();   某个表查询全部
+				$perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
+				$rs = D(CONTROLLER_NAME)->showData($perpage);
+				$this->assign('title','麦斯威尔咖啡商城-产品列表');
+				$this->assign('item',$this->item[''.CONTROLLER_NAME.'']);
+				//模型返回的分页输出
+				$this->assign('page',$rs['page']);
+				//模型返回的数据输出
+				$this->assign('rs',$rs['result']);
+				$this->display();
 	    }
 		//产品添加
 	    public function add(){
@@ -162,5 +162,150 @@ class ProductController extends PublicController {
 			$this->assign('title','麦斯威尔咖啡商城-产品套餐添加');
 			$this->display();
 		}
+    }
+		//产品套餐编辑
+    public function setupdate(){
+		if(IS_POST){
+			$data=I('post.');
+			$data=$this->checkEmpty($data);
+			//M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
+			$rs=D('ProductSet')->saveData($data);
+			//返回值 修改条数
+			if($rs>0){
+				$this->success('更新成功', U('Admin/Product/setlist').'?id='.$data['proid']);
+			}else{
+				$this->error('更新失败');
+			}
+		}else{
+		    //查询需要添加的商品信息
+			$product=D('Product')->findData(I('get.id'));
+            $this->assign('product',$product);	
+			
+		    $perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
+			$part=D('ProductPart')->showData($perpage);
+            $this->assign('partresult',$part['result']);	
+            $this->assign('partpage',$part['page']);	
+			
+            $rs=D('ProductSet')->where('id='.I('get.part_id'))->find();
+			$rs['partid']=explode(',',$rs['partid']);
+			$this->assign('rs',$rs);
+			
+		    $this->assign('id',I('get.id'));		
+			$this->assign('title','福维克商城-产品套餐编辑');		
+			$this->display();
+		}
+    }
+	//产品套餐删除
+    public function setdel(){
+		    //M('表名')->delete(删除数据id); 
+			$rs=M('ProductSet')->delete(I('get.part_id'));
+			//查看错误
+			//dump(M('adminuser')->getDbError());
+			//返回值 修改条数
+			if($rs>0){
+				$this->success('删除成功', U('Admin/Product/setlist').'?id='.I('get.id').'&part_id='.I('get.part_id'));
+			}else{
+				$this->error('删除失败');
+			}
+    }
+	//产品库存列表页
+    public function stocklist(){
+		$rs = D('Stock')->showData(10,'proid='.I('get.id'));
+		$this->assign('title','福维克商城-产品库存列表');
+		$this->assign('item',$this->item['Stock']);
+		//模型返回的分页输出
+		$this->assign('page',$rs['page']);
+		//模型返回的数据输出
+		$this->assign('rs',$rs['result']);
+		$this->assign('id',I('get.id'));
+        $this->display();
+    }
+	//产品库存添加
+    public function stockadd(){
+		if(IS_POST){
+			//I('post.')  POST全部数据   I('get.')  GET全部数据
+			$data=I('post.');
+			$data=$this->checkEmpty($data);
+			//M('表名')->add(添加数据);   
+			$rs=D('Stock')->addData($data);
+			//返回值id
+			if($rs>0){
+				$this->success('新增成功', U('Admin/Product/Stocklist').'?id='.$data['pro_id']);
+			}else{
+				$this->error('新增失败');
+			}
+			// dump($data);exit;
+		}else{	
+		    $perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
+			//查询需要添加的商品信息
+			$product=D('Product')->findData(I('get.id'));
+            $this->assign('product',$product);	
+
+			//查询要选择的属性信息
+			$ProductAttr=M('ProductAttr')
+			->join('max_attribute on max_product_attr.attrid=max_attribute.id')
+			->where('max_product_attr.proid='.I('get.id'))->select();
+			//dump($ProductAttr);exit;
+			$temp=array();
+			foreach($ProductAttr AS $k=>$v){
+				$temp[$v['attrtype']][$v['attrid']][]=$v;
+			}
+			$ProductAttr=$temp;
+            $this->assign('ProductAttr',$ProductAttr);	
+
+			$productSet=D('ProductSet')->showData(10000000,'max_product.id='.I('get.id'));
+            $this->assign('productSet',$productSet['result']);
+
+			
+		    $this->assign('id',I('get.id'));		
+			$this->assign('title','福维克商城-产品库存添加');
+			$this->display();
+		}
+    }
+	//产品库存编辑
+    public function stockupdate(){
+		if(IS_POST){
+			$data=I('post.');
+			$data=$this->checkEmpty($data);
+			//M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
+			$rs=D('Stock')->saveData($data);
+			//返回值 修改条数
+			if($rs>0){
+				$this->success('更新成功', U('Admin/Product/Stocklist').'?id='.$data['proid']);
+			}else{
+				$this->error('更新失败');
+			}
+		}else{
+		    $perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
+			$part=D('ProductPart')->showData($perpage);
+            $this->assign('partresult',$part['result']);	
+            $this->assign('partpage',$part['page']);	
+			
+            $rs=D('Stock')->where('id='.I('get.part_id'))->find();
+			$rs['partid']=explode(',',$rs['partid']);
+			$this->assign('rs',$rs);
+			
+		    $this->assign('id',I('get.id'));		
+			$this->assign('title','福维克商城-产品库存编辑');		
+			$this->display();
+		}
+    }
+	//产品库存删除
+    public function stockdel(){
+		    //M('表名')->delete(删除数据id); 
+			$rs=M('Stock')->delete(I('get.sid'));
+			//查看错误
+			//dump(M('adminuser')->getDbError());
+			//返回值 修改条数
+			if($rs>0){
+				//删除库存后要更新产品表的库存字段
+			    D('Product')->save(array(
+				     'gtype'=>$this->where('pro_id='.I('post.pro_id'))->sum('amount'),
+				     'id'=>I('get.id'),
+				));
+				$this->success('删除成功',  U('Admin/Product/Stocklist').'?id='.I('get.id').'&sid='.I('get.sid'));
+			}else{
+				$this->error('删除失败');
+			}
     }
 }

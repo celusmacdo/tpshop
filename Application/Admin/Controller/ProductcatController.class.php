@@ -26,7 +26,7 @@ class ProductcatController extends PublicController {
 				$data=I('post.');
 				$this->checkEmpty($data);
 				//M('表名')->add(添加数据);   
-				$rs=D(CONTROLLER_NAME)->addData($data);
+				$rs=D('Category')->addData($data);
 				//返回值id
 				if($rs>0){
 					$this->success('新增成功', 'index');
@@ -36,7 +36,7 @@ class ProductcatController extends PublicController {
 				// dump($data);exit;
 			}else{
 				//查询分类表的文章分类的所有二级分类
-				$rs1=  D('Category')->showProductcat(100000000);
+				$rs1= D('Category')->showProductcat(100000000);
 				$this->assign('topcat',$rs1['result']);
 				
 				$attribute=M('Attribute')->select();
@@ -50,11 +50,12 @@ class ProductcatController extends PublicController {
 	    public function update(){
 			if(IS_POST){
 				$data=I('post.');
-				//M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
+				// dump(I('post.'));exit;
+				// M('表名')->save(更新数据);   注：更新数据必须包含id,不然会出错
 				$rs=D('Category')->saveData($data);
-				//查看错误
-				//dump(M('adminuser')->getDbError());
-				//返回值 修改条数
+				// 查看错误
+				// dump(D('Category')->getDbError());exit;
+				// 返回值 修改条数
 				if($rs>0){
 					$this->success('更新成功', 'index');
 				}else{
@@ -91,10 +92,11 @@ class ProductcatController extends PublicController {
 	    public function del(){
 			//M('表名')->delete(删除数据id); 
 			$rs=M('Category')->delete(I('get.id'));
+			$rs1=M('CategoryAttr')->where('catid='.$data['id'])->delete();
 			//查看错误
 			//dump(M('adminuser')->getDbError());
 			//返回值 修改条数
-			if($rs>0){
+			if($rs>0 && $rs1>0){
 				$this->success('删除成功', 'index');
 			}else{
 				$this->error('删除失败');

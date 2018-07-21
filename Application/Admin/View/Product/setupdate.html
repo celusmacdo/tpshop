@@ -1,0 +1,197 @@
+<include file="Public/header" />
+<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('breadcrumbs', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <ul class="breadcrumb">
+               <li>
+                   <i class="icon-home home-icon"></i>
+                   <a href="{$base_url}Admin">首页</a>
+               </li>
+               <li>
+                   <a href="{:U("Admin/Product/index")}">产品中心</a>
+                </li>
+                <li>
+                   <a href="{:U("Admin/Product/setlist")}?id={$id}">产品套餐</a>
+                </li>
+                <li class="active">
+                      产品套餐更新
+                </li>
+        </ul>
+        <!-- .breadcrumb -->
+
+        <div class="nav-search" id="nav-search">
+            <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+            </form>
+        </div>
+        <!-- #nav-search -->
+    </div>
+
+    <div class="page-content">
+        <form id="add_form" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+        <input type="hidden" name="id" value="{$rs.id}">
+        <input type="hidden" name="proid" value="{$id}">
+        <div class="row col-md-6 pull-left">
+                <div style="height:50px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>商品信息:</label>
+                    <div class="col-sm-9">
+                         <P>商品名称：{$product.pro_name}</P>
+                         <P>商品图片：<img src="{$product.pro_photo}" width="100" height="50" /></P>
+                         <P>商品分类：{$product.cat_name}</P>
+                         <P>商品价钱：{$product.shop_price}</P>
+                         <P>商品品牌：{$product.brand_name}</P>
+                    </div>
+                </div>
+				<div style="height:50px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>套餐名称:</label>
+                    <div class="col-sm-9">
+                        <input name="set_name" value="{$rs.set_name}" type="text" id="set_name" placeholder="套餐名称" class="col-xs-10 col-sm-5" />
+                        
+                    </div>
+                </div>
+                <div style="height:50px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>套餐价格:</label>
+                    <div class="col-sm-9">
+                        <input name="set_price" value="{$rs.set_price}" type="text" id="set_price" placeholder="套餐价格" class="col-xs-10 col-sm-5" />元
+                        
+                    </div>
+                </div>
+                <div style="height:50px">
+                    <div class="col-sm-9">
+                        <button class="btn btn-info" type="submit" name="">
+                            <i class="icon-ok bigger-110"></i>
+                            提交
+                        </button>
+
+                        &nbsp; &nbsp; &nbsp;
+                        <button class="btn" type="reset" name="">
+                            <i class="icon-undo bigger-110"></i>
+                            重置
+                        </button>   
+                    </div>
+                </div>           
+            </div>
+            <div class="row col-md-6 pull-right">
+                <div style="height:50px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>配件商品:</label>
+                    <div class="col-sm-9">
+                             <table id="sample-table-1" class="table table-striped table-bordered table-hover">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="center">
+                                                                <label>
+                                                                    <input type="checkbox" class="ace" />
+                                                                    <span class="lbl"></span>
+                                                                </label>
+                                                            </th>
+                                                            <th>配件商品id</th>
+                                                            <th>配件商品</th>
+                                                            <th>配件商品图片</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+                                                        <volist name="partresult" id="v" key="k">
+                                                        <tr>
+                                                            <td class="center">
+                                                                <label>
+                                                                    <input type="checkbox" name="partid[]" class="ace" value="{$v.id}" <in name="v.id" value="$rs.partid">checked=checked</in>/>
+                                                                    <span class="lbl"></span>
+                                                                </label>
+                                                            </td>
+                                                            
+                                                            <td>{$v.id}</td>
+                                                            <td>{$v.part_name}</td>
+                                                            <td>{$v.part_photo}</td>
+                                                        </tr>
+                                                        </volist>
+                                                    </tbody>
+                                                </table>
+                                                <ul class="pagination">
+                                                {$partpage}
+                                                </ul>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+        <!-- /.row -->
+    </div>
+    <!-- /.page-content -->
+</div>
+<!-- /.main-content -->
+
+<div class="ace-settings-container" id="ace-settings-container">
+    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+        <i class="icon-cog bigger-150"></i>
+    </div>
+
+    <div class="ace-settings-box" id="ace-settings-box">
+        <div>
+            <div class="pull-left">
+                <select id="skin-colorpicker" class="hide">
+                    <option data-skin="default" value="#438EB9">#438EB9</option>
+                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                </select>
+            </div>
+            <span>&nbsp; 选择皮肤</span>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+            <label class="lbl" for="ace-settings-navbar"> 固定导航条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+            <label class="lbl" for="ace-settings-sidebar"> 固定滑动条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+            <label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+            <label class="lbl" for="ace-settings-rtl">切换到左边</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+            <label class="lbl" for="ace-settings-add-container">
+                切换窄屏
+                <b></b>
+            </label>
+        </div>
+    </div>
+</div>
+<!-- /#ace-settings-container -->
+</div>
+<!-- /.main-container-inner -->
+
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="icon-double-angle-up icon-only bigger-110"></i>
+</a>
+</div>
+<script>
+    $(function(){
+
+    });
+</script>
+<!-- /.main-container -->
+<include file="Public/footer" />
