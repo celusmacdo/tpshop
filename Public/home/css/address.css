@@ -1,0 +1,168 @@
+.content {
+	width: 100%;
+	background-color: #e4e4e4;
+	padding-top: 10px;
+}
+
+.content>div {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/*主要内容的小导航*/
+
+.content>div>p {
+	margin: 10px 0 20px;
+	font-size: 14px;
+}
+
+
+/*个人中心*/
+
+.content>div>ul {
+	width: 200px;
+	height: 610px;
+	border: 3px solid red;
+	padding: 10px;
+	float: left;
+	background-color: white;
+}
+
+.content>div>ul>li h3 {
+	border-bottom: 2px solid #a0a0a0;
+	padding-bottom: 3px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.content>div>ul>li>ul {
+	margin-top: 20px;
+}
+
+.content>div>ul>li>ul>li {
+	margin-bottom: 25px;
+}
+
+.content>div>ul>li>ul>li>a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+
+
+/*右面上半部分*/
+
+.cont_right_top {
+	width: 930px;
+	margin-left: 10px;
+	float: left;
+}
+
+.cont_right_top>h4 {
+	width: 100%;
+	line-height: 38px;
+	text-indent: 10px;
+	border-bottom: 2px solid red;
+}
+
+.cont_right_top>a {
+	float: right;
+	display: block;
+	width: 90px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	background-color: red;
+	color: white;
+	margin: 10px 0;
+}
+
+.cont_right_top>table {
+	width: 100%;
+}
+
+.cont_right_top>table th {
+	height: 50px;
+	line-height: 50px;
+	background-color: red;
+	color: white;
+	font-size: 14px;
+	border-bottom: 2px solid #e4e4e4;
+}
+
+.cont_right_top>table td {
+	text-align: center;
+	font-size: 14px;
+	height: 100px;
+	line-height: 100px;
+	background-color: white;
+	border-bottom: 4px solid #e4e4e4;
+}
+
+.cont_right_top>table td a {
+	color: red;
+}
+
+
+/*page*/
+
+.cont_right_top .page {
+	overflow: hidden;
+	float: right;
+	margin: 20px 0 180px 0;
+	border: none;
+	width: auto;
+}
+
+.cont_right_top .page li {
+	margin-right: 10px;
+	float: left;
+	border: 1px solid #d2d2d2;
+	text-align: center;
+}
+.cont_right_top .page li:hover{
+	background-color: red;
+}
+.cont_right_top .page li:hover a{
+	color: white;
+}
+.cont_right_top .page li a {
+	display: block;
+	padding: 5px 7px;
+	font-size: 12px;
+}
+
+.cont_right_top .page li .current {
+	background-color: red;
+	color: white;
+}
+
+.cont_right_top .page span {
+	display: block;
+	float: left;
+	margin: 6px 5px;
+	font-size: 12px;
+}
+
+.cont_right_top .page span input {
+	width: 40px;
+	height: 20px;
+	margin: -18px 5px;
+	text-align: center;
+	background-color: #E4E4E4;
+	border: 1px solid #d2d2d2;
+}
+
+.cont_right_top .page button {
+	border: 1px solid #d2d2d2;
+	width: 40px;
+	height: 24px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.footer{
+	margin-top: 0;
+	}

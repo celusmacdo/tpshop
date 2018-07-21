@@ -1,0 +1,231 @@
+.content{
+	width: 100%;
+	background-color: #e4e4e4;
+	padding-top: 10px;
+}
+.content>div{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*主要内容的小导航*/
+.content>div>p{
+	margin: 10px 0 20px;
+	font-size: 14px;
+}
+/*个人中心*/
+.content>div>ul{
+	width: 200px;
+	
+	border: 3px solid red;
+	padding: 10px;
+	float: left;
+	background-color: white;
+}
+.content>div>ul>li h3{
+	border-bottom: 2px solid #a0a0a0;
+	padding-bottom: 3px;
+	font-size: 18px;
+	font-weight: normal;
+}
+.content>div>ul>li>ul{
+	margin-top: 20px;
+}
+.content>div>ul>li>ul>li{
+	margin-bottom: 25px;
+}
+.content>div>ul>li>ul>li>a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size: 14px;
+}
+/*右面部分*/
+.content>div>div{
+	overflow: hidden;
+	float: left;
+	margin-left: 20px;
+}
+/*用户信息*/
+.content>div>div>div:first-child{
+	width: 950px;
+	overflow: hidden;
+	border: 2px solid red;
+	background: url(../img/bguser.png) no-repeat;
+	background-position: 478px 0;
+	background-color: white;
+}
+.content>div>div>div:first-child img{
+	margin: 14px 50px;
+	float: left;
+}
+.content>div>div>div:first-child div{
+	float: left;
+	margin-top: 30px;
+	font-size: 15px;
+}
+.content>div>div>div:first-child ul{
+	overflow: hidden;
+	width: 380px;
+	margin-top: 10px;
+}
+.content>div>div>div:first-child ul li{
+	float: left;
+	margin: 0 16px 20px 0;
+}
+.content>div>div>div:first-child ul li a{
+	font-size: 14px;
+	color: gray;
+}
+.content>div>div>div:first-child ul li a span{
+	color: red;
+}
+/*订单详情*/
+.content>div>div>div:first-child+div{
+	width: 950px;
+	overflow: hidden;
+	border: 2px solid red;
+	background-color: white;
+	margin: 35px 0;
+}
+.content>div>div>div:first-child+div>div{
+	width: 100%;
+	height: 40px;
+	background-color: red;
+	overflow: hidden;
+	line-height: 40px;
+}
+.content>div>div>div:first-child+div div>p:first-child{
+	float: left;
+	color: white;
+	margin-left: 33px;
+	font-weight: 700;
+}
+.content>div>div>div:first-child+div div>p:first-child+p{
+	float: left;
+	color: white;
+	margin-left: 190px;
+}
+.content>div>div>div:first-child+div div>p:first-child+p+p{
+	float: left;
+	color: white;
+	margin-left: 190px;
+}
+.content>div>div>div:first-child+div ul{
+	width: 100%;
+}
+.content>div>div>div:first-child+div ul li{
+	width: 100%;
+	height: 100px;
+	overflow: hidden;
+	border-bottom: 1px solid red;
+}
+.content>div>div>div:first-child+div ul li:last-child{
+	border: none;
+}
+.content>div>div>div:first-child+div ul li div{
+	float: left;
+	margin: 5px 15px;
+	overflow: hidden;
+}
+.content>div>div>div:first-child+div ul li div img{
+	float: left;
+	margin: 0 10px;
+}
+.content>div>div>div:first-child+div ul li div p{
+	float: left;
+	width: 200px;
+	font-size: 12px;
+	margin: 12px 0;
+}
+
+.content>div>div>div:first-child+div ul li div p span{
+	display: block;
+	margin: 5px 0;
+	color: gray;
+}
+.content>div>div>div:first-child+div ul li .pri{
+	margin: 16px 120px 0;
+	text-align: center;
+}
+.content>div>div>div:first-child+div ul li .pri>span:first-child{
+	font-size: 14px;
+}
+.content>div>div>div:first-child+div ul li .pri>span:first-child+span{
+	font-size: 12px;
+	text-decoration: line-through;
+	display: block;
+	color: gray;
+}
+.content>div>div>div:first-child+div ul li .pay{
+	float: left;
+	margin-top: 16px;
+}
+.content>div>div>div:first-child+div ul li .pay a:first-child{
+	width: 75px;
+	height: 25px;
+	display: block;
+	text-align: center;
+	line-height: 25px;
+	background-color: red;
+	color: white;
+	margin-bottom: 10px;
+	font-size: 12px;
+}
+.content>div>div>div:first-child+div ul li .pay a:first-child+a{
+	width: 75px;
+	height: 25px;
+	display: block;
+	text-align: center;
+	line-height: 25px;
+	background-color: white;
+	color: black;
+	font-size: 12px;
+}
+.content>div>div>div:first-child+div ul li>a{
+	float: left;
+	display: block;
+	margin: 16px 0 0 120px;
+	font-size: 12px;
+	color: gray;
+}
+/*查看更多*/
+.content>div>div>a{
+	width: 130px;
+	height: 40px;
+	display: block;
+	text-align: center;
+	line-height: 40px;
+	background-color: red;
+	color: white;
+	border-radius: 10px;
+	float: right;
+	margin: 20px 0 150px 0;
+}
+.footer{
+	margin-top: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

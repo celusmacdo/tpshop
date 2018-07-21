@@ -1,0 +1,367 @@
+.content {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/*进度条*/
+
+.cont_top {
+	width: 100%;
+}
+
+.cont_top ul {
+	width: 700px;
+	overflow: hidden;
+	margin: 25px auto;
+}
+
+.cont_top ul li {
+	width: 220px;
+	height: 45px;
+	float: left;
+	position: relative;
+}
+
+.cont_top ul li hr {
+	width: 100%;
+	height: 5px;
+	background-color: #eeeeee;
+	border: none;
+	position: absolute;
+	top: 8px;
+}
+
+.cont_top ul li div {
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: #cccccc;
+	text-align: center;
+	line-height: 20px;
+	position: absolute;
+	top: 0px;
+	left: 50%;
+	color: white;
+	margin-left: -10px;
+}
+
+.cont_top ul li p {
+	width: 150px;
+	margin: 24px 0 0 37px;
+	font-size: 12px;
+	color: #cccccc;
+	text-align: center;
+}
+
+.cont_top ul .one hr {
+	background-color: #7d7d7d;
+}
+
+.cont_top ul .one div {
+	background-color: #7d7d7d;
+}
+
+.cont_top ul .one p {
+	color: #7d7d7d;
+}
+
+
+/*填写收货地址*/
+
+.cont_mid {
+	width: 99%;
+	border: 1px solid #dfdfdf;
+}
+
+.add_top {
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-indent: 30px;
+}
+
+.add_bot {
+	width: 100%;
+	height: 205px;
+}
+
+.add_bot ul {
+	overflow: hidden;
+	float: left;
+	
+}
+
+.add_bot ul li {
+	width: 275px;
+	height: 165px;
+	float: left;
+	margin-left: 15px;
+	cursor: pointer;
+	border: 1px solid #dfdfdf;
+	position: relative;
+	background: url(../img/huiseduihao.png) no-repeat;
+	background-position: right bottom;
+}
+
+.add_bot ul li span {
+	width: 90%;
+	height: 34px;
+	display: block;
+	margin: 10px auto;
+	font-size: 14px;
+	line-height: 34px;
+	border-bottom: 1px dashed #dfdfdf;
+}
+
+.add_bot ul li span img {
+	margin-right: 10px;
+}
+
+.add_bot ul li .on {
+	border: none;
+}
+
+.add_bot ul .current {
+	border-color: red;
+	background: url(../img/duihao.png) no-repeat;
+	background-position: right bottom;
+}
+
+.add_bot>ul>li:last-child {
+	width: 275px;
+	height: 165px;
+	float: left;
+	text-align: center;
+	margin-left: 15px;
+	cursor: pointer;
+	border: 1px solid #dfdfdf;
+	background: none;
+}
+
+.add_bot>ul>li:last-child img {
+	margin-top: 55px;
+}
+.add_bot>ul>li:last-child span{
+	width: 90%;
+	height: 34px;
+	display: block;
+	margin: 10px auto;
+	font-size: 14px;
+	line-height: 34px;
+	border: none;
+}
+
+/*确认订单信息*/
+
+.cont_bot {
+	width: 100%;
+	margin-top: 50px;
+	overflow: hidden;
+}
+
+.cont_bot>p {
+	margin-left: 30px;
+	font-size: 14px;
+}
+
+.cont_bot>table {
+	width: 100%;
+	border: 1px solid #666666;
+	margin-top: 10px;
+}
+
+.cont_bot>table>thead {
+	line-height: 45px;
+	background-color: #fafafa;
+}
+
+.cont_bot>table>thead>tr th {
+	border-bottom: 1px solid #666666;
+}
+.cont_bot>table>thead>tr th:first-child+th+th+th{
+	width: 150px;
+}
+.cont_bot>table>thead>tr th:first-child {
+	width: 570px;
+}
+
+.cont_bot>table>tbody>tr td {
+	height: 100px;
+}
+
+.cont_bot>table>tbody>tr td {
+	text-align: center;
+	border-bottom: 1px solid darkgray;
+}
+
+.cont_bot>table>tbody>tr .pro>a>img {
+	float: left;
+	margin-left: 33px;
+}
+
+.cont_bot>table>tbody>tr .pro>p {
+	float: left;
+	width: 210px;
+	font-size: 12px;
+	text-align: left;
+	margin: 10px 0 0 30px;
+}
+
+.cont_bot>table>tbody>tr .pro>p span {
+	display: block;
+	color: gray;
+}
+
+.cont_bot>table>tbody>tr .pri>p:first-child+p {
+	text-decoration: line-through;
+	font-size: 14px;
+	color: #666666;
+	font-weight: 800;
+}
+
+.num>div {
+	width: 110px;
+	height: 25px;
+	margin: 0 auto;
+}
+
+.num>div>span {
+	width: 20px;
+	height: 25px;
+	text-align: center;
+	border: 1px solid #666666;
+	display: block;
+	float: left;
+	line-height: 25px;
+	cursor: pointer;
+	background-color: white;
+}
+
+.num>div>input {
+	width: 60px;
+	height: 25px;
+	border: 1px solid #666666;
+	text-align: center;
+	float: left;
+	background-color: #f5f5f5;
+	line-height: 25px;
+	border-right: none;
+	border-left: none;
+}
+
+.cont_bot>table>tbody>tr> .amount {
+	color: red;
+}
+
+.cont_bot>table>tbody>tr>td>a {
+	display: block;
+}
+
+.cont_bot>table>tfoot {
+	background-color: #fafafa;
+}
+
+.cont_bot>table>tfoot>tr>td {
+	margin-top: 10px;
+	height: 50px;
+	text-indent: 30px;
+	font-size: 14px;
+}
+
+.chk {
+	display: none;
+	color: black;
+}
+
+.chk+ label {
+	border: 1px solid black;
+	padding: 8px;
+	display: inline-block;
+	position: relative;
+	top: 3px;
+	cursor: pointer;
+	margin: 0 5px 0 20px;
+}
+
+.chk:checked+ label:after {
+	content: '\2714';
+	position: absolute;
+	padding: 0;
+	top: -2px;
+	left: -27px;
+	color: black;
+	font-size: 16px;
+}
+
+.cont_bot>table>tfoot>tr>td>form {
+	overflow: hidden;
+}
+.cont_bot>table>tfoot>tr>td>form label{
+	cursor: pointer;
+}
+.cont_bot>table>tfoot>tr>td>form input[type=text] {
+	text-indent: 5px;
+}
+
+.cont_bot>table>tfoot>tr>td>form>p {
+	display: inline;
+	margin-left: 44px;
+}
+
+.cont_bot>table>tfoot>tr>td>form>span {
+	text-align: right;
+	display: inline-block;
+	width: 115px;
+	height: 30px;
+}
+
+.cont_bot>table>tfoot>tr>td>form>textarea {
+	width: 380px;
+	height: 80px;
+	float: left;
+	resize: none;
+	margin-left: 15px;
+	text-indent: 5px;
+	padding: 5px;
+}
+
+.cont_bot>table>tfoot tr .text {
+	height: 130px;
+}
+
+.cont_bot>table>tfoot tr .text form span {
+	float: left;
+	margin-left: 23px;
+}
+
+
+/*提交订单*/
+
+.cont_bot>div {
+	width: 200px;
+	float: right;
+}
+
+.cont_bot>div>p {
+	font-size: 14px;
+	color: gray;
+	margin: 20px 0;
+	text-align: right;
+}
+
+.cont_bot>div>p span {
+	color: red;
+}
+
+.cont_bot>div>a {
+	width: 120px;
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	color: white;
+	background-color: red;
+	display: block;
+	float: right;
+}

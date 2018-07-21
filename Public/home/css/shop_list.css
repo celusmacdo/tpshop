@@ -1,0 +1,232 @@
+/*第二部分*/
+.content{
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+/*第二部分的上面部分*/
+.cont_top{
+	width: 100%;
+}
+/*第一行内容*/
+.cont_top>ul{
+	width: 100%;
+	overflow: hidden;
+	margin: 15px 0;
+}
+
+.cont_top ul span{
+	float: left;
+}
+.cont_top ul li{
+	float: left;
+	margin-left: 5px;
+}
+/*红色框部分*/
+.cont_top>div{
+	width: 99%;
+	border: 3px solid #D70003;
+	
+	overflow: hidden;
+}
+.cont_top>div>div:first-child{
+	line-height: 45px;
+	border-bottom: 3px solid #D70003;
+	overflow: hidden;
+}
+.cont_top>div>div:first-child span{
+	display: block;
+	margin-left: 25px;
+	float: left;
+	font-size: 14px;
+}
+.cont_top>div>div:first-child ul{
+	float: left;
+	overflow: hidden;
+	margin: 7px 0;
+}
+.cont_top>div>div:first-child ul li{
+	padding: 3px 8px;
+	height: 22px;
+	border: 1px solid #d2d2d2;
+	text-align: center;
+	line-height: 22px;
+	margin-left: 10px;
+	font-size: 14px;
+	color: red;
+	cursor: pointer;
+}
+.cont_top>div>div:first-child ul li span{
+	float: right;
+	color: #d2d2d2;
+}
+.cont_top>div>div:first-child img{
+	
+	float: right;
+}
+.cont_top>div>div:first-child+div div{
+	height: 50px;
+	border-bottom: 1px solid #D2D2D2;
+	line-height: 50px;
+}
+.cont_top>div>div:first-child+div div span{
+	display: block;
+	margin-left: 8px;
+	float: left;
+	font-size: 14px;
+	width: 100px;
+	text-align: right;
+}
+.cont_top>div>div:first-child+div div ul{
+	overflow: hidden;
+	float: left;
+}
+.cont_top>div>div:first-child+div div ul li{
+	margin-right: 30px;
+	font-size: 14px;
+	cursor: pointer;
+}
+.cont_top>div>div:first-child+div div ul li:hover{
+	color: red;
+}
+.cont_top>div>div:first-child+div div ul .current{
+	color: red;
+}
+.cont_top>div>div:first-child+div div form{
+	float: left;
+}
+
+.cont_top>div>div:first-child+div div form input[type=text]{
+	width: 50px;
+	height: 22px;
+	text-indent: 5px;
+}
+.cont_top>div>div:first-child+div div form input[type=button]{
+	border: 1px solid #dddddd;
+	background-color: #eeeeee;
+	width: 42px;
+	height: 26px;
+	color: #666666;
+	margin-left: 18px;
+	cursor: pointer;
+}
+.cont_top>div>div:first-child+div div .cont_up{
+	float: left;
+	margin-left: 125px;
+}
+.cont_top>div>div:first-child+div div .cont_up input[type=text]{
+	width: 130px;
+	height: 22px;
+	text-indent: 5px;
+	color: #A8A8A8;
+}
+.cont_top>div>div:first-child+div div .cont_up input[type=button]{
+	background-color: #dddddd;
+	width: 42px;
+	height: 26px;
+	color: #666666;
+	margin-left: -8px;
+	cursor: pointer;
+}
+/*商品*/
+.content .product{
+	width: 100%;
+	overflow: hidden;
+	margin: 50px 0 50px 0;
+}
+.content .product>li{
+	float: left;
+	width: 275px;
+	height: 290px;
+	margin: 0 0 50px 20px;
+	border: 1px solid transparent;
+}
+.content .product>li>a{
+	width: 278px;
+	display: block;
+	margin: 0 0 0 -1px;
+}
+.content .product>li>a img{
+	width: 100%;
+}
+.content .product>li:hover{
+	border: 1px solid black;
+}
+.content .product>li h1{
+	margin: 5px auto 0 5px;
+	font-weight: normal;
+	color: red;
+}
+.content .product>li p{
+	font-size: 13px;
+	margin: 5px;
+	line-height: 22px;
+}
+.content .product>li p span{
+	color: red;
+}
+/*分页*/
+
+.content .page{
+	float: right;
+	overflow: hidden;
+}
+.content>.page li{
+	float: left;
+	border: 1px solid #dcdcdc;
+	margin-right: 5px;
+	font-size: 12px;
+	text-align: center;
+}
+.content>.page li:hover{
+	background-color: red;
+}
+.content>.page li:hover a{
+	color: white;
+}
+.content>.page li a{
+	display: block;
+	padding: 5px 7px;
+}
+.content>.page li .current{
+	background-color: red;
+	color: white;
+}
+.content>.page span{
+	display: block;
+	float: left;
+	margin: 6px 0;
+	font-size: 12px;
+}
+.content>.page span input{
+	width: 40px;
+	height: 20px;
+	margin: -18px 15px;
+	text-align: center;
+}
+.content>.page button{
+	border: 1px solid #DCDCDC;
+	background-color: white;
+	width: 40px;
+	height: 24px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.footer{
+	margin-top: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

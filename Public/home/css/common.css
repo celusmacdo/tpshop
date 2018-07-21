@@ -1,0 +1,438 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select:none;
+	user-select:none;
+}
+label{
+	cursor: pointer;
+}
+li {
+	list-style: none;
+}
+
+body {
+	background-color: white;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/*头部*/
+
+.header {
+	width: 100%;
+	height: 235px;
+}
+
+
+/*最上边的灰色导航*/
+
+.header .top {
+	width: 100%;
+	height: 30px;
+	background-color: #cccccc;
+}
+
+.header .top>div {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+
+/*灰色部分左边文字*/
+
+.header .top span {
+	float: left;
+	font-size: 12px;
+	line-height: 30px;
+}
+
+
+/*灰色部分右边a标签*/
+
+.header .top>div>div {
+	float: right;
+}
+
+.header .top div a {
+	line-height: 30px;
+	margin-left: 40px;
+	font-size: 12px;
+	display: inline-block;
+	color: black;
+	text-decoration: none;
+}
+
+
+/*我的订单*/
+
+.header .top>div>div select {
+	appearance: none;
+	-moz-appearance: none;
+	border: none;
+	-webkit-appearance: none;
+	font-size: 12px;
+	margin-left: 40px;
+	padding-right: 22px;
+	background: url(../img/sanjiao.png) no-repeat scroll right center transparent;
+	cursor: pointer;
+}
+
+.header .top>div>div select::-ms-expand {
+	display: none;
+}
+
+
+/*头部中间部分*/
+
+.header .middle {
+	width: 100%;
+	height: 130px;
+	background-color: white;
+	overflow: hidden;
+}
+
+.header .middle>div {
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+
+/*logo*/
+
+.header .middle>div>a>img {
+	float: left;
+	margin: 30px 0 0 0;
+}
+
+.header .middle>div>span {
+	float: left;
+	margin: 75px 0 0 -5px;
+	font-size: 14px;
+	font-weight: 900;
+}
+
+
+/*搜索框*/
+
+.search {
+	float: left;
+	margin: 52px 0 0 280px;
+}
+
+.search input[type=text] {
+	float: left;
+	width: 330px;
+	height: 35px;
+	border: 3px solid #d70003;
+	text-indent: 10px;
+}
+
+.search input[type=submit] {
+	float: left;
+	width: 100px;
+	height: 41px;
+	background-color: #d70003;
+	text-align: center;
+	line-height: 35px;
+	border: none;
+	margin-left: -10px;
+	color: white;
+	font-size: 14px;
+	cursor: pointer;
+}
+/*搜索框下面的文字*/
+
+.search ul {
+	overflow: hidden;
+	margin-top: 5px;
+}
+
+.search ul li {
+	float: left;
+	margin-right: 15px;
+	font-size: 12px;
+}
+
+.search ul li a {
+	text-decoration: none;
+	color: black;
+}
+
+.search ul li a:hover {
+	color: red;
+}
+
+.search ul li .current {
+	color: red;
+}
+
+
+/*购物车*/
+
+.shop_carts{
+	width: 140px;
+	height: 35px;
+	background-color: #f9f9f9;
+	float: right;
+	margin: 55px 0 0 0;
+	border: 1px solid gainsboro;
+	position: relative;
+}
+
+.shop_carts>a>img {
+	margin: 10px 0 0 20px;
+}
+
+.shop_carts>a>span {
+	margin: -22px 0 0 50px;
+	display: block;
+	font-size: 12px;
+	color: #a8a8a8;
+}
+
+.shop_carts>a {
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.shop_carts .num{
+	width: 17px;
+	display: block;
+	background: url(../img/tuoyuan.png) no-repeat;
+	line-height: 14px;
+	text-align: center;
+	font-size: 12px;
+	position: absolute;
+	top: -6px;
+	left: 110px;
+	color: white;
+}
+
+
+
+
+/*头部导航部分*/
+
+.header .nav {
+	width: 100%;
+	height: 70px;
+	background-color: white;
+	border-bottom: 4px solid #D70003;
+	position: relative;
+}
+
+.header .nav>div {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.header .nav .left {
+	width: 230px;
+	line-height: 55px;
+	display: inline-block;
+	float: left;
+	margin: 15px 0 0;
+	text-align: center;
+}
+
+.header .nav .left:hover .clearfix {
+	display: block;
+	height: 550px;
+	overflow: hidden;
+}
+
+.header .nav .left>a {
+	display: block;
+	width: 100%;
+	height: 59px;
+	color: white;
+	font-size: 18px;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: #D70003;
+}
+
+.header .nav .left a img {
+	margin-left: 50px;
+}
+
+.header .nav>ul {
+	overflow: hidden;
+}
+
+.header .nav>div>ul>li {
+	margin: 15px 0 0 0;
+	float: left;
+	line-height: 65px;
+	width: 160px;
+	text-align: center;
+}
+
+.header .nav>div>ul>li>a {
+	height: 100%;
+	display: block;
+	text-decoration: none;
+	color: black;
+	font-size: 20px;
+	font-weight: 700;
+}
+
+.header .nav .left .clearfix {
+	width: 230px;
+	background-color: rgba(255, 255, 255, 0.7);
+	display: none;
+	position: absolute;
+	z-index: 3;
+}
+
+.header .nav .left>ul>li {
+	overflow: hidden;
+	margin: 14px 0 0 0;
+}
+.header .nav .left>ul>li:first-child+li ul li{
+	margin-right: 21px;
+}
+.header .nav .left>ul>li:first-child+li+li ul li{
+	margin-right: 17px;
+}
+.header .nav .left>ul>li:first-child+li+li+li ul li{
+	margin-right: 42px;
+}
+.header .nav .left>ul>li:first-child+li+li+li+li ul li{
+	margin-right: 43px;
+}
+.header .nav .left>ul>li>h2 {
+	text-align: left;
+	font-weight: 600;
+	margin: 0 0 0 3px;
+	font-size: 18px;
+	line-height: 20px;
+}
+.header .nav .left>ul>li>ul{
+	width: 220px;
+	margin: 16px 0 0 10px;
+	overflow: hidden;
+}
+.header .nav .left>ul>li>ul>li{
+	line-height: 14px;
+	float: left;
+	font-weight: 600;
+	margin: 0 22px 15px 0;
+}
+.header .nav .left>ul>li>ul>li>a{
+	font-size: 14px;
+	line-height: 14px;
+	float: left;
+	font-weight: 600;
+	margin: 0 11px 8px 0;
+}
+
+/*最底部分*/
+
+.footer {
+	width: 100%;
+	margin: 180px auto 0;
+	border-top: 3px solid #D70003;
+	background-color: #444444;
+}
+
+
+/*底部上面*/
+
+.footer_top {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.footer_top>ul {
+	overflow: hidden;
+	float: left;
+}
+
+.footer_top .footer_top_left>li {
+	width: 130px;
+	height: 175px;
+	float: left;
+	text-align: center;
+	color: white;
+	margin-right: 70px;
+}
+
+.footer_top .footer_top_left>li>h3 {
+	margin: 20px auto 15px;
+	font-size: 18px;
+}
+
+.footer_top .footer_top_left>li>ul>li>a {
+	display: block;
+	color: white;
+	font-size: 13px;
+	margin-bottom: 9px;
+}
+.footer_top .footer_top_right{
+	width: 155px;
+	margin-top: 30px;
+}
+.footer_top .footer_top_right li{
+	margin-bottom: 15px;
+	color: white;
+}
+.footer_top .footer_top_right li span{
+	font-size: 14px;
+}
+
+/*底部下面*/
+
+.footer_bot {
+	width: 100%;
+	background-color: white;
+	overflow: hidden;
+}
+
+.footer_bot>.pic {
+	width: 640px;
+	overflow: hidden;
+	margin: 0 auto 30px;
+}
+.footer_bot>.pic li{
+	float: left;
+}
+.footer_bot>.pic img {
+	float: left;
+	margin: 15px 9px 0 0;
+}
+
+.footer_bot .word {
+	width: 415px;
+	overflow: hidden;
+	margin: 0 auto 20px;
+}
+
+.footer_bot .word>li {
+	float: left;
+	width: 130px;
+	font-size: 12px;
+	border-left: 1px solid black;
+	text-align: center;
+}
+
+.footer_bot .word>li:first-child{
+	border: none;
+	text-align: left;
+	padding-right: 10px;
+}
