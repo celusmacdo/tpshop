@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-19 18:20:37
+Date: 2018-07-21 12:06:45
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -180,25 +180,12 @@ CREATE TABLE `max_brand` (
   `brand_url` varchar(255) DEFAULT NULL COMMENT '官网地址',
   `brand_info` text COMMENT '品牌简介',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8 CHECKSUM=1;
 
 -- ----------------------------
 -- Records of max_brand
 -- ----------------------------
-INSERT INTO `max_brand` VALUES ('1', '123', null, '123', '123');
-INSERT INTO `max_brand` VALUES ('2', '121515', null, '35435435', null);
-INSERT INTO `max_brand` VALUES ('3', '大萨达', null, '大萨达', '大萨达');
-INSERT INTO `max_brand` VALUES ('4', '大萨达', null, '大萨达撒多撒', '大萨达撒多撒');
-INSERT INTO `max_brand` VALUES ('5', '哥儿', null, 'grew', '果然是');
-INSERT INTO `max_brand` VALUES ('6', 'ds阿达', null, null, null);
-INSERT INTO `max_brand` VALUES ('7', 'ds阿达', null, null, null);
-INSERT INTO `max_brand` VALUES ('8', 'ds阿达', null, null, null);
-INSERT INTO `max_brand` VALUES ('9', '萨达', null, '打', '打');
-INSERT INTO `max_brand` VALUES ('10', '苟富贵', '/Uploads/2018-07-13/5b4876789cc77.jpg', '112', '2221');
-INSERT INTO `max_brand` VALUES ('11', '发122', '/Uploads/2018-07-13/5b4875692a439.jpg', '55225', '5522');
-INSERT INTO `max_brand` VALUES ('12', '456', '/Uploads/2018-07-13/5b484f4610080.jpg', '687', '35478');
-INSERT INTO `max_brand` VALUES ('13', '456', '', '687', '37836');
-INSERT INTO `max_brand` VALUES ('14', '小彬彬', '/Uploads/2018-07-19/5b4fe7d86da30.jpg', '5212', '333');
+INSERT INTO `max_brand` VALUES ('1', '麦斯威尔', '/Uploads/2018-07-21/5b52ae8d34fd7.jpg', 'http://www.kraftrecipes.com/maxwell-house', '麦斯威尔（Maxwell House）是卡夫食品旗下的一个咖啡品牌，创立于1892年，有着100多年的辉煌历史，她精选世界各地的咖啡豆，以特殊的制造工艺，通过精心烘培研制成特有的麦氏香醇。麦斯威尔拥有众多口味的咖啡，包括：原味、香草、巧克力、特浓、咖啡醇、奶茶等。“滴滴香浓，意犹未尽”是麦斯威尔一贯遵循的准则。');
 
 -- ----------------------------
 -- Table structure for `max_category`
