@@ -89,49 +89,59 @@ class CategoryModel extends Model {
 	 }
 	//分类添加
 	public function addData($data){
+// 			$data['pid']=$_POST['catid'];
+// 			$data['level']=$v["level"];
+			// dump($data['pid']);exit;
 		$result = $this->add($data); 
 		if($result>0){
 			//插入新的数据
-				foreach($data['attrid'] as $k=>$v){
-				M('CategoryAttr')->add(array(
-						'catid'=>$result,
-					'attrid'=>$v,
-				));
-			}
-			// 如果主键是自动增长型 成功后返回值就是最新插入的值
-			$insertId = $result;
-			return $insertId; 
+			foreach($data['attrid'] as $k=>$v){
+			M('CategoryAttr')->add(array(
+				'catid'=>$result,
+				'attrid'=>$v,
+			));
+		}
+		// 如果主键是自动增长型 成功后返回值就是最新插入的值
+		$insertId = $result;
+		return $insertId; 
 		}else{
 			return false;
 		}
 	}
 	//分类更新
     public function saveData($data){
-		$result = $this->save($data);
-		//先删除分类属性表的分类关联的数据
-		if($result>0){
-			    M('CategoryAttr')->where('catid='.$data['id'])->delete();
-				//插入新的数据
-			    foreach($data['attrid'] as $k=>$v){
-						M('CategoryAttr')->add(array(
-							'catid'=>$data['id'],
-							'attrid'=>$v,
-						));
-					}
-		}else{
-			M('CategoryAttr')->where('catid='.$data['id'])->delete();
-			foreach($data['attrid'] as $k=>$v){
-				M('CategoryAttr')->add(array(
-					'catid'=>$data['id'],
-					'attrid'=>$v,
-				));
+// 			$rs1= D('Category')->showProductcat(100000000);
+// 			foreach($rs1['result'] as $k=>$v){
+// 				$data['pid']=$_POST['catid'];
+// 				$data['level']=$v["level"];
+// 				dump($data);exit;
+// 			}
+			$result = $this->save($data);
+			// dump($data);exit;
+			//先删除分类属性表的分类关联的数据
+			if($result>0){
+						M('CategoryAttr')->where('catid='.$data['id'])->delete();
+					//插入新的数据
+						foreach($data['attrid'] as $k=>$v){
+							M('CategoryAttr')->add(array(
+								'catid'=>$data['id'],
+								'attrid'=>$v,
+							));
+						}
+			}else{
+				M('CategoryAttr')->where('catid='.$data['id'])->delete();
+				foreach($data['attrid'] as $k=>$v){
+					M('CategoryAttr')->add(array(
+						'catid'=>$data['id'],
+						'attrid'=>$v,
+					));
+				}
 			}
-		}
-		if($result !== false){
-			return true;
-		}else{
-			return false;
-		} 
+			if($result !== false){
+				return true;
+			}else{
+				return false;
+			} 
 	}
 	//分类删除
 		public function delData(){
