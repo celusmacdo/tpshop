@@ -97,7 +97,7 @@ class ProductModel extends Model {
 		}
 		 
 		$result = $this->save($data); // 写入数据到数据库 
-		if($result){
+		if($result !== false){
 			M('ProductAttr')->where('proid='.$data['id'])->delete();
 			foreach($data['product_attr'] as $k=>$v){
 				//4-1   =>  4(attrid) 和  1(attrtype)

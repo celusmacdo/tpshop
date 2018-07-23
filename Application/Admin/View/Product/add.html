@@ -140,9 +140,9 @@
                     </div>
                 </div>
 
-                <div class="row col-md-6 pull-right">
+                <div class="row col-md-6 pull-left">
                     <div style="height:50px">
-                        <label class="col-sm-3 control-label no-padding-right">
+                        <label class="col-sm-3 control-label no-padding-left">
                             <font color="red">*</font>所属分类:</label>
                         <div class="col-sm-9">
                             <select id="choice_category" name="catid">
@@ -154,11 +154,11 @@
 
                         </div>
                     </div>
-                    <div style="height:50px; display: none;" class="attrProduct clearfix">
-                        <label class="col-sm-3 control-label no-padding-right">
+                    <div style="display: none;" class="attrProduct form-group">
+                        <label class="col-sm-3 control-label no-padding-left">
                             <font color="red">*</font>产品属性:</label>
                     </div>
-                    <div style="display: none; margin: 0 0 0 231px;" class="attrProduct clearfix">
+                    <div style="display: none; margin: 0 0 0 100px;" class="attrProduct form-group">
                         <p>
                             <font color="red">*</font>单选属性:
                         </p>
@@ -167,7 +167,7 @@
 
                         </div>
                     </div>
-                    <div style="display: none; margin: 0 0 0 231px;" class="attrProduct clearfix">
+                    <div style="display: none; margin: 0 0 0 100px;" class="attrProduct form-group">
                         <p>
                             <font color="red">*</font>固定属性:
                         </p>
@@ -254,13 +254,13 @@
                     if (v['attrtype'] == 1) {
                         $('#choiceAttr').append(
                             '<div style="margin:0 0 20px 0;"><span style="float:left;width:100px;">' +
-                            v['attrname'] + ':</span><input name="product_attr[' +
+                            v['attrname'] + ':</span><input type="text" name="product_attr[' +
                             v['attrid'] + '_' + v['attrtype'] + ']" /></div>');
                     }
                     if (v['attrtype'] == 2) {
                         $('#inputAttr').append(
                             '<div style="margin:0 0 20px 0;"><span style="float:left;width:100px;">' +
-                            v['attrname'] + ':</span><input name="product_attr[' +
+                            v['attrname'] + ':</span><input type="text" name="product_attr[' +
                             v['attrid'] + '_' + v['attrtype'] + ']" /></div>');
                     }
                 });

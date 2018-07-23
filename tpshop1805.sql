@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost_3306
-Source Server Version : 50553
+Source Server         : root
+Source Server Version : 50547
 Source Host           : localhost:3306
 Source Database       : tpshop1805
 
 Target Server Type    : MYSQL
-Target Server Version : 50553
+Target Server Version : 50547
 File Encoding         : 65001
 
-Date: 2018-07-23 18:35:25
+Date: 2018-07-23 20:56:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -365,11 +365,12 @@ CREATE TABLE `max_product` (
   `catid` int(10) unsigned DEFAULT NULL COMMENT '所属分类',
   `amount` int(10) unsigned DEFAULT NULL COMMENT '库存数量',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_product
 -- ----------------------------
+INSERT INTO `max_product` VALUES ('1', '3211', '1532346617', '529', null, null, null, null, null, null, '56', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '1', '1', null, '1', null, '31', null);
 
 -- ----------------------------
 -- Table structure for `max_productcat`
@@ -397,29 +398,11 @@ CREATE TABLE `max_product_attr` (
   `attrvalue` varchar(100) DEFAULT NULL,
   `attrphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_product_attr
 -- ----------------------------
-INSERT INTO `max_product_attr` VALUES ('1', '4', '1', '红色', null);
-INSERT INTO `max_product_attr` VALUES ('2', '4', '1', '蓝色', null);
-INSERT INTO `max_product_attr` VALUES ('3', '4', '1', '绿色', null);
-INSERT INTO `max_product_attr` VALUES ('4', '2', '1', '65456', null);
-INSERT INTO `max_product_attr` VALUES ('5', '3', '1', '测试产品', null);
-INSERT INTO `max_product_attr` VALUES ('6', '5', '1', '1234567', null);
-INSERT INTO `max_product_attr` VALUES ('7', '6', '1', '起效', null);
-INSERT INTO `max_product_attr` VALUES ('8', '7', '1', '余朋', null);
-INSERT INTO `max_product_attr` VALUES ('9', '8', '1', '牵引力教育集团', null);
-INSERT INTO `max_product_attr` VALUES ('10', '9', '1', '福维克', null);
-INSERT INTO `max_product_attr` VALUES ('11', '10', '1', '41111', null);
-INSERT INTO `max_product_attr` VALUES ('12', '11', '1', '111', null);
-INSERT INTO `max_product_attr` VALUES ('13', '12', '1', '100W', null);
-INSERT INTO `max_product_attr` VALUES ('14', '13', '1', '100W', null);
-INSERT INTO `max_product_attr` VALUES ('15', '14', '1', '5米', null);
-INSERT INTO `max_product_attr` VALUES ('16', '15', '1', '100tb', null);
-INSERT INTO `max_product_attr` VALUES ('17', '16', '1', '11', null);
-INSERT INTO `max_product_attr` VALUES ('18', '17', '1', '545', null);
 INSERT INTO `max_product_attr` VALUES ('19', '6', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('20', '5', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('21', '4', '2', '', null);
