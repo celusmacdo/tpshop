@@ -13,7 +13,7 @@
                 <a href="{$base_url}Admin">首页</a>
             </li>
 			<li>
-                <a href="{$base_url}Admin/Productpart">产品配件中心</a>
+                <a href="{$base_url}Admin/ProductPart">产品配件中心</a>
             </li>
             <li class="active">产品配件更新</li>
         </ul>
@@ -31,25 +31,46 @@
     </div>
 
     <div class="page-content">
-      
-      <form id="update_form" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">  
-      <div class="row col-md-6 pull-left">
-			<input type="hidden" name="id" value="{$rs.id}" />
+        <div class="row">
+            <form id="update_form" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$rs.id}" />
+                <input type="hidden" name="old_photo" value="{$rs.part_photo}" />
                 <div style="height:50px">
                     <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>产品名称:</label>
-                    <div class="widget-main col-sm-9">
-                        <input name="pro_name" value="{$rs.pro_name}" type="text" id="pro_name" placeholder="pro_name" class="col-xs-10 col-sm-5" />
+                        <font color="red">*</font>配件名称:</label>
+                    <div class="col-sm-9">
+                        <input name="part_name" value="{$rs.part_name}" type="text" id="part_name" placeholder="part_name" class="col-xs-10 col-sm-5" />
+                        
+                    </div>
+                </div>
+                <div style="height:50px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>配件价值:</label>
+                    <div class="col-sm-9">
+                        <input name="value_price" value="{$rs.value_price}" type="text" id="value_price" placeholder="value_price" class="col-xs-10 col-sm-5" />元
+                        
+                    </div>
+                </div>
+                <div style="height:150px">
+                    <label class="col-sm-3 control-label no-padding-right">
+                        <font color="red">*</font>配件图片:</label>
+                    <div class="col-sm-9">
+                        
+                        <input name="part_photo" value="{$rs.part_photo}" type="file" id="part_photo" placeholder="配件图片" class="col-xs-10 col-sm-5" style="display: none" />
+                            <a class="btn" id="fileupload">上传</a>
+                            <div id="pic_preview">
+                                <img style="width: 200px; height: 100px; margin-left:20px;" src="{$rs.part_photo}" />
+                            </div>
                     </div>
                 </div>
                 <div style="height:50px">
                     <label class="col-sm-3 control-label no-padding-right">
                         <font color="red">*</font>所属品牌:</label>
                     <div class="col-sm-9">
-                        <select id="choice_type" name="brand_id">
+                        <select id="choice_type" name="part_brand_id">
                                 <option>..请选择</option>
                                 <volist name="brand" id="v" key="k">
-                                <option value="{$v.id}" <eq name="rs.brand_id" value="$v.id">selected=selected</eq>>{$v.brand_name}</option>
+                                    <option value="{$v.id}" <eq name="rs.part_brand_id" value="$v.id">selected=selected</eq>>{$v.brand_name}</option>
                                 </volist>
                         </select>
                         
@@ -57,76 +78,19 @@
                 </div>
                 <div style="height:50px">
                     <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>本店价:</label>
+                        <font color="red">*</font>所属分类:</label>
                     <div class="col-sm-9">
-                        <input name="shop_price" value="{$rs.shop_price}" type="text" id="shop_price" placeholder="shop_price" class="col-xs-10 col-sm-5" />元
+                        <select id="choice_category" name="part_catid">
+                                <option>..请选择</option>
+                                <volist name="category" id="v" key="k">
+                                    <option value="{$v.id}" <eq name="rs.part_catid" value="$v.id">selected=selected</eq>>{$v.cat_name}</option>
+                                </volist>
+                        </select>
                         
                     </div>
                 </div>
-                <div style="height:50px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>库存数量:</label>
-                    <div class="col-sm-9">
-                        <input name="gtype" value="{$rs.gtype}" type="text" id="gtype" placeholder="gtype" class="col-xs-10 col-sm-5" />件
-                        
-                    </div>
-                </div>
-                <div style="height:150px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>产品图片:</label>
-                    <div class="col-sm-9">
-                        
-                        <input name="pro_photo" value="{$rs.pro_photo}" type="file" id="pro_photo" placeholder="产品图片" class="col-xs-10 col-sm-5" style="display: none" />
-                            <a class="btn" id="fileupload">上传</a>
-                            <div id="pic_preview">
-                                <img style="width: 200px; height: 100px; margin-left:20px;" src="{$rs.pro_photo}" />
-                            </div>
-                    </div>
-                </div>
-                <div style="height:50px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>新品上市:</label>
-                    <div class="col-sm-9">
-                        <label>
-                            <input class="ace" name="is_new" value="1" <eq name="rs.is_new" value="1">checked="checked"<else/></eq> type="radio"  />
-                            <span class="lbl">是</span>
-                        </label>
-                        <label>
-                            <input class="ace" name="is_new" value="2" <eq name="rs.is_new" value="2">checked="checked"<else/></eq> type="radio"  />
-                            <span class="lbl">否</span>
-                        </label>
-                    </div> 
-                </div>
-                <div style="height:50px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>精品推荐:</label>
-                    <div class="col-sm-9">
-                        <label>
-                            <input class="ace" name="is_good" value="1" <eq name="rs.is_good" value="1">checked="checked"<else/></eq> type="radio"  />
-                            <span class="lbl">是</span>
-                        </label>
-                        <label>
-                            <input class="ace" name="is_good" value="2" <eq name="rs.is_good" value="2">checked="checked"<else/></eq> type="radio"  />
-                            <span class="lbl">否</span>
-                        </label>
-                    </div>
-                </div>
-                <div style="height:50px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>热销商品:</label>
-                    <div class="col-sm-9">
-                        <label>
-                            <input class="ace" name="is_hot" value="1" type="radio" <eq name="rs.is_hot" value="1">checked="checked"<else/></eq> />
-                            <span class="lbl">是</span>
-                        </label>
-                        <label>
-                            <input class="ace" name="is_hot" value="2" type="radio" <eq name="rs.is_hot" value="2">checked="checked"<else/></eq> />
-                            <span class="lbl">否</span>
-                        </label>
-                    </div>
-                </div>
-                <div style="height:50px">
-                    <div class="col-sm-9">
+                <div class="clearfix">
+                    <div class="col-md-offset-3 col-md-9">
                         <button class="btn btn-info" type="submit" name="">
                             <i class="icon-ok bigger-110"></i>
                             提交
@@ -138,40 +102,9 @@
                             重置
                         </button>   
                     </div>
-                </div>  
-			   
-            </div>
-            <div class="row col-md-6 pull-right">
-                <div style="height:50px">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>所属分类:</label>
-                    <div class="widget-main col-sm-9">
-                        <select id="choice_category" name="catid">
-                                <option>..请选择</option>
-                                <volist name="category" id="v" key="k">
-                                <option value="{$v.id}" <eq name="rs.catid" value="$v.id">selected=selected</eq>>{$v.cat_name}</option>
-                                </volist>
-                        </select>
-                    </div>
-                </div>
-               <div style="height:50px; display: block;" class="attrProduct clearfix">
-                    <label class="col-sm-3 control-label no-padding-right">
-                        <font color="red">*</font>产品属性:</label>
-                </div>
-               <div style="display: block; margin: 0 0 0 231px;" class="attrProduct clearfix">
-                    <div id="choiceAttr">
-                         <div style="margin:0 0 20px 0;"><span style="float:left;width:100px;">{$showCategoryAttr.1.attrname}</span><input name="product_attr[{$showCategoryAttr.1.attrid}_{$showCategoryAttr.1.attrtype}]" value="{$showCategoryAttr.1.attrvalue}" /></div>
-                    </div>
-                </div>
-                <div style="display: block; margin: 0 0 0 231px;" class="attrProduct clearfix">
-                    <div id="inputAttr">
-                         <volist name="showCategoryAttr.2" id="v" key="k">
-                            <div style="margin:0 0 20px 0;"><span style="float:left;width:100px;">{$v.attrname}</span><input name="product_attr[{$v.attrid}_{$v.attrtype}]" value="{$v.attrvalue}" /></div>                         
-                         </volist>
-                    </div>
-                </div>               
-            </div>    
-        </form>
+                </div>           
+            </form>
+          </div>  
         <!-- /.row -->
     </div>
     <!-- /.page-content -->
@@ -252,13 +185,13 @@
             });
         });
         $('#fileupload').click(function(){
-            $('#pro_photo').click();
+            $('#part_photo').click();
 
         });
         //上传域选择图片 change
-        $('#pro_photo').change(function(){
+        $('#part_photo').change(function(){
             //把缓存在浏览器的图片信息获取到
-             var f = document.getElementById("pro_photo").files[0];
+             var f = document.getElementById("part_photo").files[0];
              //用createObjectURL这个方法去获取保存路径
              var src = window.URL.createObjectURL(f);
              //去掉前一次显示的图片
@@ -269,7 +202,7 @@
         $('#update_form').submit(function(){
              $(this).ajaxSubmit({
                                          type:'post',
-                                         url:'{:U("Admin/Product/update")}',
+                                         url:'{:U("Admin/ProductPart/update")}',
                                          data: {
     
                                          },
@@ -280,10 +213,10 @@
                                          },
                                          success:function(rs){
                                              if(rs['status']==1){
-                                                alert('产品更新成功');
-                                                location.href='{:U("Admin/Product/index")}';
+                                                alert('产品配件更新成功');
+                                                location.href='{:U("Admin/ProductPart/index")}';
                                              }else{
-                                                alert('产品更新失败');
+                                                alert('产品配件更新失败');
                                              }
                                          },
                                          resetForm:true

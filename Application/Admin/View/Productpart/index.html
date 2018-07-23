@@ -22,23 +22,23 @@
 							</form>
 						</div><!-- #nav-search -->
 					</div>
-						<form action="" method="get" style="margin-bottom: 8px;">							
-							   <select name="perpage">
-								  <option>请选择</option>
-								  <option value="1">每页显示1条</option>
-								  <option value="2">每页显示2条</option>
-								  <option value="3">每页显示3条</option>
-								  <option value="4">每页显示4条</option>
-								  <option value="5">每页显示5条</option>
-								  <option value="6">每页显示6条</option>
-								  <option value="7">每页显示7条</option>
-								  <option value="8">每页显示8条</option>
-								  <option value="9">每页显示9条</option>
-								  <option value="10">每页显示10条</option>
-							    </select>
-							    <button class="btn btn-xs" style="margin-bottom: 3px;">提交</button>
+					<div class="page-content">
+						<form action="" method="get" style="margin-bottom: 8px;">
+							<select name="perpage">
+								<option>请选择</option>
+								<option value="1">每页显示1条</option>
+								<option value="2">每页显示2条</option>
+								<option value="3">每页显示3条</option>
+								<option value="4">每页显示4条</option>
+								<option value="5">每页显示5条</option>
+								<option value="6">每页显示6条</option>
+								<option value="7">每页显示7条</option>
+								<option value="8">每页显示8条</option>
+								<option value="9">每页显示9条</option>
+								<option value="10">每页显示10条</option>
+							</select>
+							<button class="btn btn-xs" style="margin-bottom: 3px;">提交</button>
 						</form>
-					<div style="text-align: center;" class="page-content">
 						<div class="row">
 					             <div class="col-xs-12">
 											<div class="table-responsive">
@@ -51,12 +51,10 @@
 																	<span class="lbl"></span>
 																</label>
 															</th>
-															<?php foreach($item AS $k=>$v){ ?>
-															<th>
-																<?php echo $v;?>
-															</th>
-															<?php } ?>
-															<th class="hidden-480">数据操作</th>
+															<volist name="item" id="v" key="k">
+																<th>{$v}</th>
+															</volist>
+															<th class="hidden-480">操作</th>
 														</tr>
 													</thead>
 
@@ -71,30 +69,20 @@
 															</td>
 															
 															<td>{$v.id}</td>
-															<td>{$v.pro_name}</td>
-															<td>{$v.cat_name}</td>
+															<td>{$v.part_name}</td>
+															<td>{$v.value_price}</td>
+															<td>{$v.part_photo}</td>
 															<td>{$v.brand_name}</td>
-															<td>{$v.shop_price}</td>
-															<td>{$v.gtype}</td>
-															<td>{$v.pro_photo}</td>
-															<td>{$v.is_new}</td>
-															<td>{$v.is_good}</td>
-															<td>{$v.is_hot}</td>
-															<td>{$v.ctime}</td>
-															
+															<td>{$v.cat_name}</td>
+															<td>{$v.part_ctime}</td>
 															<td>
 																<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																	<button class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/setlist?id={$v.id}'">
-																		套餐管理
-																	</button>
-																</div>
-																<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																	<button class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/update?id={$v.id}'">
+																	<button class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/ProductPart/update?id={$v.id}'">
 																		<i class="icon-edit bigger-120"></i>
 																	</button>
 																</div>
 																<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-																	<button class="btn btn-xs btn-danger" onclick="location.href='{$base_url}Admin/Product/del?id={$v.id}'">
+																	<button class="btn btn-xs btn-danger" onclick="location.href='{$base_url}Admin/ProductPart/del?id={$v.id}'">
 																		<i class="icon-trash bigger-120"></i>
 																	</button>
 																</div>

@@ -23,6 +23,7 @@ class BrandModel extends Model {
 			}
 				
 			}
+			// dump($result);exit;
 			return array(
 			    'page'=>$show,
 			    'result'=>$result,

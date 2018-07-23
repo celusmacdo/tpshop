@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-23 01:39:01
+Date: 2018-07-23 18:35:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -149,7 +149,7 @@ INSERT INTO `max_attribute` VALUES ('6', '咖啡口味', '1', null);
 INSERT INTO `max_attribute` VALUES ('7', '包装单位', '2', null);
 INSERT INTO `max_attribute` VALUES ('8', '分类', '2', null);
 INSERT INTO `max_attribute` VALUES ('9', '包装单位', '2', null);
-INSERT INTO `max_attribute` VALUES ('10', '咖啡分类', '1', null);
+INSERT INTO `max_attribute` VALUES ('10', '咖啡分类', '2', null);
 
 -- ----------------------------
 -- Table structure for `max_attribute_product`
@@ -200,7 +200,7 @@ CREATE TABLE `max_category` (
   `level` int(11) unsigned DEFAULT NULL COMMENT '等级',
   `isshow` int(11) unsigned DEFAULT '1' COMMENT '是否显示',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=42 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_category
@@ -235,8 +235,17 @@ INSERT INTO `max_category` VALUES ('27', '配件', '26', 'part', '99', '2', '1')
 INSERT INTO `max_category` VALUES ('28', '速溶咖啡', '26', 'product', '99', '2', '1');
 INSERT INTO `max_category` VALUES ('29', '咖啡豆', '26', 'product', '99', '2', '1');
 INSERT INTO `max_category` VALUES ('30', '咖啡粉', '26', 'product', '99', '2', '1');
-INSERT INTO `max_category` VALUES ('31', '拿铁咖啡', '28', 'product', '99', '3', '1');
-INSERT INTO `max_category` VALUES ('32', '蓝山咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('31', '原味咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('32', '黑咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('33', '特浓咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('34', '拿铁咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('35', '卡布奇诺', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('36', '摩卡咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('37', '白咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('38', '蓝山咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('39', '炭烧咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('40', '猫屎咖啡', '28', 'product', '99', '3', '1');
+INSERT INTO `max_category` VALUES ('41', '曼特宁咖啡', '28', 'product', '99', '3', '1');
 
 -- ----------------------------
 -- Table structure for `max_category_attr`
@@ -260,12 +269,16 @@ INSERT INTO `max_category_attr` VALUES ('27', '6');
 INSERT INTO `max_category_attr` VALUES ('27', '7');
 INSERT INTO `max_category_attr` VALUES ('27', '8');
 INSERT INTO `max_category_attr` VALUES ('27', '9');
-INSERT INTO `max_category_attr` VALUES ('31', '10');
-INSERT INTO `max_category_attr` VALUES ('31', '7');
+INSERT INTO `max_category_attr` VALUES ('31', '6');
+INSERT INTO `max_category_attr` VALUES ('31', '5');
 INSERT INTO `max_category_attr` VALUES ('31', '4');
 INSERT INTO `max_category_attr` VALUES ('31', '3');
 INSERT INTO `max_category_attr` VALUES ('31', '2');
 INSERT INTO `max_category_attr` VALUES ('31', '1');
+INSERT INTO `max_category_attr` VALUES ('31', '7');
+INSERT INTO `max_category_attr` VALUES ('31', '8');
+INSERT INTO `max_category_attr` VALUES ('31', '9');
+INSERT INTO `max_category_attr` VALUES ('31', '10');
 
 -- ----------------------------
 -- Table structure for `max_group`
@@ -352,12 +365,11 @@ CREATE TABLE `max_product` (
   `catid` int(10) unsigned DEFAULT NULL COMMENT '所属分类',
   `amount` int(10) unsigned DEFAULT NULL COMMENT '库存数量',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_product
 -- ----------------------------
-INSERT INTO `max_product` VALUES ('1', '测试咖啡', '1', '10', '12', '10', '11111', '111111', null, null, '111', null, null, '1', '2', '2', '2', '14', null, '32', null);
 
 -- ----------------------------
 -- Table structure for `max_productcat`
@@ -385,7 +397,7 @@ CREATE TABLE `max_product_attr` (
   `attrvalue` varchar(100) DEFAULT NULL,
   `attrphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=19 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=29 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_product_attr
@@ -408,6 +420,16 @@ INSERT INTO `max_product_attr` VALUES ('15', '14', '1', '5米', null);
 INSERT INTO `max_product_attr` VALUES ('16', '15', '1', '100tb', null);
 INSERT INTO `max_product_attr` VALUES ('17', '16', '1', '11', null);
 INSERT INTO `max_product_attr` VALUES ('18', '17', '1', '545', null);
+INSERT INTO `max_product_attr` VALUES ('19', '6', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('20', '5', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('21', '4', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('22', '3', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('23', '2', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('24', '1', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('25', '7', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('26', '8', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('27', '9', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('28', '10', '2', '', null);
 
 -- ----------------------------
 -- Table structure for `max_product_part`
@@ -425,13 +447,14 @@ CREATE TABLE `max_product_part` (
   `part_brand_id` int(10) unsigned DEFAULT NULL COMMENT '品牌id',
   `part_catid` int(10) unsigned DEFAULT NULL COMMENT '所属分类',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_product_part
 -- ----------------------------
 INSERT INTO `max_product_part` VALUES ('6', '吸管', '121212', '12.00', '吸管的作用是：xxxx', '吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管', null, null, '5', '71');
 INSERT INTO `max_product_part` VALUES ('7', '2米管', '121212', '14.00', '2米管的作用是：xxxx', '2米管2米管2米管2米管2米管2米管2米管2米管', null, null, '6', '71');
+INSERT INTO `max_product_part` VALUES ('8', '方糖', '1532332451', '2', null, null, '/Uploads/2018-07-23/5b5589a2ef38a.jpg', null, '1', '31');
 
 -- ----------------------------
 -- Table structure for `max_product_set`
