@@ -1,0 +1,240 @@
+/*第二部分*/
+
+.content {
+	width: 1200px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.content .personal {
+	float: left;
+	width: 200px;
+	height: 610px;
+	border: 3px solid red;
+	padding: 10px;
+	background-color: white;
+	margin-top: 60px;
+}
+
+.content .personal>li h3 {
+	border-bottom: 2px solid #a0a0a0;
+	padding-bottom: 3px;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.content .personal>li>ul {
+	margin-top: 20px;
+}
+
+.content .personal>li>ul>li {
+	margin-bottom: 25px;
+}
+
+.content .personal>li>ul>li>a {
+	font-size: 14px;
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+
+/*所有订单导航*/
+
+.content>div {
+	width: 950px;
+	float: left;
+	margin: 60px 0 0 20px;
+}
+
+
+/*小导航*/
+
+.content>div>.order_nav {
+	width: 98%;
+	height: 40px;
+	margin: 0 auto;
+	border-bottom: 2px solid #d2d2d2;
+	
+}
+
+.content>div>.order_nav>li {
+	float: left;
+	margin-right: 50px;
+	border-bottom: 2px solid transparent;
+	position: relative;
+	z-index: 5;
+}
+
+.content>div>.order_nav>li>a {
+	width: 100px;
+	display: block;
+	line-height: 40px;
+	text-align: center;
+}
+
+.content>div>.order_nav>li>a:hover {
+	border-color: red;
+}
+
+.content>div>.order_nav .current {
+	border-color: red;
+}
+
+
+/*订单号*/
+
+.content>div>form {
+	width: 98%;
+	height: 70px;
+	line-height: 70px;
+	border: 1px solid #d2d2d2;
+	margin: 40px auto;
+	overflow: hidden;
+}
+
+.content>div>form>div {
+	float: left;
+	margin-left: 30px;
+}
+
+.content>div>form>div>label {
+	font-size: 14px;
+}
+
+.content>div>form>div>input {
+	text-indent: 5px;
+	margin: 0 5px;
+	width: 160px
+}
+
+
+/*所有订单*/
+
+.content>div .hide table {
+	width: 100%;
+	border: 1px solid red;
+}
+.content>div .hide table:first-child+table{
+	display: none;
+}
+.content>div .hide table>thead>tr>th {
+	background-color: red;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	color: white;
+	font-size: 14px;
+}
+
+.content>div .hide table>thead>tr>th:first-child {
+	width: 150px;
+}
+
+.content>div .hide table>thead>tr>th:first-child+th {
+	width: 280px;
+}
+
+.content>div .hide table>tbody>tr>td {
+	height: 100px;
+	text-align: center;
+	font-size: 14px;
+	border-bottom: 1px solid red;
+}
+.content>div .hide table>tbody>tr>td .pic{
+	float: left;
+	display: block;
+	margin: 0 0 0 40px;
+}
+.content>div .hide table>tbody>tr>td>div {
+	width: 150px;
+	height: 70px;
+	line-height: 70px;
+	border-right: 1px solid black;
+	font-size: 18px;
+}
+
+.content>div .hide table>tbody>tr>td>p {
+	width: 140px;
+	text-align: left;
+	line-height: 20px;
+	float: left;
+	font-size: 12px;
+	margin: 13px;
+}
+
+.content>div .hide table>tbody>tr>td>a {
+	font-size: 12px;
+}
+
+.content>div .hide table>tbody>tr>td>a:last-child {
+	color: red;
+	margin-top: 12px;
+	display: block;
+}
+
+.content>div .hide table>tbody>tr>td>a:first-child+br+a {
+	color: red;
+	display: block;
+	margin-top: 10px;
+}
+
+
+/*page*/
+
+.content>div>.page {
+	overflow: hidden;
+	float: right;
+	margin: 20px 0;
+	border: none;
+	width: auto;
+}
+
+.content>div>.page li {
+	margin-right: 10px;
+	float: left;
+	border: 1px solid #dcdcdc;
+	text-align: center;
+}
+.content>div>.page li:hover{
+	background-color: red;
+}
+.content>div>.page li:hover a{
+	color: white;
+}
+.content>div>.page li a {
+	display: block;
+	padding: 5px 7px;
+	font-size: 12px;
+}
+
+.content>div>.page li .current {
+	background-color: red;
+	color: white;
+}
+
+.content>div>.page span {
+	display: block;
+	float: left;
+	margin: 6px 5px;
+	font-size: 12px;
+}
+
+.content>div>.page span input {
+	width: 40px;
+	height: 20px;
+	margin: -18px 5px;
+	text-align: center;
+}
+
+.content>div>.page button {
+	border: 1px solid #DCDCDC;
+	background-color: white;
+	width: 40px;
+	height: 24px;
+	margin: 0 10px;
+	cursor: pointer;
+}
+.footer{
+	margin-top: 80px;
+}

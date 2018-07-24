@@ -1,0 +1,157 @@
+.content{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+}
+.content>img{
+	float: left;
+}
+/*右边登录*/
+.content>div{
+	width: 305px;
+	float: left;
+	margin: 90px 145px;
+	border: 1px solid #622626;
+}
+/*登录上面部分*/
+.cont_top{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	background-color: #622626;
+	
+}
+.cont_top span{
+	color: white;
+	font-size: 20px;
+	margin-left: 10px;
+	float: left;
+}
+.cont_top img{
+	float: right;
+	margin: 10px 30px 0 0;
+}
+/*登录中间部分*/
+.cont_mid{
+	width: 90%;
+	margin: 15px auto 0;
+	overflow: hidden;
+	border-bottom: 1px solid gray;
+}
+.cont_mid form div{
+	width: 100%;
+	margin-bottom: 18px;
+	overflow: hidden;
+	line-height: 30px;
+}
+.cont_mid form div label{
+	width: 60px;
+	text-align: right;
+	font-size: 15px;
+	display: inline-block;
+	float: left;
+}
+.cont_mid form div input{
+	width: 210px;
+	height: 26px;
+	text-indent: 10px;
+	float: left;
+}
+.cont_mid form div #yan{
+	width: 60px;
+}
+.cont_mid form div img{
+	width: 53px;
+	height: 14px;
+	float: left;
+	margin: 8px 5px;
+}
+.cont_mid form div a{
+	font-size: 12px;
+	display: block;
+}
+.cont_mid form>input{
+	width: 95%;
+	height: 32px;
+	margin: 8px auto;
+	line-height: 32px;
+	background-color: red;
+	text-align: center;
+	border: none;
+	color: white;
+	cursor: pointer;
+	border-radius: 10px;
+	display: block;
+}
+.cont_mid>a{
+	font-size: 12px;
+	text-decoration: underline;
+	float: left;
+	display: block;
+	margin:  15px 10px;
+}
+.cont_mid .free{
+	float: right;
+}
+/*登录下面部分*/
+.cont_bot{
+	width: 90%;
+	margin: 20px auto;
+}
+.cont_bot span{
+	display: block;
+	font-size: 13px;
+}
+.cont_bot li{
+	float: left;
+	font-size: 13px;
+	line-height: 25px;
+	margin: 10px 12px 10px 0;
+}
+.cont_bot li img{
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-top: 3px;
+}
+.cont_bot li a{
+	margin-left: 3px;
+}
+.footer{
+	margin: 0 auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

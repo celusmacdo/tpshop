@@ -1,0 +1,194 @@
+<include file="Public/header" />
+<div class="main-content">
+    <div class="breadcrumbs" id="breadcrumbs">
+        <script type="text/javascript">
+            try {
+                ace.settings.check('breadcrumbs', 'fixed')
+            } catch (e) {}
+        </script>
+
+        <ul class="breadcrumb">
+            <li>
+                <i class="icon-home home-icon"></i>
+                <a href="#">首页</a>
+            </li>
+            <li class="active">控制台</li>
+        </ul>
+        <!-- .breadcrumb -->
+
+        <div class="nav-search" id="nav-search">
+            <form class="form-search">
+                <span class="input-icon">
+                    <input type="text" placeholder="Search ..." class="nav-search-input" id="nav-search-input" autocomplete="off" />
+                    <i class="icon-search nav-search-icon"></i>
+                </span>
+            </form>
+        </div>
+        <!-- #nav-search -->
+    </div>
+
+    <div class="page-content">
+        <div class="row">
+            <form id="add_form" class="form-horizontal" role="form" action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$rs.id}" />
+                <div class="form-group">
+                    <label class="col-sm-3 control-label no-padding-right" for="brand_name">
+                        <font color="red">*</font>品牌名称:</label>
+                    <div class="col-sm-9">
+                        <input name="brand_name" value="{$rs.brand_name}" type="text" id="brand_name" placeholder="brand_name" class="col-xs-10 col-sm-5" />
+                        <span class="help-inline col-xs-12 col-sm-6">
+                            <span class="middle" id="brand_name_msg">注：xxxxxx
+                            </span>
+                        </span>
+                    </div>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right">
+							<font color="red">*</font>品牌LOGO:</label>
+					<div class="col-sm-9">
+							
+							<input name="brand_logo" value="" type="file" multiple  id="brand_logo" placeholder="品牌LOGO" class="col-xs-10 col-sm-5" style="display: none" />
+							<a class="btn" id="fileupload">上传</a>
+							<div id="pic_preview">
+								<img src="{$rs.brand_logo}" alt="" style="margin-top:5px"  height="100">
+							</div>
+					</div>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right">
+							<font color="red">*</font>官网地址:</label>
+					<div class="col-sm-9">
+							<input name="brand_url" value="{$rs.brand_url}" type="text" id="brand_url" placeholder="官网地址" class="col-xs-10 col-sm-5" />
+							
+					</div>
+                </div>
+                <div class="form-group">
+					<label class="col-sm-3 control-label no-padding-right">
+							<font color="red">*</font>品牌简介:</label>
+					<div class="col-sm-9">
+							<textarea name="brand_info" value="" type="text" id="brand_info" placeholder="品牌简介" class="col-xs-10 col-sm-5" >{$rs.brand_info}</textarea>
+					</div>
+                </div>
+
+                <div class="clearfix form-actions">
+                    <div class="col-md-offset-3 col-md-9">
+                        <button class="btn btn-info" type="submit" name="">
+                            <i class="icon-ok bigger-110"></i>
+                            提交
+                        </button>
+
+                        &nbsp; &nbsp; &nbsp;
+                        <button class="btn" type="reset" name="">
+                            <i class="icon-undo bigger-110"></i>
+                            重置
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.page-content -->
+</div>
+<!-- /.main-content -->
+
+<div class="ace-settings-container" id="ace-settings-container">
+    <div class="btn btn-app btn-xs btn-warning ace-settings-btn" id="ace-settings-btn">
+        <i class="icon-cog bigger-150"></i>
+    </div>
+
+    <div class="ace-settings-box" id="ace-settings-box">
+        <div>
+            <div class="pull-left">
+                <select id="skin-colorpicker" class="hide">
+                    <option data-skin="default" value="#438EB9">#438EB9</option>
+                    <option data-skin="skin-1" value="#222A2D">#222A2D</option>
+                    <option data-skin="skin-2" value="#C6487E">#C6487E</option>
+                    <option data-skin="skin-3" value="#D0D0D0">#D0D0D0</option>
+                </select>
+            </div>
+            <span>&nbsp; 选择皮肤</span>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-navbar" />
+            <label class="lbl" for="ace-settings-navbar"> 固定导航条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-sidebar" />
+            <label class="lbl" for="ace-settings-sidebar"> 固定滑动条</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-breadcrumbs" />
+            <label class="lbl" for="ace-settings-breadcrumbs">固定面包屑</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-rtl" />
+            <label class="lbl" for="ace-settings-rtl">切换到左边</label>
+        </div>
+
+        <div>
+            <input type="checkbox" class="ace ace-checkbox-2" id="ace-settings-add-container" />
+            <label class="lbl" for="ace-settings-add-container">
+                切换窄屏
+                <b></b>
+            </label>
+        </div>
+    </div>
+</div>
+<!-- /#ace-settings-container -->
+</div>
+<!-- /.main-container-inner -->
+
+<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+    <i class="icon-double-angle-up icon-only bigger-110"></i>
+</a>
+</div>
+<script>
+    $(function(){
+        $('#fileupload').click(function(){
+            $('#brand_logo').click();
+
+        });
+        //上传域选择图片 change
+        $('#brand_logo').change(function(){
+            //把缓存在浏览器的图片信息获取到
+             var f = document.getElementById("brand_logo").files[0];
+             //用createObjectURL这个方法去获取保存路径
+             var src = window.URL.createObjectURL(f);
+             //去掉前一次显示的图片
+             $('#pic_preview img').remove();
+             //把获取到的图片路径显示到某个p标签中
+             $('#pic_preview').append('<img src="'+src+'" width="200" height="100" style="margin-left:14px;margin-top:5px";>');
+        });
+        $('#add_form').submit(function(){
+			// alert(414);return false;
+             $(this).ajaxSubmit({
+								 type:'post',
+								 url:'{:U("Admin/Brand/update")}',
+								 data: {
+
+								 },
+								 beforeSubmit:function(){
+
+								 },
+								 uploadProgress:function(event,position,total,percentComplete){
+								 },
+								 success:function(rs){
+										 if(rs==1){
+												location.href='{:U("Admin/Brand/index")}';
+										 }else{
+												alert('品牌添加失败');
+										 }
+								 },
+								 resetForm:true
+              });
+              return false;
+        });
+    });
+</script>
+<!-- /.main-container -->
+<include file="Public/footer" />
