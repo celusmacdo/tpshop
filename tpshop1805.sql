@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : root
-Source Server Version : 50547
+Source Server         : localhost_3306
+Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : tpshop1805
 
 Target Server Type    : MYSQL
-Target Server Version : 50547
+Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-23 20:56:18
+Date: 2018-07-24 18:09:33
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -188,6 +188,29 @@ CREATE TABLE `max_brand` (
 INSERT INTO `max_brand` VALUES ('1', '麦斯威尔', '/Uploads/2018-07-21/5b52ae8d34fd7.jpg', 'http://www.kraftrecipes.com/maxwell-house', '麦斯威尔（Maxwell House）是卡夫食品旗下的一个咖啡品牌，创立于1892年，有着100多年的辉煌历史，她精选世界各地的咖啡豆，以特殊的制造工艺，通过精心烘培研制成特有的麦氏香醇。麦斯威尔拥有众多口味的咖啡，包括：原味、香草、巧克力、特浓、咖啡醇、奶茶等。“滴滴香浓，意犹未尽”是麦斯威尔一贯遵循的准则。');
 
 -- ----------------------------
+-- Table structure for `max_cart`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_cart`;
+CREATE TABLE `max_cart` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `pro_id` int(10) unsigned DEFAULT NULL,
+  `stock_id` varchar(255) DEFAULT NULL,
+  `pro_price` varchar(20) DEFAULT NULL,
+  `add_time` int(11) DEFAULT NULL,
+  `number` int(10) unsigned DEFAULT NULL,
+  `member_id` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_cart
+-- ----------------------------
+INSERT INTO `max_cart` VALUES ('3', '35', '83', '49.9', '1532341747', '1', null);
+INSERT INTO `max_cart` VALUES ('4', '35', '83', '49.9', '1532341851', '1', null);
+INSERT INTO `max_cart` VALUES ('5', '35', '83', '49.9', '1532344804', '1', null);
+INSERT INTO `max_cart` VALUES ('6', '35', '83', '49.9', '1532350614', '4', null);
+
+-- ----------------------------
 -- Table structure for `max_category`
 -- ----------------------------
 DROP TABLE IF EXISTS `max_category`;
@@ -281,6 +304,43 @@ INSERT INTO `max_category_attr` VALUES ('31', '9');
 INSERT INTO `max_category_attr` VALUES ('31', '10');
 
 -- ----------------------------
+-- Table structure for `max_delivery_list`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_delivery_list`;
+CREATE TABLE `max_delivery_list` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `delivery_name` varchar(255) DEFAULT NULL,
+  `delivery_logo` varchar(255) DEFAULT NULL,
+  `delivery_url` varchar(255) DEFAULT NULL,
+  `delivery_info` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_delivery_list
+-- ----------------------------
+INSERT INTO `max_delivery_list` VALUES ('1', 'EMS全球快递', null, null, null);
+INSERT INTO `max_delivery_list` VALUES ('2', '顺丰速运', null, null, null);
+INSERT INTO `max_delivery_list` VALUES ('3', '申通快递', null, null, null);
+
+-- ----------------------------
+-- Table structure for `max_delivery_price`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_delivery_price`;
+CREATE TABLE `max_delivery_price` (
+  `id` int(11) NOT NULL DEFAULT '0',
+  `delivery_id` int(11) DEFAULT NULL,
+  `from_city` varchar(255) DEFAULT NULL,
+  `to_city` varchar(255) DEFAULT NULL,
+  `price` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_delivery_price
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `max_group`
 -- ----------------------------
 DROP TABLE IF EXISTS `max_group`;
@@ -336,6 +396,124 @@ CREATE TABLE `max_imgrun` (
 
 -- ----------------------------
 -- Records of max_imgrun
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_member`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_member`;
+CREATE TABLE `max_member` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '会员id',
+  `username` varchar(20) DEFAULT NULL COMMENT '账号名',
+  `password` char(32) DEFAULT NULL COMMENT '登陆密码',
+  `repassword` char(32) DEFAULT NULL COMMENT '再次确认密码',
+  `realname` varchar(20) DEFAULT NULL COMMENT '姓名',
+  `sex` varchar(5) DEFAULT '1' COMMENT '性别:1代表男;2代表女',
+  `phone` char(10) DEFAULT NULL COMMENT '电话',
+  `email` varchar(255) DEFAULT NULL COMMENT '邮箱',
+  `province` varchar(255) DEFAULT NULL COMMENT '省',
+  `city` varchar(255) DEFAULT NULL COMMENT '市',
+  `district` varchar(255) DEFAULT NULL COMMENT '区',
+  `address` varchar(255) DEFAULT NULL COMMENT '会员住址',
+  `portrait` varchar(255) DEFAULT NULL COMMENT '头像',
+  `birthday` int(10) DEFAULT NULL COMMENT '会员生日',
+  `member_pic` varchar(255) DEFAULT NULL,
+  `acount_id` int(11) unsigned DEFAULT NULL,
+  `addtime` varchar(20) DEFAULT NULL COMMENT '添加时间',
+  `error_times` tinyint(4) unsigned DEFAULT NULL COMMENT '登陆密码错误的次数',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_member
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_member_acount`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_member_acount`;
+CREATE TABLE `max_member_acount` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `acount_id` int(10) unsigned DEFAULT NULL,
+  `acount_pwd` varchar(32) DEFAULT NULL,
+  `money_balance` int(20) unsigned DEFAULT NULL,
+  `member_id` int(20) unsigned DEFAULT NULL,
+  `charge_total` int(20) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_member_acount
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_member_chargelist`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_member_chargelist`;
+CREATE TABLE `max_member_chargelist` (
+  `charge_id` mediumint(8) unsigned NOT NULL AUTO_INCREMENT,
+  `acount_id` int(10) DEFAULT NULL,
+  `member_id` int(10) DEFAULT NULL,
+  `charge_time` int(10) DEFAULT NULL,
+  `pay_id` int(10) DEFAULT NULL,
+  `charge_total` decimal(10,2) DEFAULT NULL,
+  `charge_no` varchar(20) DEFAULT NULL,
+  PRIMARY KEY (`charge_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_member_chargelist
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_member_collection`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_member_collection`;
+CREATE TABLE `max_member_collection` (
+  `id` int(6) unsigned NOT NULL AUTO_INCREMENT,
+  `proid` int(6) unsigned DEFAULT NULL,
+  `memberid` int(11) unsigned DEFAULT NULL,
+  `addtime` int(1) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_member_collection
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_member_level`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_member_level`;
+CREATE TABLE `max_member_level` (
+  `id` tinyint(3) NOT NULL,
+  `group_name` varchar(250) DEFAULT NULL,
+  `discount` int(8) unsigned DEFAULT NULL,
+  `min_point` int(10) unsigned DEFAULT NULL,
+  `max_point` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_member_level
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `max_pay`
+-- ----------------------------
+DROP TABLE IF EXISTS `max_pay`;
+CREATE TABLE `max_pay` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `pay_name` varchar(255) DEFAULT NULL,
+  `pay_logo` varchar(255) DEFAULT NULL,
+  `pay_url` varchar(255) DEFAULT NULL,
+  `pay_info` varchar(255) DEFAULT NULL,
+  `pay_config` tinyint(4) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of max_pay
 -- ----------------------------
 
 -- ----------------------------
