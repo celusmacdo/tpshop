@@ -27,8 +27,10 @@
         <!-- #nav-search -->
     </div>
     <div class="page-content">
+		<button class="btn btn-xs btn-info pull-left" style="margin:0 8px 8px 0;" onclick="location.href='{:U(" Admin/Product/setadd ")}?id={$id}'">添加套餐</button>
 		<form action="" method="get" style="margin-bottom: 8px;">
-			<select name="perpage">
+			<button class="btn btn-xs btn-info pull-right" style="margin-left: 8px;">提交</button>
+			<select name="perpage" class="pull-right">
 				<option>请选择</option>
 				<option value="1">每页显示1条</option>
 				<option value="2">每页显示2条</option>
@@ -41,7 +43,6 @@
 				<option value="9">每页显示9条</option>
 				<option value="10">每页显示10条</option>
 			</select>
-			<button class="btn btn-xs" style="margin-bottom: 3px;">提交</button>
 		</form>
         <div class="row">
             <div class="col-xs-12">
@@ -98,7 +99,7 @@
                                             </button>
                                         </div>
                                         <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
-                                            <button class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/update?id={$v.id}'">
+                                            <button style="margin: 0 1px 0 0; width: 27px; font-size: 12px;" class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/update?id={$v.id}'">
                                                 <i class="icon-edit bigger-120"></i>
                                             </button>
                                         </div>
