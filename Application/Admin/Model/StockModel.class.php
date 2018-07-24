@@ -8,28 +8,28 @@ class StockModel extends Model {
      public function showData($perpage=1,$where=''){
 		 //总条数
 		 $count=$this
-		 ->field('vor_stock.id as sid,vor_stock.pro_attr,vor_stock.amount,vor_stock.set_id,vor_stock.attr_id,vor_product.*,vor_brand.brand_name,vor_category.cat_name,vor_product_set.set_name,vor_attribute.attrname')
-		 ->order('vor_stock.id asc')
-		 ->join('vor_product on vor_product.id=vor_stock.pro_id')
-		 ->join('vor_brand on vor_brand.id=vor_product.brand_id')
-		 ->join('vor_category on vor_category.id=vor_product.catid')
-		 ->join('vor_product_set on vor_product_set.id=vor_stock.set_id')
-		 ->join('vor_attribute on vor_attribute.id=vor_stock.attr_id')
+		 ->field('max_stock.id as sid,max_stock.pro_attr,max_stock.amount,max_stock.set_id,max_stock.attr_id,max_product.*,max_brand.brand_name,max_category.cat_name,max_product_set.set_name,max_attribute.attrname')
+		 ->order('max_stock.id asc')
+		 ->join('max_product on max_product.id=max_stock.pro_id')
+		 ->join('max_brand on max_brand.id=max_product.brand_id')
+		 ->join('max_category on max_category.id=max_product.catid')
+		 ->join('max_product_set on max_product_set.id=max_stock.set_id')
+		 ->join('max_attribute on max_attribute.id=max_stock.attr_id')
 		 ->where($where)
 		 ->count();// 查询满足要求的总记录数
 		 //实例化调用分页
 		 $Page       = new \Think\AdminPage($count,$perpage);// 实例化分页类 传入总记录数和每页显示的记录数(25)
 
 		 $show       = $Page->show();// 分页显示输出
-		 //vor_product inner join(连表) vor_group  on(条件)   vor_group.id = vor_product.group_id'
+		 //max_product inner join(连表) max_group  on(条件)   max_group.id = max_product.group_id'
          $result=$this
-		  ->field('vor_stock.id as sid,vor_stock.pro_attr,vor_stock.amount,vor_stock.set_id,vor_stock.attr_id,vor_product.*,vor_brand.brand_name,vor_category.cat_name,vor_product_set.set_name,vor_attribute.attrname')
-		 ->order('vor_stock.id asc')
-		 ->join('vor_product on vor_product.id=vor_stock.pro_id')
-		 ->join('vor_brand on vor_brand.id=vor_product.brand_id')
-		 ->join('vor_category on vor_category.id=vor_product.catid')
-		 ->join('vor_product_set on vor_product_set.id=vor_stock.set_id')
-		 ->join('vor_attribute on vor_attribute.id=vor_stock.attr_id')
+		  ->field('max_stock.id as sid,max_stock.pro_attr,max_stock.amount,max_stock.set_id,max_stock.attr_id,max_product.*,max_brand.brand_name,max_category.cat_name,max_product_set.set_name,max_attribute.attrname')
+		 ->order('max_stock.id asc')
+		 ->join('max_product on max_product.id=max_stock.pro_id')
+		 ->join('max_brand on max_brand.id=max_product.brand_id')
+		 ->join('max_category on max_category.id=max_product.catid')
+		 ->join('max_product_set on max_product_set.id=max_stock.set_id')
+		 ->join('max_attribute on max_attribute.id=max_stock.attr_id')
 		 ->where($where)
 		 ->limit($Page->firstRow.','.$Page->listRows)
 		 ->select();

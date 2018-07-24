@@ -87,6 +87,11 @@
                                     <td>{$v.ctime}</td>
 
                                     <td>
+										<div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
+											<button style="margin: 0 0 1px 0; width: 55px; font-size: 11px;" class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/stocklist?id={$v.id}'">
+												库存管理
+											</button>
+										</div>
                                         <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
                                             <button style="margin: 0 0 1px 0; width: 55px; font-size: 11px;" class="btn btn-xs btn-info" onclick="location.href='{$base_url}Admin/Product/setlist?id={$v.id}'">
                                                 套餐管理

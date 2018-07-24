@@ -127,7 +127,7 @@ class ProductController extends PublicController {
 		public function setlist(){
 			//M('表名')->where()->order()->select();   某个表查询全部
 		$perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
-		$rs = D('ProductSet')->showData($perpage);
+		$rs = D('ProductSet')->showData($perpage,'proid='.I('get.id'));
 		$this->assign('title','麦斯威尔咖啡商城-产品套餐列表');
 		$this->assign('item',$this->item['ProductSet']);
 		//模型返回的分页输出
@@ -144,15 +144,18 @@ class ProductController extends PublicController {
 			$data=I('post.');
 			$data=$this->checkEmpty($data);
 			//M('表名')->add(添加数据);   
-			$rs=D(CONTROLLER_NAME)->addData($data);
+			$rs=D('ProductSet')->addData($data);
 			//返回值id
 			if($rs>0){
-				$this->success('新增成功', 'index');
+				$this->success('新增成功', U('Admin/Product/setlist').'?id='.$data['proid']);
 			}else{
 				$this->error('新增失败');
 			}
 			// dump($data);exit;
-		}else{	
+		}else{
+			//查询需要添加的商品信息
+			$product=D('Product')->findData(I('get.id'));
+            $this->assign('product',$product);
 		    $perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
 			$part=D('ProductPart')->showData($perpage);
             $this->assign('partresult',$part['result']);	
