@@ -15,7 +15,6 @@
             <li class="active">控制台</li>
         </ul>
         <!-- .breadcrumb -->
-
         <div class="nav-search" id="nav-search">
             <form class="form-search">
                 <span class="input-icon">
@@ -26,8 +25,8 @@
         </div>
         <!-- #nav-search -->
     </div>
-
     <div class="page-content">
+        <button class="btn btn-xs btn-info pull-left" style="margin:0 8px 8px 0;" onclick="location.href='{$base_url}Admin/Articlecat/add'">添加文章分类</button>
         <div class="row">
             <div class="col-xs-12">
                 <div class="table-responsive">
@@ -112,7 +111,7 @@
                             </volist>
                         </tbody>
                     </table>
-					{$page}
+                    {$page}
                 </div>
                 <!-- /.table-responsive -->
             </div>

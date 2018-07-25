@@ -26,8 +26,24 @@
         </div>
         <!-- #nav-search -->
     </div>
-
     <div class="page-content">
+        <button class="btn btn-xs btn-info pull-left" style="margin:0 8px 8px 0;" onclick="location.href='{$base_url}Admin/System/add'">添加设置</button>
+        <form action="" method="get" style="margin-bottom: 8px;">
+            <button class="btn btn-xs btn-info pull-right" style="margin-left: 8px;">提交</button>
+            <select name="perpage" class="pull-right">
+                <option>请选择</option>
+                <option value="1">每页显示1条</option>
+                <option value="2">每页显示2条</option>
+                <option value="3">每页显示3条</option>
+                <option value="4">每页显示4条</option>
+                <option value="5">每页显示5条</option>
+                <option value="6">每页显示6条</option>
+                <option value="7">每页显示7条</option>
+                <option value="8">每页显示8条</option>
+                <option value="9">每页显示9条</option>
+                <option value="10">每页显示10条</option>
+            </select>
+        </form>
         <div class="row">
             <div class="col-xs-12">
                 <div class="table-responsive">
@@ -61,7 +77,7 @@
 
                                     <td>{$v.id}</td>
                                     <td>{$v.name_cn}</td>
-									<td>{$v.value}</td>
+                                    <td>{$v.value}</td>
 
                                     <td>
                                         <div class="visible-md visible-lg hidden-sm hidden-xs btn-group">
@@ -112,7 +128,7 @@
                             </volist>
                         </tbody>
                     </table>
-					{$page}
+                    {$page}
                 </div>
                 <!-- /.table-responsive -->
             </div>

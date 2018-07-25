@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-24 18:09:33
+Date: 2018-07-25 18:27:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -282,16 +282,6 @@ CREATE TABLE `max_category_attr` (
 -- ----------------------------
 -- Records of max_category_attr
 -- ----------------------------
-INSERT INTO `max_category_attr` VALUES ('27', '10');
-INSERT INTO `max_category_attr` VALUES ('27', '1');
-INSERT INTO `max_category_attr` VALUES ('27', '2');
-INSERT INTO `max_category_attr` VALUES ('27', '3');
-INSERT INTO `max_category_attr` VALUES ('27', '4');
-INSERT INTO `max_category_attr` VALUES ('27', '5');
-INSERT INTO `max_category_attr` VALUES ('27', '6');
-INSERT INTO `max_category_attr` VALUES ('27', '7');
-INSERT INTO `max_category_attr` VALUES ('27', '8');
-INSERT INTO `max_category_attr` VALUES ('27', '9');
 INSERT INTO `max_category_attr` VALUES ('31', '6');
 INSERT INTO `max_category_attr` VALUES ('31', '5');
 INSERT INTO `max_category_attr` VALUES ('31', '4');
