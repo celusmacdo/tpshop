@@ -4,12 +4,7 @@
 */
 namespace Home\Controller;
 use Think\Controller;
-class IndexController extends Controller {
-	public function __construct(){
-		//引入父类的构造函数
-		parent::__construct();
-		$this->assign('base_url','http://www.maxwell.com/');
-	}
+class IndexController extends PublicController {
 	//前台首页
     public function index(){
 		$this->assign('title','麦斯威尔咖啡商城-首页');

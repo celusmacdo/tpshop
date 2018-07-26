@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-25 18:27:55
+Date: 2018-07-26 18:14:55
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -282,6 +282,16 @@ CREATE TABLE `max_category_attr` (
 -- ----------------------------
 -- Records of max_category_attr
 -- ----------------------------
+INSERT INTO `max_category_attr` VALUES ('32', '1');
+INSERT INTO `max_category_attr` VALUES ('32', '2');
+INSERT INTO `max_category_attr` VALUES ('32', '3');
+INSERT INTO `max_category_attr` VALUES ('32', '4');
+INSERT INTO `max_category_attr` VALUES ('32', '5');
+INSERT INTO `max_category_attr` VALUES ('32', '6');
+INSERT INTO `max_category_attr` VALUES ('32', '7');
+INSERT INTO `max_category_attr` VALUES ('32', '8');
+INSERT INTO `max_category_attr` VALUES ('32', '9');
+INSERT INTO `max_category_attr` VALUES ('32', '10');
 INSERT INTO `max_category_attr` VALUES ('31', '6');
 INSERT INTO `max_category_attr` VALUES ('31', '5');
 INSERT INTO `max_category_attr` VALUES ('31', '4');
@@ -292,6 +302,96 @@ INSERT INTO `max_category_attr` VALUES ('31', '7');
 INSERT INTO `max_category_attr` VALUES ('31', '8');
 INSERT INTO `max_category_attr` VALUES ('31', '9');
 INSERT INTO `max_category_attr` VALUES ('31', '10');
+INSERT INTO `max_category_attr` VALUES ('33', '1');
+INSERT INTO `max_category_attr` VALUES ('33', '2');
+INSERT INTO `max_category_attr` VALUES ('33', '3');
+INSERT INTO `max_category_attr` VALUES ('33', '4');
+INSERT INTO `max_category_attr` VALUES ('33', '5');
+INSERT INTO `max_category_attr` VALUES ('33', '6');
+INSERT INTO `max_category_attr` VALUES ('33', '7');
+INSERT INTO `max_category_attr` VALUES ('33', '8');
+INSERT INTO `max_category_attr` VALUES ('33', '9');
+INSERT INTO `max_category_attr` VALUES ('33', '10');
+INSERT INTO `max_category_attr` VALUES ('34', '1');
+INSERT INTO `max_category_attr` VALUES ('34', '2');
+INSERT INTO `max_category_attr` VALUES ('34', '3');
+INSERT INTO `max_category_attr` VALUES ('34', '4');
+INSERT INTO `max_category_attr` VALUES ('34', '5');
+INSERT INTO `max_category_attr` VALUES ('34', '6');
+INSERT INTO `max_category_attr` VALUES ('34', '7');
+INSERT INTO `max_category_attr` VALUES ('34', '8');
+INSERT INTO `max_category_attr` VALUES ('34', '9');
+INSERT INTO `max_category_attr` VALUES ('34', '10');
+INSERT INTO `max_category_attr` VALUES ('35', '1');
+INSERT INTO `max_category_attr` VALUES ('35', '2');
+INSERT INTO `max_category_attr` VALUES ('35', '3');
+INSERT INTO `max_category_attr` VALUES ('35', '4');
+INSERT INTO `max_category_attr` VALUES ('35', '5');
+INSERT INTO `max_category_attr` VALUES ('35', '6');
+INSERT INTO `max_category_attr` VALUES ('35', '7');
+INSERT INTO `max_category_attr` VALUES ('35', '8');
+INSERT INTO `max_category_attr` VALUES ('35', '9');
+INSERT INTO `max_category_attr` VALUES ('35', '10');
+INSERT INTO `max_category_attr` VALUES ('36', '1');
+INSERT INTO `max_category_attr` VALUES ('36', '2');
+INSERT INTO `max_category_attr` VALUES ('36', '3');
+INSERT INTO `max_category_attr` VALUES ('36', '4');
+INSERT INTO `max_category_attr` VALUES ('36', '5');
+INSERT INTO `max_category_attr` VALUES ('36', '6');
+INSERT INTO `max_category_attr` VALUES ('36', '7');
+INSERT INTO `max_category_attr` VALUES ('36', '8');
+INSERT INTO `max_category_attr` VALUES ('36', '9');
+INSERT INTO `max_category_attr` VALUES ('36', '10');
+INSERT INTO `max_category_attr` VALUES ('37', '1');
+INSERT INTO `max_category_attr` VALUES ('37', '2');
+INSERT INTO `max_category_attr` VALUES ('37', '3');
+INSERT INTO `max_category_attr` VALUES ('37', '4');
+INSERT INTO `max_category_attr` VALUES ('37', '5');
+INSERT INTO `max_category_attr` VALUES ('37', '6');
+INSERT INTO `max_category_attr` VALUES ('37', '7');
+INSERT INTO `max_category_attr` VALUES ('37', '8');
+INSERT INTO `max_category_attr` VALUES ('37', '9');
+INSERT INTO `max_category_attr` VALUES ('37', '10');
+INSERT INTO `max_category_attr` VALUES ('38', '1');
+INSERT INTO `max_category_attr` VALUES ('38', '2');
+INSERT INTO `max_category_attr` VALUES ('38', '3');
+INSERT INTO `max_category_attr` VALUES ('38', '4');
+INSERT INTO `max_category_attr` VALUES ('38', '5');
+INSERT INTO `max_category_attr` VALUES ('38', '6');
+INSERT INTO `max_category_attr` VALUES ('38', '7');
+INSERT INTO `max_category_attr` VALUES ('38', '8');
+INSERT INTO `max_category_attr` VALUES ('38', '9');
+INSERT INTO `max_category_attr` VALUES ('38', '10');
+INSERT INTO `max_category_attr` VALUES ('39', '1');
+INSERT INTO `max_category_attr` VALUES ('39', '2');
+INSERT INTO `max_category_attr` VALUES ('39', '3');
+INSERT INTO `max_category_attr` VALUES ('39', '4');
+INSERT INTO `max_category_attr` VALUES ('39', '5');
+INSERT INTO `max_category_attr` VALUES ('39', '6');
+INSERT INTO `max_category_attr` VALUES ('39', '7');
+INSERT INTO `max_category_attr` VALUES ('39', '8');
+INSERT INTO `max_category_attr` VALUES ('39', '9');
+INSERT INTO `max_category_attr` VALUES ('39', '10');
+INSERT INTO `max_category_attr` VALUES ('40', '1');
+INSERT INTO `max_category_attr` VALUES ('40', '2');
+INSERT INTO `max_category_attr` VALUES ('40', '3');
+INSERT INTO `max_category_attr` VALUES ('40', '4');
+INSERT INTO `max_category_attr` VALUES ('40', '5');
+INSERT INTO `max_category_attr` VALUES ('40', '6');
+INSERT INTO `max_category_attr` VALUES ('40', '7');
+INSERT INTO `max_category_attr` VALUES ('40', '8');
+INSERT INTO `max_category_attr` VALUES ('40', '9');
+INSERT INTO `max_category_attr` VALUES ('40', '10');
+INSERT INTO `max_category_attr` VALUES ('41', '1');
+INSERT INTO `max_category_attr` VALUES ('41', '2');
+INSERT INTO `max_category_attr` VALUES ('41', '3');
+INSERT INTO `max_category_attr` VALUES ('41', '4');
+INSERT INTO `max_category_attr` VALUES ('41', '5');
+INSERT INTO `max_category_attr` VALUES ('41', '6');
+INSERT INTO `max_category_attr` VALUES ('41', '7');
+INSERT INTO `max_category_attr` VALUES ('41', '8');
+INSERT INTO `max_category_attr` VALUES ('41', '9');
+INSERT INTO `max_category_attr` VALUES ('41', '10');
 
 -- ----------------------------
 -- Table structure for `max_delivery_list`
@@ -538,7 +638,7 @@ CREATE TABLE `max_product` (
 -- ----------------------------
 -- Records of max_product
 -- ----------------------------
-INSERT INTO `max_product` VALUES ('1', '3211', '1532346617', '529', null, null, null, null, null, null, '56', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '1', '1', null, '1', null, '31', null);
+INSERT INTO `max_product` VALUES ('1', '黑咖啡01', '1532346617', '529', '12', '12', '122', '1222222', '卧式吸尘器/持久吸力/家具保洁神器/居家必备/呵护家人', '<img src=\"https://img30.360buyimg.com/sku/jfs/t20581/135/691198162/184571/12069443/5b14f3efN4c07e77a.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t20467/65/663471274/256949/41bf588f/5b14f3efNfc378b20.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t22414/4/681611285/289393/65b7d5be/5b14f3efN7295e6fd.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t4687/266/433342235/3122/e862105a/58cf5231Na746b88b.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20971/289/670551551/151075/dfceebcd/5b14f3efNd1bfc01d.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20572/151/675190494/135057/4426a1e1/5b14f3efNfefea90b.jpg\" alt=\"\">', '500', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '2', '2', '2', '1', null, '32', '200');
 
 -- ----------------------------
 -- Table structure for `max_productcat`
@@ -566,7 +666,7 @@ CREATE TABLE `max_product_attr` (
   `attrvalue` varchar(100) DEFAULT NULL,
   `attrphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=63 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_product_attr
@@ -581,6 +681,16 @@ INSERT INTO `max_product_attr` VALUES ('25', '7', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('26', '8', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('27', '9', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('28', '10', '2', '', null);
+INSERT INTO `max_product_attr` VALUES ('63', '6', '1', '黑咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('64', '1', '1', '黑咖啡01', null);
+INSERT INTO `max_product_attr` VALUES ('65', '2', '1', '01', null);
+INSERT INTO `max_product_attr` VALUES ('66', '3', '1', '500g', null);
+INSERT INTO `max_product_attr` VALUES ('67', '4', '1', '泰国', null);
+INSERT INTO `max_product_attr` VALUES ('68', '5', '1', '500g', null);
+INSERT INTO `max_product_attr` VALUES ('69', '7', '1', '袋装', null);
+INSERT INTO `max_product_attr` VALUES ('70', '8', '1', '咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('71', '9', '1', '袋装', null);
+INSERT INTO `max_product_attr` VALUES ('72', '10', '1', '黑咖啡', null);
 
 -- ----------------------------
 -- Table structure for `max_product_part`
@@ -603,9 +713,9 @@ CREATE TABLE `max_product_part` (
 -- ----------------------------
 -- Records of max_product_part
 -- ----------------------------
-INSERT INTO `max_product_part` VALUES ('6', '吸管', '121212', '12.00', '吸管的作用是：xxxx', '吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管', null, null, '5', '71');
-INSERT INTO `max_product_part` VALUES ('7', '2米管', '121212', '14.00', '2米管的作用是：xxxx', '2米管2米管2米管2米管2米管2米管2米管2米管', null, null, '6', '71');
-INSERT INTO `max_product_part` VALUES ('8', '方糖', '1532332451', '2', null, null, '/Uploads/2018-07-23/5b5589a2ef38a.jpg', null, '1', '31');
+INSERT INTO `max_product_part` VALUES ('2', '吸管', '121212', '12.00', '吸管的作用是：xxxx', '吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管吸管', null, null, '5', '71');
+INSERT INTO `max_product_part` VALUES ('3', '2米管', '121212', '14.00', '2米管的作用是：xxxx', '2米管2米管2米管2米管2米管2米管2米管2米管', null, null, '6', '71');
+INSERT INTO `max_product_part` VALUES ('1', '方糖', '1532332451', '2', null, null, '/Uploads/2018-07-23/5b5589a2ef38a.jpg', null, '1', '31');
 
 -- ----------------------------
 -- Table structure for `max_product_set`
@@ -4065,48 +4175,13 @@ CREATE TABLE `max_stock` (
   `set_id` int(11) unsigned DEFAULT NULL COMMENT '套餐id',
   `attr_id` varchar(255) DEFAULT NULL COMMENT '属性id',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=83 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_stock
 -- ----------------------------
-INSERT INTO `max_stock` VALUES ('46', '37', '颜色分类:黑色;尺码:XL', '1000', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('47', '37', '颜色分类:蓝色;尺码:XL', '1000', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('48', '37', '颜色分类:白色;尺码:XL', '1000', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('49', '37', '颜色分类:黑色;尺码:L', '200', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('50', '37', '颜色分类:蓝色;尺码:L', '200', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('51', '37', '颜色分类:白色;尺码:L', '150', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('52', '37', '颜色分类:黑色;尺码:M', '100', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('53', '37', '颜色分类:蓝色;尺码:M', '100', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('54', '37', '颜色分类:白色;尺码:M', '120', '1', '4,19');
-INSERT INTO `max_stock` VALUES ('55', '37', '颜色分类:黑色;尺码:XL', '120', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('56', '37', '颜色分类:蓝色;尺码:XL', '120', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('57', '37', '颜色分类:白色;尺码:XL', '100', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('58', '37', '颜色分类:黑色;尺码:L', '200', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('59', '37', '颜色分类:蓝色;尺码:L', '200', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('60', '37', '颜色分类:白色;尺码:L', '100', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('61', '37', '颜色分类:黑色;尺码:M', '100', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('62', '37', '颜色分类:蓝色;尺码:M', '100', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('63', '37', '颜色分类:白色;尺码:M', '100', '13', '4,19');
-INSERT INTO `max_stock` VALUES ('64', '36', '颜色分类:黑色;尺码:XL', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('65', '36', '颜色分类:蓝色;尺码:XL', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('66', '36', '颜色分类:白色;尺码:XL', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('67', '36', '颜色分类:黑色;尺码:L', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('68', '36', '颜色分类:蓝色;尺码:L', '110', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('69', '36', '颜色分类:白色;尺码:XL', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('70', '36', '颜色分类:黑色;尺码:M', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('71', '36', '颜色分类:蓝色;尺码:M', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('72', '36', '颜色分类:白色;尺码:M', '100', '11', '4,19');
-INSERT INTO `max_stock` VALUES ('73', '36', '颜色分类:黑色;尺码:XL', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('74', '36', '颜色分类:蓝色;尺码:XL', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('75', '36', '颜色分类:白色;尺码:XL', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('76', '36', '颜色分类:黑色;尺码:L', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('77', '36', '颜色分类:蓝色;尺码:L', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('78', '36', '颜色分类:白色;尺码:L', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('79', '36', '颜色分类:黑色;尺码:M', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('80', '36', '颜色分类:蓝色;尺码:M', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('81', '36', '颜色分类:白色;尺码:M', '100', '12', '4,19');
-INSERT INTO `max_stock` VALUES ('82', '34', '颜色分类:白色;尺码:M', '1000', '16', '4,19');
+INSERT INTO `max_stock` VALUES ('1', '1', '咖啡口味:黑咖啡', '200', '1', '6');
+INSERT INTO `max_stock` VALUES ('2', '1', '咖啡口味:黑咖啡', '300', '2', '6');
 
 -- ----------------------------
 -- Table structure for `max_system`

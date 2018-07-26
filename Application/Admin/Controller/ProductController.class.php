@@ -194,7 +194,7 @@ class ProductController extends PublicController {
 			$this->assign('rs',$rs);
 			
 		    $this->assign('id',I('get.id'));		
-			$this->assign('title','福维克商城-产品套餐编辑');		
+			$this->assign('title','麦斯威尔咖啡商城-产品套餐编辑');		
 			$this->display();
 		}
     }
@@ -214,7 +214,7 @@ class ProductController extends PublicController {
 	//产品库存列表页
     public function stocklist(){
 		$rs = D('Stock')->showData(10,'proid='.I('get.id'));
-		$this->assign('title','福维克商城-产品库存列表');
+		$this->assign('title','麦斯威尔咖啡商城-产品库存列表');
 		$this->assign('item',$this->item['Stock']);
 		//模型返回的分页输出
 		$this->assign('page',$rs['page']);
@@ -261,7 +261,7 @@ class ProductController extends PublicController {
 
 			
 		    $this->assign('id',I('get.id'));		
-			$this->assign('title','福维克商城-产品库存添加');
+			$this->assign('title','麦斯威尔咖啡商城-产品库存添加');
 			$this->display();
 		}
     }
@@ -274,7 +274,7 @@ class ProductController extends PublicController {
 			$rs=D('Stock')->saveData($data);
 			//返回值 修改条数
 			if($rs>0){
-				$this->success('更新成功', U('Admin/Product/Stocklist').'?id='.$data['proid']);
+				$this->success('更新成功', U('Admin/Product/Stocklist').'?id='.$data['pro_id']);
 			}else{
 				$this->error('更新失败');
 			}
@@ -284,12 +284,12 @@ class ProductController extends PublicController {
             $this->assign('partresult',$part['result']);	
             $this->assign('partpage',$part['page']);	
 			
-            $rs=D('Stock')->where('id='.I('get.part_id'))->find();
-			$rs['partid']=explode(',',$rs['partid']);
+            $rs=D('Stock')->where('id='.I('get.id'))->find();
+			$rs['partid']=explode(',',$rs['id']);
 			$this->assign('rs',$rs);
 			
 		    $this->assign('id',I('get.id'));		
-			$this->assign('title','福维克商城-产品库存编辑');		
+			$this->assign('title','麦斯威尔咖啡商城-产品库存编辑');		
 			$this->display();
 		}
     }
@@ -306,7 +306,7 @@ class ProductController extends PublicController {
 				     'gtype'=>$this->where('pro_id='.I('post.pro_id'))->sum('amount'),
 				     'id'=>I('get.id'),
 				));
-				$this->success('删除成功',  U('Admin/Product/Stocklist').'?id='.I('get.id').'&sid='.I('get.sid'));
+				$this->success('删除成功',U('Admin/Product/Stocklist').'?id='.I('get.id').'&sid='.I('get.sid'));
 			}else{
 				$this->error('删除失败');
 			}
