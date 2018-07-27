@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-26 18:14:55
+Date: 2018-07-27 18:19:14
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -638,7 +638,7 @@ CREATE TABLE `max_product` (
 -- ----------------------------
 -- Records of max_product
 -- ----------------------------
-INSERT INTO `max_product` VALUES ('1', '黑咖啡01', '1532346617', '529', '12', '12', '122', '1222222', '卧式吸尘器/持久吸力/家具保洁神器/居家必备/呵护家人', '<img src=\"https://img30.360buyimg.com/sku/jfs/t20581/135/691198162/184571/12069443/5b14f3efN4c07e77a.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t20467/65/663471274/256949/41bf588f/5b14f3efNfc378b20.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t22414/4/681611285/289393/65b7d5be/5b14f3efN7295e6fd.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t4687/266/433342235/3122/e862105a/58cf5231Na746b88b.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20971/289/670551551/151075/dfceebcd/5b14f3efNd1bfc01d.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20572/151/675190494/135057/4426a1e1/5b14f3efNfefea90b.jpg\" alt=\"\">', '500', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '2', '2', '2', '1', null, '32', '200');
+INSERT INTO `max_product` VALUES ('1', '经典原味速溶咖啡三合一餐饮 饮装卡夫食品（700g/袋）', '1532346617', '39', '12', '12', '122', '1222222', '卧式吸尘器/持久吸力/家具保洁神器/居家必备/呵护家人', '<img src=\"https://img30.360buyimg.com/sku/jfs/t20581/135/691198162/184571/12069443/5b14f3efN4c07e77a.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t20467/65/663471274/256949/41bf588f/5b14f3efNfc378b20.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t22414/4/681611285/289393/65b7d5be/5b14f3efN7295e6fd.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t4687/266/433342235/3122/e862105a/58cf5231Na746b88b.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20971/289/670551551/151075/dfceebcd/5b14f3efNd1bfc01d.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20572/151/675190494/135057/4426a1e1/5b14f3efNfefea90b.jpg\" alt=\"\">', '500', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '2', '2', '2', '1', null, '32', '200');
 
 -- ----------------------------
 -- Table structure for `max_productcat`
@@ -666,7 +666,7 @@ CREATE TABLE `max_product_attr` (
   `attrvalue` varchar(100) DEFAULT NULL,
   `attrphoto` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=73 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=86 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_product_attr
@@ -681,16 +681,19 @@ INSERT INTO `max_product_attr` VALUES ('25', '7', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('26', '8', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('27', '9', '2', '', null);
 INSERT INTO `max_product_attr` VALUES ('28', '10', '2', '', null);
-INSERT INTO `max_product_attr` VALUES ('63', '6', '1', '黑咖啡', null);
-INSERT INTO `max_product_attr` VALUES ('64', '1', '1', '黑咖啡01', null);
-INSERT INTO `max_product_attr` VALUES ('65', '2', '1', '01', null);
-INSERT INTO `max_product_attr` VALUES ('66', '3', '1', '500g', null);
-INSERT INTO `max_product_attr` VALUES ('67', '4', '1', '泰国', null);
-INSERT INTO `max_product_attr` VALUES ('68', '5', '1', '500g', null);
-INSERT INTO `max_product_attr` VALUES ('69', '7', '1', '袋装', null);
-INSERT INTO `max_product_attr` VALUES ('70', '8', '1', '咖啡', null);
-INSERT INTO `max_product_attr` VALUES ('71', '9', '1', '袋装', null);
-INSERT INTO `max_product_attr` VALUES ('72', '10', '1', '黑咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('81', '5', '1', '500g', null);
+INSERT INTO `max_product_attr` VALUES ('80', '4', '1', '泰国', null);
+INSERT INTO `max_product_attr` VALUES ('79', '3', '1', '500g', null);
+INSERT INTO `max_product_attr` VALUES ('78', '2', '1', '01', null);
+INSERT INTO `max_product_attr` VALUES ('77', '1', '1', '黑咖啡01', null);
+INSERT INTO `max_product_attr` VALUES ('76', '6', '1', '黄咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('75', '6', '1', '紫咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('74', '6', '1', '白咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('73', '6', '1', '黑咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('82', '7', '1', '袋装', null);
+INSERT INTO `max_product_attr` VALUES ('83', '8', '1', '咖啡', null);
+INSERT INTO `max_product_attr` VALUES ('84', '9', '1', '袋装', null);
+INSERT INTO `max_product_attr` VALUES ('85', '10', '1', '黑咖啡', null);
 
 -- ----------------------------
 -- Table structure for `max_product_part`
@@ -728,13 +731,15 @@ CREATE TABLE `max_product_set` (
   `set_price` varchar(20) DEFAULT NULL COMMENT '本店价',
   `partid` varchar(50) DEFAULT NULL COMMENT '所属分类',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of max_product_set
 -- ----------------------------
 INSERT INTO `max_product_set` VALUES ('1', '单机套餐', '1', '10', '');
-INSERT INTO `max_product_set` VALUES ('2', '套餐1', '1', '20', '6,7');
+INSERT INTO `max_product_set` VALUES ('2', '套餐1', '1', '20', '1');
+INSERT INTO `max_product_set` VALUES ('3', '套餐2', '1', '41', '1');
+INSERT INTO `max_product_set` VALUES ('4', '套餐3', '1', '41', '1,2');
 
 -- ----------------------------
 -- Table structure for `max_region`

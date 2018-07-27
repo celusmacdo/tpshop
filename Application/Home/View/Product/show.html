@@ -25,10 +25,10 @@
 					<!--左边小轮播图-->
 					<div class="cont_part_left">
 						<div id="lwrap">
-							<img src="{$base_url}Public/home/img/pro_coffee.png" />
+							<img src="{$rs.pro_photo}" />
 						</div>
 						<div id="mwrap">
-							<img src="{$base_url}Public/home/img/pro_coffee.png" />
+							<img src="{$rs.pro_photo}" />
 							<div id="slider"></div>
 							<div class="big"><img src="{$base_url}Public/home/img/fangdajing.png" alt="" /></div>
 						</div>
@@ -51,9 +51,9 @@
 					<div class="cont_part_mid">
 						<!--中间上面部分-->
 						<div>
-							<h2>麦斯威尔原味速溶咖啡30条盒装（390g/盒）</h2>
+							<h2>{$rs.pro_name}</h2>
 							<div class="price">
-								<span>商品原价：</span><span> ￥92.00</span>
+								<span>商品原价：</span><span> ￥{$rs.shop_price}</span>
 								<p>累计评价<br /> 2.2万+
 								</p>
 							</div>
@@ -78,30 +78,23 @@
 						</div>
 
 						<!--中间下面部分-->
-						<ul>
+						
+						<ul id="set_choice">
+						   <volist name="attribute.1" id="v" key="k">
 							<li>
-								<span>选择口味：</span>
+								<input type="hidden" class="attr_list" value="">
+								<span>{$key}:</span>
 								<ul>
-									<li class="current">
-										<img src="{$base_url}Public/home/img/small_coffee.png" alt="" /><span>特浓30条（390克/盒）</span>
+								<!-- class="current" -->
+								<volist name="v" id="val" key="keys">
+									<li class="attrchoice">
+										<img src="{$base_url}Public/home/img/small_coffee.png" alt="" />&nbsp;<span>{$val.attrvalue}</span>
 									</li>
-									<li>
-										<img src="{$base_url}Public/home/img/small_coffee2.png" alt="" /><span>原味30条（390克/盒）</span>
-									</li>
-									<li>
-										<img src="{$base_url}Public/home/img/small_coffee.png" alt="" /><span>特浓30条（390克/盒）</span>
-									</li>
-									<li>
-										<img src="{$base_url}Public/home/img/small_coffee2.png" alt="" /><span>原味30条（390克/盒）</span>
-									</li>
-									<li>
-										<img src="{$base_url}Public/home/img/small_coffee.png" alt="" /><span>特浓30条（390克/盒）</span>
-									</li>
-									<li>
-										<img src="{$base_url}Public/home/img/small_coffee2.png" alt="" /><span>原味30条（390克/盒）</span>
-									</li>
+								</volist>
+
 								</ul>
 							</li>
+							</volist>
 							<li>
 								<span>选择数量：</span>
 								<div class="input-bth">
@@ -111,6 +104,7 @@
 								</div>
 							</li>
 						</ul>
+						
 						<!--立即购买-->
 						<div>
 							<div>
@@ -265,26 +259,15 @@
 						<div class="pic">
 							<div>
 								<ul>
-									<li>商品名称：麦斯威尔原味速溶咖啡</li>
-									<li>商品编号：000000</li>
-									<li>商品毛重;1.52kg</li>
-									<li>商品产地：泰国</li>
-									<li>重量：1000g以上</li>
-									<li>咖啡口味：原味咖啡</li>
-									<li>包装：独立包装</li>
-									<li>分类：咖啡</li>
-									<li>包装单位：盒装</li>
-									<li>咖啡分类：速溶咖啡</li>
+								<volist name="attribute.2" id="v" key="k">
+									<li>{$v.attrname}：{$v.attrvalue}</li>
+								</volist>
 								</ul>
 								<span><a href="##">更多详情>></a></span>
 							</div>
 							<!--右侧图片部分-->
 							<div class="cont_bot_pic">
-								<img src="{$base_url}Public/home/img/big.png" alt="" />
-								<img src="{$base_url}Public/home/img/big2.png" alt="" />
-								<img src="{$base_url}Public/home/img/big3.png" alt="" />
-								<img src="{$base_url}Public/home/img/big4.png" alt="" />
-								<img src="{$base_url}Public/home/img/big5.png" alt="" />
+								{$rs.content}
 							</div>
 						</div>
 						<div></div>
@@ -587,6 +570,52 @@
 		<script src="{$base_url}Public/home/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
 		<script src="{$base_url}Public/home/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script>
 		<script src="{$base_url}Public/home/js/common.js" type="text/javascript" charset="utf-8"></script>
+		
+		<script>
+        	$(function(){
+        		//属性的span标签点击时候
+        		$('.attrchoice').click(function(){
+        			 $(this).parent().parent().parent().find('.attr_list').attr('value',$(this).parent().parent().find('span').html()+$(this).find('span').html())
+        		});
+        		//套餐选择的时候
+        		$('#set_choice span').click(function(){
+        			    if($('.attr_list').eq(0).val().length<1 || $('.attr_list').eq(1).val().length<1){
+                             alert('请先检查清楚，还有未选的');
+                             return false;
+        			    }else{
+			                        //初始化一个空白字符串
+			        			    var pro_attr='';
+			        			    pro_attr+=$('.attr_list').eq(1).val()+';'+$('.attr_list').eq(0).val();
+			        			    //pro_attr=pro_attr.substr(0,pro_attr.length-1)
+									$.getJSON("{:U('Home/product/checkstock')}", { pro_attr: pro_attr, set_id: $(this).attr('set_id') , pro_id: "{$rs.id}"}, function(json){
+										 if(json==null){
+			                                alert('暂时无货');
+										 }else{
+										 	$('#amount').html(json.amount);
+										 	$('#shop_price').html('<b>￥</b>'+json.set_price);
+										 	$('#del-price').html('<b>￥</b>'+json.set_price*0.95);
+										 	//记住库存id
+										 	$('#stock_id').attr('value',json.sid);
+										 	$('#showButton').show();
+										 }
+									});			        			   
+					     }
+        			 
+        		});
+        		//加入购物车点击时候
+        		$('#add-cart').click(function(){
+ 									$.getJSON("{:U('Home/cart/addcart')}", { pro_id: '{$rs.id}', stock_id: $('#stock_id').val(), pro_price: "{$rs.shop_price}", number: $('#numberlist').val()}, function(json){
+										 if(json=='ok'){
+										 	 alert('添加购物车成功');
+			                                 location.href="{:U('Home/Cart/index')}";
+										 }else{
+				                             alert('添加购物车失败');
+										 }
+									});	       			   
+        		});
+        	});
+        </script>
+		
 		<script type="text/javascript">
 			var body = document.body;
 			var contentTop = document.getElementsByClassName("cont_top")[0];

@@ -279,12 +279,16 @@ class ProductController extends PublicController {
 				$this->error('更新失败');
 			}
 		}else{
+			$product=D('Product')->findData(I('get.id'));
+            $this->assign('product',$product);	
+			// dump($product);exit;
 		    $perpage=isset($_GET['perpage'])?$_GET['perpage']:10;
 			$part=D('ProductPart')->showData($perpage);
             $this->assign('partresult',$part['result']);	
             $this->assign('partpage',$part['page']);	
 			
             $rs=D('Stock')->where('id='.I('get.id'))->find();
+			//dump($rs);exit;
 			$rs['partid']=explode(',',$rs['id']);
 			$this->assign('rs',$rs);
 			

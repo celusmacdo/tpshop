@@ -197,15 +197,17 @@
 			</div
 			<!--商品-->
 			<ul class="product">
+			<volist name="rs" id="v" key="d">
 				<li>
-					<a href="{$base_url}Home/Product/show"><img src="{$base_url}Public/home/img/mai.png" alt="" /></a>
-					<h1>￥39</h1>
+					<a href="{$base_url}Home/Product/show?id={$v.id}"><img src="{$v.pro_photo}" alt="" width="278" height="184"/></a>
+					<h1>￥{$v.shop_price}</h1>
 					<p>
 						<a href="pro_details.html">
-							<span>麦斯威尔新款</span> 经典原味速溶咖啡三合一餐饮 饮装卡夫食品（700g/袋）
+							<span>{$v.brand_name}新款</span>&nbsp;{$v.pro_name}
 						</a>
 					</p>
 				</li>
+			</volist>
 			</ul>
 			<!--分页-->
 			<ul class="page">

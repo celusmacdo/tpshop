@@ -63,17 +63,22 @@ class ProductController extends PublicController {
 	}
 	//产品列表页
     public function lists(){
+		$perpage=isset($GET['perpage'])?$_GET['perpage']:6;
+		$rs=D('Product')->showData($perpage);
+		$this->assign('page',$rs['page']);
+		$this->assign('rs',$rs['result']);
+		// dump($rs['result']);exit;
 		$this->assign('title','麦斯威尔咖啡商城-产品列表页');
 		$this->display();
     }
 	//会员专区
 	public function memberarea(){
-		$this->assign('title','福维克商城-会员专区');
+		$this->assign('title','麦斯威尔咖啡商城-会员专区');
 		$this->display();
 	}
 	//产品搜索
 	public function search(){
-		$this->assign('title','福维克商城-产品搜索');
+		$this->assign('title','麦斯威尔咖啡商城-产品搜索');
 		$this->display();
 	}	
 	//产品详情页
@@ -96,6 +101,7 @@ class ProductController extends PublicController {
 		$this->assign('catNav',$catNav);
 		$this->assign('productSet',$productSet['result']);
 		$this->assign('rs',$rs);
+		// dump($rs);exit;
 		$this->assign('title','麦斯威尔咖啡商城-产品详情页');
 		$this->display();
     }

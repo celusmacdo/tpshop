@@ -15,9 +15,10 @@ class ProductModel extends Model {
 		 ->where($where)
 		 ->count();// 查询满足要求的总记录数
 		 //实例化调用分页
-		 $Page       = new \Think\HomePage($count,$perpage);// 实例化分页类 传入总记录数和每页显示的记录数(25)
-
-		 $show       = $Page->show();// 分页显示输出
+		 //dump($count);exit;
+		 $Page = new \Think\HomePage($count,$perpage);// 实例化分页类 传入总记录数和每页显示的记录数(25)
+		
+		 $show = $Page->show();// 分页显示输出
 		 //max_product inner join(连表) max_group  on(条件)   max_group.id = max_product.group_id'
          $result=$this
 		 ->field('max_product.*,max_brand.brand_name,max_category.cat_name')
@@ -32,6 +33,7 @@ class ProductModel extends Model {
 				 $result[$k]['pro_name_short']=mb_substr($result[$k]['pro_name'],0,8,"utf8")."...";
 			 }
 		 }
+		 // dump($result);exit;
 		 return array(
 		    'page'=>$show,     
 		    'result'=>$result,

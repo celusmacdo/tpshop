@@ -75,6 +75,7 @@ class StockModel extends Model {
 			 }
 		 }
 		 $result = $this->save($data); // 写入数据到数据库 
+		 //dump($result);exit;
 		  if($result){
 			    //添加库存后要更新产品表的库存字段
 			    D('Product')->save(array(

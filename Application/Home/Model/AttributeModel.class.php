@@ -9,7 +9,7 @@ class AttributeModel extends Model {
 		 ->join('max_product_attr on max_product_attr.attrid=max_attribute.id')
 		 ->join('max_category_attr on max_category_attr.attrid=max_attribute.id')
 		 ->where('max_product_attr.proid='.$id)
-		 ->order('max_attribute.id desc')
+		 ->order('max_attribute.id asc')
 		 ->select();
 		 //初始化一个数组
 		 $data=array();
