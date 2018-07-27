@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-27 18:19:14
+Date: 2018-07-27 19:09:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -200,15 +200,13 @@ CREATE TABLE `max_cart` (
   `number` int(10) unsigned DEFAULT NULL,
   `member_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_cart
 -- ----------------------------
-INSERT INTO `max_cart` VALUES ('3', '35', '83', '49.9', '1532341747', '1', null);
-INSERT INTO `max_cart` VALUES ('4', '35', '83', '49.9', '1532341851', '1', null);
-INSERT INTO `max_cart` VALUES ('5', '35', '83', '49.9', '1532344804', '1', null);
-INSERT INTO `max_cart` VALUES ('6', '35', '83', '49.9', '1532350614', '4', null);
+INSERT INTO `max_cart` VALUES ('10', '1', '', '39', '1532688738', '0', null);
+INSERT INTO `max_cart` VALUES ('11', '1', '', '39', '1532688812', '0', null);
 
 -- ----------------------------
 -- Table structure for `max_category`
