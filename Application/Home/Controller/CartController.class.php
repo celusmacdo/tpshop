@@ -27,8 +27,8 @@ class CartController extends PublicController {
 			$stock=D('Stock')->findData(array(
 			   'max_stock.id'=>$v['stock_id'],
 			));		
-            $cart[$k]['pro_info_list']=$stock;	
-          	$cart[$k]['totalBuy']=$v['pro_price']*$v['number'];//计算单项目、总值	
+            $cart[$k]['pro_info_list']=$stock;
+          	$cart[$k]['totalBuy']=$v['pro_price']*$v['number'];//计算单项目、总值
 		}
         $this->assign('cart',$cart);
 		$this->assign('title','麦斯威尔咖啡商城-购物车');

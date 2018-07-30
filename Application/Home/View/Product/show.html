@@ -575,18 +575,42 @@
         	$(function(){
         		//属性的span标签点击时候
         		$('.attrchoice').click(function(){
-        			 $(this).parent().parent().parent().find('.attr_list').attr('value',$(this).parent().parent().find('span').html()+$(this).find('span').html())
+        			 $(this).parent().find('.attr_list').attr('value',$(this).parent().find('b').html()+$(this).html())
+        		});
+        		//套餐选择的时候
+        		$('#set_choice span').click(function(){
+					if($('.attr_list').eq(0).val().length<1 || $('.attr_list').eq(1).val().length<1){
+						alert('请先检查清楚，还有未选的');
+						return false;
+					}else{
+						//初始化一个空白字符串
+						var pro_attr='';
+						pro_attr+=$('.attr_list').eq(1).val()+';'+$('.attr_list').eq(0).val();
+						//pro_attr=pro_attr.substr(0,pro_attr.length-1)
+						$.getJSON("{:U('Home/product/checkstock')}", { pro_attr: pro_attr, set_id: $(this).attr('set_id') , pro_id: "{$rs.id}"}, function(json){
+							if(json==null){
+								alert('暂时无货');
+							}else{
+								$('#amount').html(json.amount);
+								$('#shop_price').html('<b>￥</b>'+json.set_price);
+								$('#del-price').html('<b>￥</b>'+json.set_price*0.95);
+								//记住库存id
+								$('#stock_id').attr('value',json.sid);
+								$('#showButton').show();
+							}
+						});			        			   
+					}
         		});
         		//加入购物车点击时候
         		$('#add-cart').click(function(){
- 									$.getJSON("{:U('Home/cart/addcart')}", { pro_id: '{$rs.id}', stock_id: $('#stock_id').val(), pro_price: "{$rs.shop_price}", number: $('#numberlist').val()}, function(json){
-										 if(json=='ok'){
-										 	 alert('添加购物车成功');
-			                                 location.href="{:U('Home/Cart/index')}";
-										 }else{
-				                             alert('添加购物车失败');
-										 }
-									});	       			   
+					$.getJSON("{:U('Home/cart/addcart')}", { pro_id: '{$rs.id}', stock_id: $('#stock_id').val(), pro_price: "{$rs.shop_price}", number: $('#numberlist').val()}, function(json){
+						 if(json=='ok'){
+							 alert('添加购物车成功');
+							 location.href="{:U('Home/Cart/index')}";
+						 }else{
+							 alert('添加购物车失败');
+						 }
+					});	       			   
         		});
         	});
         </script>
