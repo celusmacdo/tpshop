@@ -56,7 +56,6 @@ class ProductController extends PublicController {
     public function checkstock(){
 		$rs=D('Stock')->findData(array(
 		   'max_stock.pro_attr'=>I('get.pro_attr'),
-		   'max_stock.set_id'=>I('get.set_id'),
 		   'max_stock.pro_id'=>I('get.pro_id'),
 		));
 		return  $this->ajaxReturn($rs);

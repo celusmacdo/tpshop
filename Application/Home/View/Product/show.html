@@ -97,14 +97,13 @@
 							</volist>
 							<li>
 								<span>选择数量：</span>
-								<div class="input-bth">
+								<div class="input-bth" id="numberlist">
 									<span class="prd_subnum">-</span>
 									<input type="text" value="1" class="prd_num" id="input" />
 									<span class="prd_addnum">+</span>
 								</div>
 							</li>
 						</ul>
-						
 						<!--立即购买-->
 						<div>
 							<div>
@@ -113,6 +112,7 @@
 							<div>
 								<a href="##" class="add-cart" id="add-cart">加入购物车</a>
 							</div>
+							<input type="hidden" id="stock_id" value="">
 						</div>
 					</div>
 					<!--看了又看-->
@@ -575,17 +575,14 @@
         	$(function(){
         		//属性的span标签点击时候
         		$('.attrchoice').click(function(){
-        			 $(this).parent().find('.attr_list').attr('value',$(this).parent().find('b').html()+$(this).html())
-        		});
-        		//套餐选择的时候
-        		$('#set_choice span').click(function(){
-					if($('.attr_list').eq(0).val().length<1 || $('.attr_list').eq(1).val().length<1){
+        			$(this).parent().parent().find('.attr_list').attr('value',$(this).parent().parent().find('span').html()+$(this).find('span').html());
+					if($('.attr_list').val().length<1){
 						alert('请先检查清楚，还有未选的');
 						return false;
 					}else{
 						//初始化一个空白字符串
-						var pro_attr='';
-						pro_attr+=$('.attr_list').eq(1).val()+';'+$('.attr_list').eq(0).val();
+						var pro_attr=$('.attr_list').val();
+						<!-- pro_attr+=$('.attr_list').val()+';'+$('.attr_list').eq(0).val(); -->
 						//pro_attr=pro_attr.substr(0,pro_attr.length-1)
 						$.getJSON("{:U('Home/product/checkstock')}", { pro_attr: pro_attr, set_id: $(this).attr('set_id') , pro_id: "{$rs.id}"}, function(json){
 							if(json==null){
@@ -603,14 +600,21 @@
         		});
         		//加入购物车点击时候
         		$('#add-cart').click(function(){
-					$.getJSON("{:U('Home/cart/addcart')}", { pro_id: '{$rs.id}', stock_id: $('#stock_id').val(), pro_price: "{$rs.shop_price}", number: $('#numberlist').val()}, function(json){
-						 if(json=='ok'){
-							 alert('添加购物车成功');
-							 location.href="{:U('Home/Cart/index')}";
-						 }else{
-							 alert('添加购物车失败');
-						 }
-					});	       			   
+					var pro_attr=$('.attr_list').val();
+					$.getJSON("{:U('Home/product/checkstock')}", { pro_attr: pro_attr, set_id: $(this).attr('set_id') , pro_id: "{$rs.id}"}, function(json){
+						if(json==null){
+							
+						}else{
+							$.getJSON("{:U('Home/cart/addcart')}", { pro_id: '{$rs.id}', stock_id: $('#stock_id').val(), pro_price: "{$rs.shop_price}"*$('#numberlist').find('input').val(), number: $('#numberlist').find('input').val()}, function(json){
+							 if(json=='ok'){
+								 alert('添加购物车成功');
+								 location.href="{:U('Home/Cart/index')}";
+							 }else{
+								 alert('添加购物车失败');
+							 }
+							});	
+						}
+					});	
         		});
         	});
         </script>
