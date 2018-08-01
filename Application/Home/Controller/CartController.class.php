@@ -7,8 +7,8 @@ use Think\Controller;
 class CartController extends PublicController {
     //添加购物车
     public function addcart(){
-        $rs=M('Cart')->add(array(
-		    'pro_id'=>I('get.pro_id'),
+			$rs=M('Cart')->add(array(
+			'pro_id'=>I('get.pro_id'),
 			'stock_id'=>I('get.stock_id'),
 			'pro_price'=>I('get.pro_price'),
 			'number'=>I('get.number'),
@@ -22,18 +22,18 @@ class CartController extends PublicController {
 	}
 	//购物车列表页
     public function index(){
-		$cart=M('Cart')->select();
-		foreach($cart AS $k=>$v){
-			$stock=D('Stock')->findData(array(
-			   'max_stock.id'=>$v['stock_id'],
-			));		
-            $cart[$k]['pro_info_list']=$stock;
-          	$cart[$k]['totalBuy']=$v['pro_price']*$v['number'];//计算单项目、总值
-		}
-		
-        $this->assign('cart',$cart);
-		$this->assign('title','麦斯威尔咖啡商城-购物车');
-        $this->display();
+			$cart=M('Cart')->select();
+			foreach($cart AS $k=>$v){
+				$stock=D('Stock')->findData(array(
+					 'max_stock.id'=>$v['stock_id'],
+				));		
+				$cart[$k]['pro_info_list']=$stock;
+				$cart[$k]['totalBuy']=$v['pro_price'];//计算单项目、总值
+			}
+			$this->assign('cart',$cart);
+			// dump($cart[$k]['pro_info_list']['pro_name']);exit;
+			$this->assign('title','麦斯威尔咖啡商城-购物车');
+			$this->display();
     }
 	//购物车删除
 	public function del(){

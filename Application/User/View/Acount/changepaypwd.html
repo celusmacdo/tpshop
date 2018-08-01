@@ -1,0 +1,98 @@
+	<include file="Public/header" />
+	<link rel="stylesheet"href="{$base_url}Public/home/css/user.css"/>
+	<div class="mg product ov row">
+		<!------------left-show------------------->
+		<div class="left-show col-xs-2">
+				<!--l-nav-->
+				<div class="l-nav left">
+				<a href="{:U('User/member/center')}"><img src="/{$Think.session.HomeUser.member_pic}" width="148" height="144" alt="" /></a>
+				<p>你好,<i class="n-user">欢迎来到福维克</i></p>
+				</div>
+		        <include file="Public/membermenu" />
+			</div>				
+			<!------------left-show-end------------------>
+			<div class="right-show col-xs-10">
+		   		<div class="address ov ">
+         			<h2 class="text-left c-title">会员支付密码修改</h2>
+								<form action="" method="post" id="paypassword_form">
+                                     <table>
+									       <tr>
+										          <td style="width: 150px;height: 50px;text-align: right;">旧支付密码：</td>
+												  <td style="text-align: left;"><input type="text" name="old_paypassword" id="old_paypassword" value="">&nbsp;&nbsp;<span><font color="red">*<font></span></td>
+										   </tr>
+										    <tr>
+										          <td style="width: 150px;height: 50px;text-align: right;">新支付密码：</td>
+												  <td style="text-align: left;"><input type="text" name="new_paypassword" id="new_paypassword" value="" >&nbsp;&nbsp;<span></span></td>
+										   </tr>
+										    <tr>
+										          <td style="width: 150px;height: 50px;text-align: right;">确认新支付密码：</td>
+												  <td style="text-align: left;"><input type="text" name="comfirm_paypassword" id="comfirm_paypassword"  value="">&nbsp;&nbsp;<span></span></td>
+										   </tr>										   
+									 </table>
+											<a id="submit" style="display: block; background:silver; width:80px; height: 30px;cursor: pointer;text-decoration:none;color:#333;text-align: center;line-height: 30px;border-radius: 8px;margin:30px 0 0 120px;">保存修改</a>							
+						        </form>
+
+         		</div>
+         	</div>	
+			<!--爆款产品-end-->
+		</div>
+	</div>
+
+
+	<include file="Public/footer" />
+	<script type="text/javascript" src="{$base_url}Public/home/js/jquery-1.11.0.js"></script>
+	<script type="text/javascript" src="{$base_url}Public/home/js/comment.js" ></script>
+	<script type="text/javascript" src="{$base_url}Public/home/js/loaddown.js"></script>
+	
+<script>
+
+            $(function(){
+                //b表单提交的时候
+                $('#submit').click(function(){
+                    if($('#old_paypassword').val().length<1){
+                        $('#old_paypassword').parent().find('span').html('请输入初始密码');
+                        return false;
+                    }else{
+                        //检查原来密码是否正确
+                        $.getJSON("{:U('User/Acount/checkpaypwd')}?id={:session('HomeUser.id')}&pay_password="+$('#old_paypassword').val()+"", {}, function(json){
+                              if(json=='ok'){
+                                    if($('#new_paypassword').val().length<1){
+                                        $('#old_paypassword').parent().find('span').html('填写正确');
+                                        $('#new_paypassword').parent().find('span').html('请输入新密码');
+                                        return false;
+                                    }else{
+                                        var rs=/^[A-Za-z][A-Za-z0-9]{5,}$/.exec($('#new_paypassword').val());
+                                        if(rs!=null){
+                                        // 无法匹配  ：null
+                                            if($('#new_paypassword').val()==$('#comfirm_paypassword').val()){
+                                               $('#new_paypassword').parent().find('span').html('填写正确');
+                                               $('#comfirm_paypassword').parent().find('span').html('填写正确');
+                                               $('#old_password').parent().find('span').html('填写正确');
+                                               $.post("{:U('User/Acount/savepaypwd')}", 
+                                                { id: "{:session('HomeUser.id')}", pay_password: $('#new_paypassword').val()},
+                                                function(data){
+                                                     if(data=='ok'){
+                                                        alert('修改成功');
+                                                        location.href="{:U('User/Member/index')}";
+                                                     }else{
+                                                        alert('修改失败');
+                                                     }
+                                                });
+                                            }else{
+                                               $('#comfirm_paypassword').parent().find('span').html('确认密码和新密码不一致');
+                                            }
+                                        }else{
+                                            $('#new_paypassword').parent().find('span').html('密码格式不对,必须英文开头，最少6位');
+                                        }
+                                    }
+                              }else{
+                                  $('#old_paypassword').parent().find('span').html('原来密码不正确');
+                                   return false;
+                              }                
+                        });
+                    }
+                    return false;
+                });
+            });
+        </script>
+</html>

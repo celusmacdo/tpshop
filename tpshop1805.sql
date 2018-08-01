@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2018-07-31 18:24:40
+Date: 2018-08-01 18:23:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -200,12 +200,12 @@ CREATE TABLE `max_cart` (
   `number` int(10) unsigned DEFAULT NULL,
   `member_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8mb4;
+) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of max_cart
 -- ----------------------------
-INSERT INTO `max_cart` VALUES ('27', '1', '1', '78', '1533017879', '2', null);
+INSERT INTO `max_cart` VALUES ('30', '1', '1', '117', '1533094422', '3', null);
 
 -- ----------------------------
 -- Table structure for `max_category`
@@ -635,7 +635,7 @@ CREATE TABLE `max_product` (
 -- ----------------------------
 -- Records of max_product
 -- ----------------------------
-INSERT INTO `max_product` VALUES ('1', '经典原味速溶咖啡三合一餐饮 饮装卡夫食品（700g/袋）', '1532346617', '39', '12', '12', '122', '1222222', '卧式吸尘器/持久吸力/家具保洁神器/居家必备/呵护家人', '<img src=\"https://img30.360buyimg.com/sku/jfs/t20581/135/691198162/184571/12069443/5b14f3efN4c07e77a.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t20467/65/663471274/256949/41bf588f/5b14f3efNfc378b20.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t22414/4/681611285/289393/65b7d5be/5b14f3efN7295e6fd.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t4687/266/433342235/3122/e862105a/58cf5231Na746b88b.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20971/289/670551551/151075/dfceebcd/5b14f3efNd1bfc01d.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20572/151/675190494/135057/4426a1e1/5b14f3efNfefea90b.jpg\" alt=\"\">', '500', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '2', '2', '2', '1', null, '32', '200');
+INSERT INTO `max_product` VALUES ('1', '经典原味速溶咖啡三合一餐饮 饮装卡夫食品（700g/袋）', '1532346617', '39', '49', '29', '122', '1222222', '卧式吸尘器/持久吸力/家具保洁神器/居家必备/呵护家人', '<img src=\"https://img30.360buyimg.com/sku/jfs/t20581/135/691198162/184571/12069443/5b14f3efN4c07e77a.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t20467/65/663471274/256949/41bf588f/5b14f3efNfc378b20.jpg\" alt=\"\" /><img src=\"https://img30.360buyimg.com/sku/jfs/t22414/4/681611285/289393/65b7d5be/5b14f3efN7295e6fd.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t4687/266/433342235/3122/e862105a/58cf5231Na746b88b.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20971/289/670551551/151075/dfceebcd/5b14f3efNd1bfc01d.jpg\" alt=\"\"><img src=\"https://img30.360buyimg.com/sku/jfs/t20572/151/675190494/135057/4426a1e1/5b14f3efNfefea90b.jpg\" alt=\"\">', '500', '/Uploads/2018-07-23/5b55cba8da1bf.jpg', null, '1', '2', '2', '2', '1', null, '32', '200');
 
 -- ----------------------------
 -- Table structure for `max_productcat`

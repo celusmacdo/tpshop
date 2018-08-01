@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>订单列表</title>
+		<link rel="stylesheet" href="{$base_url}Public/home/css/common.css" />
+		<link rel="stylesheet" href="{$base_url}Public/home/css/order.css" />
+	</head>
+
+	<body>
+		<!--头部-->
+		<div class="header">
+			<!--最上边的灰色导航-->
+			<div class="top">
+				<div class="container">
+					<!--灰色部分左边文字-->
+					<span>亲，欢迎来到Maxwell House咖啡商城!</span>
+					<!--灰色部分右边a标签-->
+					<div>
+						<a href="login.html">请登录</a>
+						<a href="register.html">快速注册</a>
+						<select>
+							<option>我的订单</option>
+							<option>其他订单</option>
+							<option>我的订单</option>
+						</select>
+						<a href="##">帮助中心</a>
+					</div>
+				</div>
+			</div>
+			<!--头部中间部分-->
+			<div class="middle">
+				<div>
+					<!--logo-->
+					<a href="index.html"><img src="{$base_url}Public/home/img/logo.png" /></a>
+					<!--搜索框-->
+					<div class="search">
+						<form>
+							<input type="text" />
+							<input type="submit" value="搜索" />
+						</form>
+						<ul>
+							<li>
+								<a href="shop_list.html" class="current">卡布奇诺</a>
+							</li>
+							<li>
+								<a href="shop_list.html">摩卡咖啡</a>
+							</li>
+							<li>
+								<a href="shop_list.html">黑咖啡</a>
+							</li>
+							<li>
+								<a href="shop_list.html">经典原味</a>
+							</li>
+							<li>
+								<a href="shop_list.html">卡布奇诺</a>
+							</li>
+						</ul>
+					</div>
+
+					<!--购物车-->
+					<div class="shop_carts">
+						<a href="shop_carts.html"><img src="{$base_url}Public/home/img/shop(index).png" /><span>我的购物车</span></a>
+						<a href="shop_carts.html" class="num">0</a>
+					</div>
+					<!--搜索框下面的文字-->
+
+				</div>
+			</div>
+			<!--头部导航部分-->
+			<div class="nav">
+				<div>
+					<div class="left">
+						<a href="##"> 全部商品分类 <img src="{$base_url}Public/home/img/jiankuohao.png" alt="" /></a>
+						<ul class="clearfix">
+							<li>
+								<h2>咖啡分类</h2>
+								<ul>
+									<li>
+										<a href="shop_list.html">速溶咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">咖啡豆</a>
+									</li>
+									<li>
+										<a href="shop_list.html">咖啡粉</a>
+									</li>
+									<li>
+										<a href="shop_list.html">其它</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>咖啡口味</h2>
+								<ul>
+									<li>
+										<a href="shop_list.html">原味咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">特浓咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">黑咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">摩卡咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">拿铁咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">白咖啡</a>
+									</li>
+									<li>
+										<a href="shop_list.html">卡布奇诺</a>
+									</li>
+									<li>
+										<a href="shop_list.html">其它</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>是否含咖啡因</h2>
+								<ul>
+									<li>
+										<a href="shop_list.html">含咖啡因</a>
+									</li>
+									<li>
+										<a href="shop_list.html">低咖啡因</a>
+									</li>
+									<li>
+										<a href="shop_list.html">无咖啡因</a>
+									</li>
+									<li>
+										<a href="shop_list.html">其它</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>是否含糖</h2>
+								<ul>
+									<li>
+										<a href="shop_list.html">无糖</a>
+									</li>
+									<li>
+										<a href="shop_list.html">含糖</a>
+									</li>
+									<li>
+										<a href="shop_list.html">其它</a>
+									</li>
+								</ul>
+							</li>
+							<li>
+								<h2>包装单位</h2>
+								<ul>
+									<li>
+										<a href="shop_list.html">袋装</a>
+									</li>
+									<li>
+										<a href="shop_list.html">盒装</a>
+									</li>
+									<li>
+										<a href="shop_list.html">瓶装</a>
+									</li>
+									<li>
+										<a href="shop_list.html">罐装</a>
+									</li>
+									<li>
+										<a href="shop_list.html">其它</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+					<ul>
+						<li>
+							<a href="index.html">首页</a>
+						</li>
+						<li>
+							<a href="shop_list.html">新年金彩礼盒</a>
+						</li>
+						<li>
+							<a href="shop_list.html">经典原味咖啡</a>
+						</li>
+						<li>
+							<a href="shop_list.html">香醇浓厚咖啡</a>
+						</li>
+						<li>
+							<a href="shop_list.html">清新奶香咖啡</a>
+						</li>
+						<li>
+							<a href="shop_list.html">麦氏典藏系列</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--第二部分-->
+		<div class="content">
+			<!--个人中心-->
+			<ul class="personal">
+				<li>
+					<h3>个人中心</h3>
+					<ul>
+						<li>
+							<a href="user.html">我的用户中心</a>
+						</li>
+						<li>
+							<a href="shop_carts.html">我的购物车</a>
+						</li>
+						<li>
+							<a href="order.html">我的订单</a>
+						</li>
+						<li>
+							<a href="##">我的收藏</a>
+						</li>
+						<li>
+							<a href="comment.html">我的评价</a>
+						</li>
+						<li>
+							<a href="##">提取现金</a>
+						</li>
+						<li>
+							<a href="##">我的余额</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>我的账户</h3>
+					<ul>
+						<li>
+							<a href="address.html">地址管理</a>
+						</li>
+						<li>
+							<a href="##">个人信息</a>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<h3>退款维权</h3>
+					<ul>
+						<li>
+							<a href="##">系统消息</a>
+						</li>
+						<li>
+							<a href="##">举报管理</a>
+						</li>
+					</ul>
+				</li>
+			</ul>
+			<!--所有订单导航-->
+			<div>
+				<!--小导航-->
+				<ul class="order_nav">
+					<li class="current">
+						<a href="##">订单列表</a>
+					</li>
+					<li>
+						<a href="##">待付款</a>
+					</li>
+					<li>
+						<a href="##">代发货</a>
+					</li>
+					<li>
+						<a href="##">待收货</a>
+					</li>
+					<li>
+						<a href="##">待评价</a>
+					</li>
+					<li>
+						<a href="##">已完成</a>
+					</li>
+				</ul>
+
+				<!--订单号-->
+				<form action="##">
+					<div>
+						<label for="name">订单号:</label>
+						<input type="text" id="name" />
+					</div>
+					<div>
+						<label for="time">下单时间:</label>
+						<input type="text" id="time" />-<input type="text" id="time" />
+					</div>
+					<div>
+						<label>订单状态:</label>
+						<select>
+							<option>所有订单</option>
+							<option>今天订单</option>
+							<option>明天订单</option>
+						</select>
+					</div>
+				</form>
+
+				<!--所有订单-->
+				<div class="hide">
+
+					<table cellspacing="0" cellpadding="0">
+						<thead>
+							<tr>
+								<th>订单号</th>
+								<th>商品</th>
+								<th>订单状态</th>
+								<th>订单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+
+									<a href="##">查看物流</a>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>待付款 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+									<a href="pay.html">去付款</a>
+									<a href="##">查看物流</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td> 未发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+									<a href="##">提醒发货</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##"></a><br />
+									<a href="comment.html" style="margin-top: -10px;">评价</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##">已评价</a><br />
+									<a href="##"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table cellspacing="0" cellpadding="0" style="display: none;">
+						<thead>
+							<tr>
+								<th>订单号</th>
+								<th>商品</th>
+								<th>订单状态</th>
+								<th>订单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+
+									<a href="##">查看物流</a>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>待付款 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="pay.html">去付款</a>
+									<a href="##">查看物流</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td> 未发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="##">提醒发货</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##"></a><br />
+									<a href="comment.html" style="margin-top: -10px;">评价</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##">已评价</a><br />
+									<a href="##"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table cellspacing="0" cellpadding="0" style="display: none;">
+						<thead>
+							<tr>
+								<th>订单号</th>
+								<th>商品</th>
+								<th>订单状态</th>
+								<th>订单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+
+									<a href="##">查看物流</a>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>待付款 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="pay.html">去付款</a>
+									<a href="##">查看物流</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td> 未发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="##">提醒发货</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##"></a><br />
+									<a href="comment.html" style="margin-top: -10px;">评价</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##">已评价</a><br />
+									<a href="##"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table cellspacing="0" cellpadding="0" style="display: none;">
+						<thead>
+							<tr>
+								<th>订单号</th>
+								<th>商品</th>
+								<th>订单状态</th>
+								<th>订单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+
+									<a href="##">查看物流</a>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>待付款 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="pay.html">去付款</a>
+									<a href="##">查看物流</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td> 未发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="##">提醒发货</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##"></a><br />
+									<a href="comment.html" style="margin-top: -10px;">评价</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##">已评价</a><br />
+									<a href="##"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<table cellspacing="0" cellpadding="0" style="display: none;">
+						<thead>
+							<tr>
+								<th>订单号</th>
+								<th>商品</th>
+								<th>订单状态</th>
+								<th>订单时间</th>
+								<th>操作</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order_details.html">订单详情></a><br />
+
+									<a href="##">查看物流</a>
+
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>待付款 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="pay.html">去付款</a>
+									<a href="##">查看物流</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td> 未发货 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="order.html">订单详情></a><br />
+									<a href="##">提醒发货</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##"></a><br />
+									<a href="comment.html" style="margin-top: -10px;">评价</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<div>HD564546</div>
+								</td>
+								<td>
+									<a href="pro_details.html" class="pic"><img src="{$base_url}Public/home/img/usercoffee222.png" alt="" /></a>
+									<p>
+										<a href="pro_details.html">麦斯威尔经典愿望速溶黑咖啡，三合一特浓咖啡</a>
+									</p>
+								</td>
+								<td>已签收 </td>
+								<td>
+									2017-05-12 <br /> 09：10
+								</td>
+								<td>
+									<a href="##">已评价</a><br />
+									<a href="##"></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+				<!--page-->
+				<ul class="page">
+					<li>
+						<a href="##">首页</a>
+					</li>
+					<li>
+						<a href="##" class="current">1</a>
+					</li>
+					<li>
+						<a href="##">2</a>
+					</li>
+					<li>
+						<a href="##">3</a>
+					</li>
+					<li>
+						<a href="##">尾页</a>
+					</li>
+					<span>共三页</span>
+					<span>
+						到第
+						<input type="text" value="1" maxlength="6" id="txt"/>
+						页
+					</span>
+					<button>确定</button>
+				</ul>
+			</div>
+		</div>
+		<!--最底部-->
+		<div class="footer">
+			<div class="footer_bot">
+				<ul class="pic">
+					<li>
+						<a href="##"><img src="{$base_url}Public/home/img/di1.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="##"><img src="{$base_url}Public/home/img/di2.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="##"><img src="{$base_url}Public/home/img/di3.png" alt="" /></a>
+					</li>
+					<li>
+						<a href="##"><img src="{$base_url}Public/home/img/di4.png" alt="" /></a>
+					</li>
+				</ul>
+				<ul class="word">
+					<li>苏ICP备14039882号-4</li>
+					<li>苏B1-20150021</li>
+					<li>麦斯威尔有限公司</li>
+				</ul>
+			</div>
+		</div>
+		<script src="{$base_url}Public/home/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{$base_url}Public/home/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script>
+		<script src="{$base_url}Public/home/js/common.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var index = 0;
+				var first = 0
+				$(".content>div>.order_nav>li").click(function() {
+					first = $(this).index();
+					$(".content>div>.order_nav>li").eq(first).addClass("current").siblings().removeClass("current");
+					$(".content>div .hide table").eq(first).fadeIn().siblings().fadeOut();
+				})
+			})
+			var txt = document.getElementById("txt");
+			txt.onkeydown = function(ev) {
+				var n = ev.keyCode;
+				if(n < 48 || n > 57) {
+					return false;
+				}
+			}
+		</script>
+	</body>
+
+</html>

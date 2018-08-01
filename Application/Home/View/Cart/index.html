@@ -1,369 +1,187 @@
+<include file="Public/header" />
+<link rel="stylesheet" href="{$base_url}Public/home/css/common.css" />
+<link rel="stylesheet" href="{$base_url}Public/home/css/shop_carts.css" />
 <!DOCTYPE html>
-<html>
+<!--第二部分-->
+<div class="content">
+    <!--进度条-->
+    <div class="cont_top">
+        <ul>
+            <li class="one">
+                <hr />
+                <div>1</div>
+                <p>我的购物车</p>
+            </li>
+            <li>
+                <hr />
+                <div>2</div>
+                <p>填写核对订单信息</p>
+            </li>
+            <li>
+                <hr />
+                <div>3</div>
+                <p>成功提交订单</p>
+            </li>
+        </ul>
+    </div>
+    <!--全选-->
+    <form>
+        <input type="checkbox" name="check" id="all" class="chk" />
+        <label for="all"></label>
+        <label for="all" id="dels">麦斯威尔官方旗舰店</label>
+    </form>
+    <!--购物车-->
+    <table cellpadding="0" cellspacing="0">
+        <thead>
+            <tr>
+                <th></th>
+                <th>商品信息</th>
+                <th>单价</th>
+                <th>数量</th>
+                <th class="money">金额</th>
+                <th>操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <volist name="cart" id="v" key="k">
+                <tr>
+                    <td>
+                        <input type='checkbox' name='check' id='id{$k}' class='chk add' />
+                        <label for='id{$k}'></label>
+                    </td>
+                    <td class='pro'>
+                        <a href='pro_details.html'>
+                            <img src='{$v.pro_info_list.pro_photo}' width="70" height="61" />
+                        </a>
+                        <p>
+                            <a href='pro_details.html'>{$v.pro_info_list.pro_name}</a>
+                            <span>{$v.pro_info_list.pro_attr}</span>
+                        </p>
+                    </td>
+                    <td class='pri'>
+                        <p>￥{$v.pro_info_list.shop_price}</p>
+                        <p>￥{$v.pro_info_list.market_price}</p>
+                    </td>
+                    <td class='number'>
+                        <div class='input-bth'>
+                            <span class='prd_subnum'>-</span>
+                            <input type='text' value='{$v.number}' class='prd_num' id='txt' />
+                            <span class='prd_addnum'>+</span>
+                        </div>
+                    </td>
+                    <td class='amount'>
+                        <span>￥{$v.totalBuy}</span>
+                    </td>
+                    <td>
+                        <button style="display: block; margin: 0 auto; background: none; padding: 0 5px; border: none; font-size: 16px;" href='##'>收藏</button>
+                        <button style="display: block; margin: 0 auto; background: none; padding: 0 5px; border: none; font-size: 16px;" onclick="if(confirm('亲，您确定要狠心删除这些商品吗?')==false){return false;}else{location.href='{:U('Home/Cart/del')}?id={$v.id}'}">删除</button>
+                    </td>
+                </tr>
+            </volist>
+        </tbody>
+    </table>
+    <!--结算-->
+    <div class="cont_top">
+        <p>
+            <span class="tol">商品总价（不含运费）</span>
+            <span class="totalamount">￥0.00</span>
+        </p>
+        <a href="confirm_order.html">去结算</a>
+    </div>
+</div>
 
-	<head>
-		<meta charset="UTF-8">
-		<title>购物车</title>
-		<link rel="stylesheet" href="{$base_url}Public/home/css/common.css" />
-		<link rel="stylesheet" href="{$base_url}Public/home/css/shop_carts.css" />
-	</head>
+<!--最底部-->
+<include file="Public/footer" />
+<script src="{$base_url}Public/home/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
+<script src="{$base_url}Public/home/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script>
 
-	<body>
-		<!--头部-->
-		<div class="header">
-			<!--最上边的灰色导航-->
-			<div class="top">
-				<div class="container">
-					<!--灰色部分左边文字-->
-					<span>亲，欢迎来到Maxwell House咖啡商城!</span>
-					<!--灰色部分右边a标签-->
-					<div>
-						<a href="login.html">请登录</a>
-						<a href="register.html">快速注册</a>
-						<select>
-							<option>我的订单</option>
-							<option>其他订单</option>
-							<option>我的订单</option>
-						</select>
-						<a href="##">帮助中心</a>
-					</div>
-				</div>
-			</div>
-			<!--头部中间部分-->
-			<div class="middle">
-				<div>
-					<!--logo-->
-					<a href="index.html"><img src="{$base_url}Public/home/img/logo.png" /></a>
-					<!--搜索框-->
-					<div class="search">
-						<form>
-							<input type="text" />
-							<input type="submit" value="搜索" />
-						</form>
-						<ul>
-							<li>
-								<a href="shop_list.html" class="current">卡布奇诺</a>
-							</li>
-							<li>
-								<a href="shop_list.html">摩卡咖啡</a>
-							</li>
-							<li>
-								<a href="shop_list.html">黑咖啡</a>
-							</li>
-							<li>
-								<a href="shop_list.html">经典原味</a>
-							</li>
-							<li>
-								<a href="shop_list.html">卡布奇诺</a>
-							</li>
-						</ul>
-					</div>
+<script src="{$base_url}Public/home/js/shop_cart.js" type="text/javascript" charset="utf-8"></script>
+<script src="{$base_url}Public/home/js/common.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    var b = document.getElementsByClassName("add");
+    var all = document.getElementById("all");
+    var top = document.getElementsByClassName("content");
+    all.onclick = function () {
+        var a = 0;
+        for (var i = 0; i < b.length; i++) {
+            if (b[i].checked == true) {
+                a++;
+            }
+        }
+        if (a == b.length) {
+            for (var j = 0; j < b.length; j++) {
+                b[j].checked = false;
+            }
+        } else {
+            for (var i = 0; i < b.length; i++) {
+                b[i].checked = true;
+            }
+        }
 
-					<!--购物车-->
-					<div class="shop_carts">
-						<a href="shop_carts.html"><img src="{$base_url}Public/home/img/shop(index).png" /><span>我的购物车</span></a>
-						<a href="shop_carts.html" class="num">0</a>
-					</div>
-					<!--搜索框下面的文字-->
+    }
+    top.onclick = function () {
+        var c = 0;
+        for (var i = 0; i < b.length; i++) {
+            if (b[i].checked == true) {
+                c++;
+            }
+            if (c == b.length) {
+                all.checked = true;
+            } else {
+                all.checked = false;
+            }
+        }
+    }
+</script>
+<script type="text/javascript">
+    var lii = function () {
+        var s = localStorage.getItem("数量");
+        for (var i = 1; i <= s; i++) {
+            var value = localStorage.getItem(i);
+            if (value != null) {
+                $(".prd_num").eq($("tr").length - 2).val(value);
+            }
+        }
+        //				var len = $("tbody tr").length;
+        //				localStorage.setItem("购物车", len);
+    }
+    lii();
+    if ($(".content>table>tbody>tr").length == 0) {
+        $(".content>form").remove();
+    }
+    var txt = document.getElementsByClassName("prd_num");
+    for (var i = 0; i < txt.length; i++) {
+        txt[i].onkeydown = function (ev) {
+            var n = ev.keyCode;
+            if ((n < 48 || n > 57) && n != 8 && (n < 95 || n > 105)) {
+                return false;
 
-				</div>
-			</div>
-			<!--头部导航部分-->
-			<div class="nav">
-				<div>
-					<div class="left">
-						<a href="##"> 全部商品分类 <img src="{$base_url}Public/home/img/jiankuohao.png" alt="" /></a>
-						<ul class="clearfix">
-							<li>
-								<h2>咖啡分类</h2>
-								<ul>
-									<li>
-										<a href="shop_list.html">速溶咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">咖啡豆</a>
-									</li>
-									<li>
-										<a href="shop_list.html">咖啡粉</a>
-									</li>
-									<li>
-										<a href="shop_list.html">其它</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>咖啡口味</h2>
-								<ul>
-									<li>
-										<a href="shop_list.html">原味咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">特浓咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">黑咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">摩卡咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">拿铁咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">白咖啡</a>
-									</li>
-									<li>
-										<a href="shop_list.html">卡布奇诺</a>
-									</li>
-									<li>
-										<a href="shop_list.html">其它</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>是否含咖啡因</h2>
-								<ul>
-									<li>
-										<a href="shop_list.html">含咖啡因</a>
-									</li>
-									<li>
-										<a href="shop_list.html">低咖啡因</a>
-									</li>
-									<li>
-										<a href="shop_list.html">无咖啡因</a>
-									</li>
-									<li>
-										<a href="shop_list.html">其它</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>是否含糖</h2>
-								<ul>
-									<li>
-										<a href="shop_list.html">无糖</a>
-									</li>
-									<li>
-										<a href="shop_list.html">含糖</a>
-									</li>
-									<li>
-										<a href="shop_list.html">其它</a>
-									</li>
-								</ul>
-							</li>
-							<li>
-								<h2>包装单位</h2>
-								<ul>
-									<li>
-										<a href="shop_list.html">袋装</a>
-									</li>
-									<li>
-										<a href="shop_list.html">盒装</a>
-									</li>
-									<li>
-										<a href="shop_list.html">瓶装</a>
-									</li>
-									<li>
-										<a href="shop_list.html">罐装</a>
-									</li>
-									<li>
-										<a href="shop_list.html">其它</a>
-									</li>
-								</ul>
-							</li>
-						</ul>
-					</div>
-					<ul>
-						<li>
-							<a href="index.html">首页</a>
-						</li>
-						<li>
-							<a href="shop_list.html">新年金彩礼盒</a>
-						</li>
-						<li>
-							<a href="shop_list.html">经典原味咖啡</a>
-						</li>
-						<li>
-							<a href="shop_list.html">香醇浓厚咖啡</a>
-						</li>
-						<li>
-							<a href="shop_list.html">清新奶香咖啡</a>
-						</li>
-						<li>
-							<a href="shop_list.html">麦氏典藏系列</a>
-						</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!--第二部分-->
-		<div class="content">
-			<!--进度条-->
-			<div class="cont_top">
-				<ul>
-					<li class="one">
-						<hr />
-						<div>1</div>
-						<p>我的购物车</p>
-					</li>
-					<li>
-						<hr />
-						<div>2</div>
-						<p>填写核对订单信息</p>
-					</li>
-					<li>
-						<hr />
-						<div>3</div>
-						<p>成功提交订单</p>
-					</li>
-				</ul>
-			</div>
-			<!--全选-->
-			<form>
-				<input type="checkbox" name="check" id="all" class="chk" />
-				<label for="all"></label>
-				<label for="all" id="dels">麦斯威尔官方旗舰店</label>
-			</form>
-			<!--购物车-->
-			<table cellpadding="0" cellspacing="0">
-				<thead>
-					<tr>
-						<th></th>
-						<th>商品信息</th>
-						<th>单价</th>
-						<th>数量</th>
-						<th class="money">金额</th>
-						<th>操作</th>
-					</tr>
-				</thead>
-				<tbody>
-				</tbody>
-			</table>
-			<!--结算-->
-			<div class="cont_top">
-				<p>
-					<span class="tol">商品总价（不含运费）</span><span class="totalamount">￥0.00</span>
-				</p>
-				<a href="confirm_order.html">去结算</a>
-			</div>
-		</div>
+            }
+        }
+    }
 
-		<!--最底部-->
-		<div class="footer">
-			<div class="footer_bot">
-				<ul class="pic">
-					<li>
-						<a href="##"><img src="{$base_url}Public/home/img/di1.png" alt="" /></a>
-					</li>
-					<li>
-						<a href="##"><img src="{$base_url}Public/home/img/di2.png" alt="" /></a>
-					</li>
-					<li>
-						<a href="##"><img src="{$base_url}Public/home/img/di3.png" alt="" /></a>
-					</li>
-					<li>
-						<a href="##"><img src="{$base_url}Public/home/img/di4.png" alt="" /></a>
-					</li>
-				</ul>
-				<ul class="word">
-					<li>苏ICP备14039882号-4</li>
-					<li>苏B1-20150021</li>
-					<li>麦斯威尔有限公司</li>
-				</ul>
-			</div>
-		</div>
-		<script src="{$base_url}Public/home/js/jquery-1.11.0.js" type="text/javascript" charset="utf-8"></script>
-		<script src="{$base_url}Public/home/js/jquery-migrate-1.2.1.js" type="text/javascript" charset="utf-8"></script>
+    $(function () {
+        $(".prd_num").change(function () {
+            var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
 
-		<script src="{$base_url}Public/home/js/shop_cart.js" type="text/javascript" charset="utf-8"></script>
-		<script src="{$base_url}Public/home/js/common.js" type="text/javascript" charset="utf-8"></script>
-		<script type="text/javascript">
-			var b = document.getElementsByClassName("add");
-			var all = document.getElementById("all");
-			var top = document.getElementsByClassName("content");
-			all.onclick = function() {
-				var a = 0;
-				for(var i = 0; i < b.length; i++) {
-					if(b[i].checked == true) {
-						a++;
-					}
-				}
-				if(a == b.length) {
-					for(var j = 0; j < b.length; j++) {
-						b[j].checked = false;
-					}
-				} else {
-					for(var i = 0; i < b.length; i++) {
-						b[i].checked = true;
-					}
-				}
-
-			}
-			top.onclick = function() {
-				var c = 0;
-				for(var i = 0; i < b.length; i++) {
-					if(b[i].checked == true) {
-						c++;
-					}
-					if(c == b.length) {
-						all.checked = true;
-					} else {
-						all.checked = false;
-					}
-				}
-			}
-		</script>
-		<script type="text/javascript">
-			var lii = function() {
-				var s = localStorage.getItem("数量");
-				for(var i = 1; i <= s; i++) {
-					var value = localStorage.getItem(i);
-					if(value != null) {
-						$("tbody").append("<tr><td><input type='checkbox' name='check' id='id" + i + "' class='chk add' /><label for='id" + i + "'></label></td><td class='pro'><a href='pro_details.html'><img src='{$base_url}Public/home/img/shopcarts.png' /></a><p><a href='pro_details.html'>{$rs.pro_id}</a><span>包装：盒装  重量：1.52kg</span></p></td><td class='pri'><p>￥29.00</p><p>￥49.00</p></td><td class='number'><div class='input-bth'><span class='prd_subnum'>-</span><input type='text' value='1' class='prd_num' id='txt'/><span class='prd_addnum'>+</span></div></td><td class='amount'><span>￥29.00</span></td><td><a href='##'>收藏</a><a href='##' class='cel'>删除</a></td></tr>")
-						$(".prd_num").eq($("tr").length - 2).val(value);
-
-					}
-				}
-				//				var len = $("tbody tr").length;
-				//				localStorage.setItem("购物车", len);
-			}
-			lii();
-			if($(".content>table>tbody>tr").length == 0) {
-				$(".content>form").remove();
-			}
-			var txt = document.getElementsByClassName("prd_num");
-			for( var i=0;i<txt.length;i++){
-				txt[i].onkeydown = function(ev) {
-				var n = ev.keyCode;
-				if((n < 48 || n > 57) && n != 8 && (n < 95 || n > 105)) {
-					return false;
-
-				}
-			}
-			}
-			
-			$(function() {
-				$(".prd_num").change(function() {
-					var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
-					
-					var iil = parseInt(id.replace(/id/i,""));
-					console.log(iil)
-					localStorage.setItem(iil,$(this).val());
-				})
-				$(".prd_addnum").click(function() {
-					var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
-					var urr = $(this).parents("tr").find("input[type=text]").val();
-					var iil = parseInt(id.replace(/id/i,""));
-					localStorage.setItem(iil,urr);
-				})
-				$(".prd_subnum").click(function() {
-					var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
-					var urr = $(this).parents("tr").find("input[type=text]").val();
-					var iil = parseInt(id.replace(/id/i,""));
-					localStorage.setItem(iil,urr);
-				})
-			})
-		</script>
-	</body>
+            var iil = parseInt(id.replace(/id/i, ""));
+            console.log(iil)
+            localStorage.setItem(iil, $(this).val());
+        })
+        $(".prd_addnum").click(function () {
+            var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
+            var urr = $(this).parents("tr").find("input[type=text]").val();
+            var iil = parseInt(id.replace(/id/i, ""));
+            localStorage.setItem(iil, urr);
+        })
+        $(".prd_subnum").click(function () {
+            var id = $(this).parents("tr").find("input[type=checkbox]").attr("id");
+            var urr = $(this).parents("tr").find("input[type=text]").val();
+            var iil = parseInt(id.replace(/id/i, ""));
+            localStorage.setItem(iil, urr);
+        })
+    })
+</script>
+</body>
 
 </html>
