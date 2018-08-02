@@ -7,28 +7,28 @@
 		<span>会员注册</span>
 		<form action="" method="post" id="RegForm">
 			<div>
-				<label for="tel">账号：</label>
-				<input style="margin-right: 10px;" type="text" id="tel" />
-				<label style="width: 45%; font-size: 12px; line-height: 16px; text-align: left;" id="nametip" class="Tip">
+				<label for="username">账号：</label>
+				<input style="margin-right: 10px;" type="text" placeholder="手机/邮箱/用户名" name="username" id="username" />
+				<label style="width: 45%; font-size: 12px; line-height: 16px; text-align: left;" id="userNameTip" class="Tip">
 					请使用字母、汉字、数字、下划线组合，4~20个字符，且不能为纯数字
 				</label>
 			</div>
 			<div>
 				<label for="email"> Email：</label>
-				<input type="text" id="email" />
+				<input type="text" placeholder="请输入邮箱" name="email" id="email" />
 			</div>
 			<div>
 				<label for="yan"> 验证码：</label>
-				<input type="text" id="yan" />
+				<input type="text" placeholder="请输入验证码" name="code" id="yan" />
 				<div>获取验证码</div>
 			</div>
 			<div>
-				<label for="paddword">密码：</label>
-				<input type="password" id="paddword" />
+				<label for="password">密码：</label>
+				<input type="password" placeholder="建议至少使用两种字符组合" id="password" />
 			</div>
 			<div>
-				<label for="confirm">确认密码：</label>
-				<input type="password" id="confirm" />
+				<label for="com_pass">确认密码：</label>
+				<input type="password" name="password" placeholder="请再次输入密码" id="com_pass" />
 			</div>
 			<div>
 				<input type="checkbox" name="" id="radio" value="" />
@@ -74,61 +74,10 @@
 </div>
 </body>
 <script>
-	$(function () {
-		$('#RegForm').validate({
-			onkeyup: false,
-
-			focusCleanup: true,
-
-			success: "valid",
-
-			submitHandler: function (form) {
-
-				$(form).ajaxSubmit({
-
-					type: 'post',
-
-					url: "{:U('User/Index/register')}",
-
-					success: function (data) {
-
-						if (data == 'ok') {
-
-							layer.msg('注册成功!', {
-								end: function () {
-
-									var index = parent.layer.getFrameIndex(window.name);
-
-									parent.$('.btn-refresh').click();
-
-									parent.layer.close(index);
-
-								}
-							});
-
-						} else {
-
-							layer.msg('注册失败!', {
-								icon: 1
-							})
-
-						}
-
-					},
-
-					error: function (XmlHttpRequest, textStatus, errorThrown) {
-
-						layer.msg('error!', {
-							icon: 1
-						});
-
-					}
-
-				});
-
-			}
-
-		});
+	$(function(){
+		var checkUserName = function(){
+			
+		}
 	});
 </script>
 
