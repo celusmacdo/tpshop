@@ -37,7 +37,7 @@ class IndexController extends PublicController {
 			}
 		}else{
 			//输出模板
-			$this->assign('title','福维克商城-会员登录');
+			$this->assign('title','麦斯威尔商城-会员登录');
 			$this->display('Index:login');
 		}
 	}
@@ -83,7 +83,7 @@ class IndexController extends PublicController {
 				}
 			}
 		}else{
-			$this->assign('title','福维克商城-会员注册');
+			$this->assign('title','麦斯威尔商城-会员注册');
 			$this->display('Index:register');
 		}
 		
